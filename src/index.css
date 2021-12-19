@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
 
-* {
-  box-sizing: border-box;
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
 
 html {
@@ -10,5 +12,10 @@ html {
 
 body {
   margin: 0;
-  background: url('./assets/uU8wbS.jpg');
+  padding: 0;
+}
+
+main {
+    height: 100vh;
+    background: url('./assets/uU8wbS.jpg');
 }

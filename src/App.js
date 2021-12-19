@@ -1,10 +1,15 @@
+import { Fragment } from "react";
+
 import Header from "./components/Layout/Header/Header";
+import Footer from "./components/Layout/Footer/Footer";
 
 function App() {
     return (
-        <div>
+        <Fragment>
             <Header />
-        </div>
+            <main></main>
+            <Footer />
+        </Fragment>
     );
 }
 
