@@ -1,8 +1,15 @@
+import { useContext } from 'react';
+
 import CartIcon from '../../Cart/CartIcon';
+import CartContext from '../../../contexts/cart-context/cart-context';
 
 import classes from './HeaderCartButton.module.css';
 
 const HeaderCartButton = props => {
+    const cartCtx = useContext(CartContext);
+    const numberOfCartItems = cartCtx.items.length;
+    console.log(numberOfCartItems);
+
     return (
         <button
             className={classes.button}
@@ -15,7 +22,7 @@ const HeaderCartButton = props => {
                 Your Cart
             </span>
             <span className={classes.badge}>
-                5
+                {numberOfCartItems}
             </span>
         </button>
     );

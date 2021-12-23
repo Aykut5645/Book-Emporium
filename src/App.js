@@ -1,12 +1,13 @@
-import { Fragment, useState } from "react";
+import { useState } from "react";
 
 import Header from './components/Layout/Header/Header';
 import Footer from './components/Layout/Footer/Footer';
 import Cart from './components/Cart/Cart/Cart';
 import BookSummary from './components/Book/BookSummary/BookSummary';
 import AvailableBooks from "./components/Book/AvailableBooks.js/AvailableBooks";
+import CartProvider from "./contexts/cart-context/CartProvider";
 
-function App() {
+const App = () => {
     const [cartIsShown, setCartIsShown] = useState(false);
 
     const showCartHandler = () => {
@@ -18,16 +19,15 @@ function App() {
     };
 
     return (
-        <Fragment>
+        <CartProvider>
             {cartIsShown && <Cart onHideCart={hideCartHandler} />}
             <Header onShowCart={showCartHandler} />
             <BookSummary />
             <main>
-                <h1>safsafs</h1>
             </main>
                 <AvailableBooks />
             <Footer />
-        </Fragment>
+        </CartProvider>
     );
 }
 
