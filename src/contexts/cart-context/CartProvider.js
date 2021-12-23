@@ -9,16 +9,23 @@ const defaultCartState = {
 const cartReducer = (state, action) => {
     if (action.type === 'ADD_ITEM') {
         const updatedItems = state.items.concat(action.payload);
-        const updatedTotalAmount = state.totalAmount + action.price;
+        const updatedTotalAmount = state.totalAmount + action.payload.price;
         
         return {
             items: updatedItems,
             totalAmount: updatedTotalAmount
         };
     }
-    // if (action.type === 'REMOVE_BOOK') {
-
-    // }
+    if (action.type === 'REMOVE_ITEM') {
+        const currentItem = state.items.find(item => item.id === action.payload);
+        const updatedTotalAmount = state.totalAmount - currentItem.price;
+        const updatedItems = state.items.filter(i => i.id !== action.payload);
+        
+        return {
+            items: updatedItems,
+            totalAmount: updatedTotalAmount
+        };
+    }
 
     return defaultCartState;
 };
@@ -27,7 +34,6 @@ const CartProvider = (props) => {
     const [cartState, dispatch] = useReducer(cartReducer, defaultCartState);
 
     const addItemToCartHandler = (item) => {
-        console.log(item);
         dispatch({
             type: 'ADD_ITEM',
             payload: item
@@ -36,7 +42,7 @@ const CartProvider = (props) => {
 
     const removeItemFromCartHandler = (id) => {
         dispatch({
-            type: 'REMOVE_BOOK',
+            type: 'REMOVE_ITEM',
             payload: id
         });
     };

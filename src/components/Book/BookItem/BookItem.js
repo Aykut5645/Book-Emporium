@@ -6,17 +6,16 @@ import classes from './BookItem.module.css';
 
 const BookItem = (props) => {
     const cartCtx = useContext(CartContext);
-    
-    const addToCartHandler = () => {
+
+    const addToCartHandler = (event) => {
         cartCtx.addItem({
             id: props.book.id,
             title: props.book.title,
             price: props.book.price
         });
-        console.log(cartCtx);
     };
 
-
+    // const isDisabled = Boolean(cartCtx.items.find(item => item.id === props.book.id)); //TODO
     const editedPrice = Number(props.book.price).toFixed(2);
 
     return (

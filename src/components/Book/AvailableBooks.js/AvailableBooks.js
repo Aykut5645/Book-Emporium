@@ -20,9 +20,9 @@ const booksDb = [
     }
 ];
 
-const bookList = booksDb.map(book => <BookItem key={book.id} book={book} />);
-
 const AvailableBooks = () => {
+    const bookList = booksDb.map(book => <BookItem key={book.id} book={book} />);
+
     return (
         <ul>
             {bookList}
