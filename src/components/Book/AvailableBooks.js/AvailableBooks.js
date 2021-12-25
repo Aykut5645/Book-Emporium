@@ -1,6 +1,6 @@
 import BookItem from '../BookItem/BookItem';
 
-// import classes from './AvailableBooks.module.css';
+import classes from './AvailableBooks.module.css';
 
 const booksDb = [
     {
@@ -24,7 +24,7 @@ const AvailableBooks = () => {
     const bookList = booksDb.map(book => <BookItem key={book.id} book={book} />);
 
     return (
-        <ul>
+        <ul className={classes.books}>
             {bookList}
         </ul>
     );

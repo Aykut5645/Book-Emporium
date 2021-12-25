@@ -14,7 +14,7 @@ const BookItem = (props) => {
             price: props.book.price
         });
     };
-
+    
     //TODO: const isDisabled = Boolean(cartCtx.items.find(item => item.id === props.book.id));
     const editedPrice = Number(props.book.price).toFixed(2);
 

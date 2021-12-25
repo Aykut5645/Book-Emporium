@@ -8,7 +8,6 @@
 
 html {
   font-family: 'Monaco', sans-serif;
-  /* font-family: 'Noto Sans JP', sans-serif; */
 }
 
 body {
@@ -19,5 +18,4 @@ body {
 
 main {
     height: 100vh;
-    background: url('./assets/uU8wbS.jpg');
 }
