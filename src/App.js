@@ -3,14 +3,11 @@ import { Route } from 'react-router-dom';
 
 import Home from "./pages/Home";
 
-// import Header from './components/Layout/Header/Header';
-// import Footer from './components/Layout/Footer/Footer';
 import Cart from './components/Cart/Cart/Cart';
-import BookSummary from './components/Book/BookSummary/BookSummary';
-import CartProvider from './contexts/cart-context/CartProvider';
 import Layout from "./components/Layout/Layout";
-import { useContext } from "react/cjs/react.development";
 import Books from "./pages/Books";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
 
 const App = () => {
     const [cartIsShown, setCartIsShown] = useState(false); //TODO: try to refactoring it using context!!!
@@ -29,11 +26,22 @@ const App = () => {
             <Route path="/" exact>
                 <Home />
             </Route>
+            <Route path="/login" exact>
+                <Login />
+            </Route>
+            <Route path="/register" exact>
+                <Register />
+            </Route>
             <Route path="/books">
                 <Books />
             </Route>
         </Layout>
-        // <CartProvider>
+    );
+}
+
+export default App;
+
+// <CartProvider>
         //     {cartIsShown && <Cart onHideCart={hideCartHandler} />}
         //     <Header onShowCart={showCartHandler} />
         //     <BookSummary />
@@ -42,7 +50,3 @@ const App = () => {
         //     <AvailableBooks />
         //     <Footer />
         // </CartProvider>
-    );
-}
-
-export default App;

@@ -1,23 +1,7 @@
-/* .books {
-    background: white;
-} */
-
-/* .main-wrapper {
-    background-color: black;
-}
-
-.book-img-wrapper {
-    margin: 0;
-    padding: 0;
-}
-
-.book img {
-    width: 85%;
-    height: 100%;
-    border-radius: 20px;
-    padding: 1rem;
-}
-
-.book-content {
+.books {
     width: 100%;
-} */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
