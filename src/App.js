@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { Route } from 'react-router-dom';
 
-import Home from "./pages/Home";
-
 import Cart from './components/Cart/Cart/Cart';
 import Layout from "./components/Layout/Layout";
+
+import Home from "./pages/Home";
 import Books from "./pages/Books";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
@@ -22,7 +22,7 @@ const App = () => {
 
     return (
         <Layout onShowCart={showCartHandler}>
-            {cartIsShown && <Cart onHideCart={hideCartHandler}/>}
+            {cartIsShown && <Cart onHideCart={hideCartHandler} />}
             <Route path="/" exact>
                 <Home />
             </Route>
