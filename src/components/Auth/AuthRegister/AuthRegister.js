@@ -54,13 +54,13 @@ const AuthRegister = () => {
                     <button>Register</button>
                     {/* {!isLoading && <button>{isLogin ? 'Login' : 'Create Account'}</button>}
                     {isLoading && <p>Sending request...</p>} */}
-                    <button
+                    {/* <button
                         type='button'
                         className={classes.toggle}
                     // onClick={switchAuthModeHandler}
                     >
                         Log in to existing account
-                    </button>
+                    </button> */}
                 </div>
             </form>
         </section>

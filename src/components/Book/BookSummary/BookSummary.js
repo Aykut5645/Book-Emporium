@@ -3,14 +3,12 @@ import classes from './BookSummary.module.css';
 const BookSummary = () => {
     return (
         <section className={classes.summary}>
-            <h2>Delicious Food, Delivered to you!</h2>
+            <h2>Welcome to BookEmporium!</h2>
             <p>
-                Choose your favorite meal from our broad selection of available meals
-                and enjoy a delicious lunch or dinner at home.
+                Book Emporium is an internet platform that offers mediation between those who sell and those who are looking for books to buy.
             </p>
             <p>
-                All our meals are cooked with high-quality ingredients, just-in-time and
-                of course by experienced chefs!
+                Here you can find the title you are looking for!
             </p>
         </section>
     );

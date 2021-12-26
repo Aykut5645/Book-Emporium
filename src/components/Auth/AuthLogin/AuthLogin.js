@@ -27,6 +27,7 @@ const AuthLogin = () => {
                     errorData.error.message || 'Authentication failed!'
                 );
             }
+            console.log('YES')
         } catch (error) {
             console.log(error);
         }
@@ -48,12 +49,12 @@ const AuthLogin = () => {
                     <button>Login</button>
                     {/* {!isLoading && <button>{isLogin ? 'Login' : 'Create Account'}</button>}
                     {isLoading && <p>Sending request...</p>} */}
-                    <button
+                    {/* <button
                         type='button'
                         className={classes.toggle}
                     >
                         Create new account
-                    </button>
+                    </button> */}
                 </div>
             </form>
         </section>

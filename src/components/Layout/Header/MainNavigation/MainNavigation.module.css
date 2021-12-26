@@ -40,8 +40,9 @@
 }
 
 .header button:hover {
-  background-color: #c291e2;
-  color: #38015c;
+  background-color: #c69f26;
+  color: #540D1A;
+  border-color: #540D1A;
 }
 
 .heading {

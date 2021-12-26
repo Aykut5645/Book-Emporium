@@ -4,7 +4,7 @@ const Footer = () => {
     return (
         <section className={classes.footer}>
             <article className={classes['footer_col']}>
-                <h3 className={classes['footer_col_title']}>SOFTUNI KIDS</h3>
+                <h3 className={classes['footer_col_title']}>SDFSADF</h3>
                 <ul className={classes['footer_col_list']}>
                     {/* <li className={classes['footer_col_item']}><a href="#">DSAFSADF</a></li> */}
                     {/* <li className={classes['footer_col_item']}><a href="#">DSAFSADF</a></li> */}

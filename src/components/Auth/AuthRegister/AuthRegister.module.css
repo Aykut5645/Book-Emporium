@@ -59,8 +59,9 @@
   }
   
   .actions button:hover {
-    background-color: #873abb;
-    border-color: #873abb;
+    background-color: #c69f26;
+    border-color: #540D1A;
+    color: #540D1A;
   }
   
   .actions .toggle {
