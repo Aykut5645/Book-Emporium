@@ -31,7 +31,7 @@ const BookItem = (props) => {
                     
                 </div>
                 <button onClick={addToCartHandler}>Add to Cart</button>
-                <Link to={`/books/${props.book.id}`}>
+                <Link to={`/books/details/${props.book.id}`}>
                     <button>See more...</button>
                 </Link>
             </div>

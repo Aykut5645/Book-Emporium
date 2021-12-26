@@ -1,7 +1,6 @@
 import classes from './AuthLogin.module.css';
 
 const AuthLogin = () => {
-
     const submitHandler = async (event) => {
         event.preventDefault();
 
@@ -52,7 +51,6 @@ const AuthLogin = () => {
                     <button
                         type='button'
                         className={classes.toggle}
-                        // onClick={switchAuthModeHandler}
                     >
                         Create new account
                     </button>

@@ -1,4 +1,4 @@
-import BookDetails from "../components/Book/BookInfo/BookDetails";
+import BookDetails from "../components/Book/BookDetails/BookDetails";
 
 const Details = () => {
     return (

@@ -12,7 +12,7 @@ const booksDb = {
 
 const BookDetails = () => {
     return (
-        <div class={classes.container}>
+        <div className={classes.container}>
             <div className={classes['book-img-wrapper']}>
                 <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1334416842l/830502.jpg" alt="" />
             </div>
@@ -28,7 +28,7 @@ const BookDetails = () => {
                 </div>
                 <button>Add to Cart</button>
                 <button>Delete</button>
-                <Link>
+                <Link to={`/books/edit/${booksDb.id}`}>
                     <button>Edit</button>
                 </Link>
             </div>
