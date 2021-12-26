@@ -17,7 +17,8 @@ const booksDb = [
         price: 19,
         imageUrl: 'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1327873594l/77270.jpg'
 
-    }
+    },
+    
 ];
 
 const AvailableBooks = () => {
