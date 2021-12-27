@@ -1,5 +1,5 @@
 import { Fragment, useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 import { AuthContext } from '../../../../contexts/auth-context';
 
@@ -23,23 +23,33 @@ const MainNavigation = () => {
                         {!authCtx.isLoggedIn && (
                             <>
                                 <li>
-                                    <Link to='/register'>Register</Link>
+                                    <NavLink activeClassName={classes.active} to='/register'>
+                                        Register
+                                    </NavLink>
                                 </li>
                                 <li>
-                                    <Link to='/login'>Login</Link>
+                                    <NavLink activeClassName={classes.active} to='/login'>
+                                        Login
+                                    </NavLink>
                                 </li>
                             </>
                         )}
                         <li>
-                            <Link to='/books'>Books</Link>
+                            <NavLink activeClassName={classes.active} to='/books'>
+                                Books
+                            </NavLink>
                         </li>
                         {authCtx.isLoggedIn && (
                             <>
                                 <li>
-                                    <Link to='/profil'>Profil</Link>
+                                    <NavLink activeClassName={classes.active} to='/profil'>
+                                        Profil
+                                    </NavLink>
                                 </li>
                                 <li>
-                                    <button onClick={logoutHandler}>Logout</button>
+                                    <button onClick={logoutHandler}>
+                                        Logout
+                                    </button>
                                 </li>
                             </>
                         )}

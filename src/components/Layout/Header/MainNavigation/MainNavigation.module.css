@@ -1,48 +1,51 @@
 .header {
-  height: 5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .header ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  align-items: baseline;
-  text-align: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: baseline;
+    text-align: center;
 }
 
 .header li {
-  margin: 0 12px;
+    margin: 0 12px;
 }
 
 .header a {
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
 }
 
 .header button {
-  font: inherit;
-  background-color: transparent;
-  border: 1px solid white;
-  color: white;
-  font-weight: bold;
-  padding: 0.5rem 1.5rem;
-  border-radius: 6px;
-  cursor: pointer;
+    font: inherit;
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    font-weight: bold;
+    padding: 0.5rem 1.5rem;
+    border-radius: 6px;
+    cursor: pointer;
 }
 
-.header a:hover {
-  color: #c69f26;
+.header a:hover,
+.header a:active,
+.header a.active {
+    color: #c69f26;
+    border-bottom: 3px solid #c69f26;
 }
 
 .header button:hover {
-  background-color: #c69f26;
-  color: #540D1A;
-  border-color: #540D1A;
+    background-color: #c69f26;
+    color: #540D1A;
+    border-color: #540D1A;
 }
 
 .heading {
@@ -56,6 +59,5 @@ h1 {
 }
 
 h1:hover {
-  color: #c69f26;
-
+    color: #c69f26;
 }
