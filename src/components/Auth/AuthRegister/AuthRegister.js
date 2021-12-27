@@ -1,7 +1,13 @@
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { useContext } from 'react/cjs/react.development';
+import { AuthContext } from '../../../contexts/auth-context';
+import { auth } from '../../../firebase-config';
+
 import classes from './AuthRegister.module.css';
 
 const AuthRegister = () => {
-
+    const authCtx = useContext(AuthContext);
+    
     const submitHandler = async (event) => {
         event.preventDefault();
 
@@ -11,26 +17,15 @@ const AuthRegister = () => {
         const enteredRepeatPassword = formData.get('repeatPassword').trim();
 
         try {
-            const response = await fetch('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDsjXKGZ1q93KkNzDH6DgHfL8yi5OtuLyM', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    email: enteredEmail,
-                    password: enteredPassword,
-                    returnSecureToken: true
-                })
-            });
-
-            if (!response.ok) {
-                const errorData = await response.json();
-                throw new Error(
-                    errorData.error.message || 'Authentication failed!'
-                );
-            }
+            const user = await createUserWithEmailAndPassword(
+                auth,
+                enteredEmail,
+                enteredPassword
+            );
+            authCtx.login(user._tokenResponse.idToken);
         } catch (error) {
-            console.log(error);
+            console.log('IN ERROR');
+            console.log(error.message);
         }
     };
 

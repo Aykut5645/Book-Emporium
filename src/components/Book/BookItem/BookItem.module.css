@@ -9,6 +9,8 @@
     color: white;
     text-align: center;
     margin: 60px 40px;
+    max-height: 320px;
+    max-width: 500px;
 }
 
 .main-wrapper {

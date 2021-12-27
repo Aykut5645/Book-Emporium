@@ -1,6 +1,13 @@
 import classes from './AuthLogin.module.css';
 
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../../../firebase-config';
+import { AuthContext } from '../../../contexts/auth-context';
+import { useContext } from 'react/cjs/react.development';
+
 const AuthLogin = () => {
+    const authCtx = useContext(AuthContext);
+
     const submitHandler = async (event) => {
         event.preventDefault();
 
@@ -9,27 +16,15 @@ const AuthLogin = () => {
         const enteredPassword = formData.get('password').trim();
 
         try {
-            const response = await fetch('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDsjXKGZ1q93KkNzDH6DgHfL8yi5OtuLyM', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    email: enteredEmail,
-                    password: enteredPassword,
-                    returnSecureToken: true
-                })
-            });
-
-            if (!response.ok) {
-                const errorData = await response.json();
-                throw new Error(
-                    errorData.error.message || 'Authentication failed!'
-                );
-            }
-            console.log('YES')
+            const user = await signInWithEmailAndPassword(
+                auth,
+                enteredEmail,
+                enteredPassword
+            );
+            authCtx.login(user._tokenResponse.idToken);
         } catch (error) {
-            console.log(error);
+            console.log('IN ERROR');
+            console.log(error.message);
         }
     };
 

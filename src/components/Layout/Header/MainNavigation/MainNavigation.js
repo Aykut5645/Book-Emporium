@@ -1,9 +1,17 @@
-import { Fragment } from 'react';
+import { Fragment, useContext } from 'react';
 import { Link } from 'react-router-dom';
+
+import { AuthContext } from '../../../../contexts/auth-context';
 
 import classes from './MainNavigation.module.css';
 
 const MainNavigation = () => {
+    const authCtx = useContext(AuthContext);
+
+    const logoutHandler = () => {
+        authCtx.logout();
+    };
+
     return (
         <Fragment>
             <Link to='/' style={{ textDecoration: 'none' }}>
@@ -12,21 +20,29 @@ const MainNavigation = () => {
             <header className={classes.header}>
                 <nav>
                     <ul>
+                        {!authCtx.isLoggedIn && (
+                            <>
+                                <li>
+                                    <Link to='/register'>Register</Link>
+                                </li>
+                                <li>
+                                    <Link to='/login'>Login</Link>
+                                </li>
+                            </>
+                        )}
                         <li>
                             <Link to='/books'>Books</Link>
                         </li>
                         <li>
-                            <Link to='/register'>Register</Link>
-                        </li>
-                        <li>
-                            <Link to='/login'>Login</Link>
-                        </li>
-                        <li>
                             <Link to='/profile'>Profile</Link>
                         </li>
-                        <li>
-                            <button>Logout</button>
-                        </li>
+                        {authCtx.isLoggedIn && (
+                            <>
+                                <li>
+                                    <button onClick={logoutHandler}>Logout</button>
+                                </li>
+                            </>
+                        )}
                     </ul>
                 </nav>
             </header>
