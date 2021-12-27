@@ -1,0 +1,38 @@
+.example {
+    position: relative;
+    top: 20%;
+    left: 13%;
+    right: 13%;
+}
+
+.example input[type=text] {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid grey;
+    float: left;
+    width: 60%;
+    background: #f1f1f1;
+}
+
+.example button {
+    float: left;
+    width: 10%;
+    padding: 10px;
+    background: #540D1A;
+    color: white;
+    font-size: 14px;
+    border: 1px solid #540D1A;
+    border-left: none;
+    cursor: pointer;
+    margin: 0;
+}
+
+.example button:hover {
+    background: #540D1A;
+}
+
+.example::after {
+    content: "";
+    clear: both;
+    display: table;
+}
