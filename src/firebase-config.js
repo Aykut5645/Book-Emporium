@@ -4,7 +4,6 @@ import { getFirestore } from 'firebase/firestore';
 import { getAuth } from 'firebase/auth';
 // https://firebase.google.com/docs/web/setup#available-libraries
 
-
 // Your web app's Firebase configuration
 const firebaseConfig = {
     apiKey: "AIzaSyDsjXKGZ1q93KkNzDH6DgHfL8yi5OtuLyM",

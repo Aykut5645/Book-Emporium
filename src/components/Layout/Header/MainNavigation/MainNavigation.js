@@ -33,11 +33,11 @@ const MainNavigation = () => {
                         <li>
                             <Link to='/books'>Books</Link>
                         </li>
-                        <li>
-                            <Link to='/profile'>Profile</Link>
-                        </li>
                         {authCtx.isLoggedIn && (
                             <>
+                                <li>
+                                    <Link to='/profil'>Profil</Link>
+                                </li>
                                 <li>
                                     <button onClick={logoutHandler}>Logout</button>
                                 </li>

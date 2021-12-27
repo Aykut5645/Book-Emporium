@@ -15,30 +15,26 @@ const BookCreate = () => {
         const enteredPrice = formData.get('price').trim();
         const enteredState = formData.get('state').trim();
 
-        console.log(
-            enteredTitle,
-            enteredAuthor,
-            enteredImageUrl,
-            enteredGenre,
-            enteredDescription,
-            enteredPrice,
-            enteredState
-        );
-        const postsCollectionRef = collection(db, 'posts');
+        const postsCollectionRef = collection(db, 'books');
 
-        await addDoc(postsCollectionRef, {
-            title: enteredTitle,
-            author: enteredAuthor,
-            imageUrl: enteredImageUrl,
-            genre: enteredGenre,
-            description: enteredDescription,
-            price: enteredPrice,
-            enteredState: enteredState,
-            author: {
-                name: '',
-                id: ''
-            }
-        });
+        try {
+            await addDoc(postsCollectionRef, {
+                title: enteredTitle,
+                author: enteredAuthor,
+                imageUrl: enteredImageUrl,
+                genre: enteredGenre,
+                description: enteredDescription,
+                price: enteredPrice,
+                enteredState: enteredState,
+                author: {
+                    name: auth.currentUser.displayName,
+                    id: auth.currentUser.uid
+                }
+            });
+        } catch (error) {
+            console.log('CREATE CATCH ERROR');
+            console.log(error.message);
+        }
     };
 
     return (

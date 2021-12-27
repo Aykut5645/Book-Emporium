@@ -1,5 +1,6 @@
-import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { useContext } from 'react/cjs/react.development';
+
+import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { AuthContext } from '../../../contexts/auth-context';
 import { auth } from '../../../firebase-config';
 
@@ -17,6 +18,10 @@ const AuthRegister = () => {
         const enteredRepeatPassword = formData.get('repeatPassword').trim();
 
         try {
+            if (enteredPassword !== enteredRepeatPassword) {
+                throw new Error('Passwords don\'t match!');
+            }
+
             const user = await createUserWithEmailAndPassword(
                 auth,
                 enteredEmail,

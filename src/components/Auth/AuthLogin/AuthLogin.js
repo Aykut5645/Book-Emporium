@@ -1,9 +1,10 @@
-import classes from './AuthLogin.module.css';
-
-import { signInWithEmailAndPassword } from 'firebase/auth';
-import { auth } from '../../../firebase-config';
-import { AuthContext } from '../../../contexts/auth-context';
 import { useContext } from 'react/cjs/react.development';
+import { auth } from '../../../firebase-config';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+
+import { AuthContext } from '../../../contexts/auth-context';
+
+import classes from './AuthLogin.module.css';
 
 const AuthLogin = () => {
     const authCtx = useContext(AuthContext);
