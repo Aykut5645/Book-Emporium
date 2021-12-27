@@ -6,15 +6,20 @@ import { db } from "../firebase-config";
 
 import AvailableBooks from "../components/Book/AvailableBooks.js/AvailableBooks";
 import SearchBookBar from "../components/Book/SearchBookBar.js/SearchBookBar";
+import LoadingSpinner from '../components/UI/LoadingSpinner/LoadingSpinner';
 
 const Books = () => {
     let [books, setBooks] = useState([]);
     const [searchValue, setSearchValue] = useState(null);
+    const [loading, setLoading] = useState(true);
+
     const booksCollectionRef = collection(db, 'books');
 
     useEffect(() => {
+        setLoading(true);
         (async () => {
             const data = await getDocs(booksCollectionRef);
+            setLoading(false);
             setBooks(
                 data.docs.map(doc => ({ ...doc.data(), id: doc.id }))
             );
@@ -34,7 +39,8 @@ const Books = () => {
     return (
         <Fragment>
             <SearchBookBar onSearch={searchHandler} />
-            <AvailableBooks books={books} />
+            {loading && <LoadingSpinner />}
+            {!loading && <AvailableBooks books={books} />}
         </Fragment>
     );
 };

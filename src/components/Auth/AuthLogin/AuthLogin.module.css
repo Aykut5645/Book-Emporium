@@ -1,7 +1,6 @@
 .auth {
-    margin: 0;
-    width: 95%;
     max-width: 35rem;
+    width: 95%;
     border-radius: 6px;
     background-color: #540D1A;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);

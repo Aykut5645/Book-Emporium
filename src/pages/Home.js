@@ -6,7 +6,7 @@ const Home = () => {
     return (
         <div style={{
             backgroundImage: `url(${booksImage})`,
-            height: '100vh'
+            height: '100vh',
         }}>
             <BookSummary />
         </div>

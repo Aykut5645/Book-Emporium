@@ -1,42 +1,42 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
-import { collection, getDocs } from 'firebase/firestore';
+import { getDoc, doc } from 'firebase/firestore';
 import { db } from '../../../firebase-config';
 
 import classes from './BookDetails.module.css';
 
 const BookDetails = () => {
-    const [book, setBook] = useState();
-    const booksCollectionRef = collection(db, 'books');
+    const [book, setBook] = useState(null);
+
+    const { bookId } = useParams();
+    const booksCollectionRef = doc(db, 'books', bookId);
 
     useEffect(() => {
         (async () => {
-            const data = await getDocs(booksCollectionRef);
+            const book = await getDoc(booksCollectionRef);
+            console.log(book.data());
             setBook(
-                data.docs.map(doc => ({ ...doc.data(), id: doc.id }))
+                book.data()
             );
         })();
     }, []);
-    
+
     return (
         <div className={classes.container}>
             <div className={classes['book-img-wrapper']}>
-                <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1334416842l/830502.jpg" alt="" />
+                <img src={book?.imageUrl} alt="" />
             </div>
             <div className={classes['book-content']}>
                 <div className={classes['content-info']}>
-                    <p><span>Title: {book.title}</span></p>
-                    <p>Author: {book.author}</p>
-                    <p>Price: {book.price}</p>
+                    <p><span>Title: {book?.title}</span></p>
+                    <p>Author: {book?.author}</p>
+                    <p>Price: {book?.price}</p>
                     <p>Condition: good</p>
-                    <div className="description">
-                        <p>Descripiton: sdlfslakfmlkasdsafasdfasdfsafassssssssssssssssssssssssssssssssskfmlkasdsafasdfasdfsafassssssssssssssssssssssssssssssssskfmlkasdsafasdfasdfsafassssssssssssssssssssssssssssssssskfmlkasdsafasdfasdfsafassssssssssssssssssssssssssssssssskfmlkasdsafasdfasdfsafassssssssssssssssssssssssssssssssskfmlkasdsafasdfasdfsafassssssssssssssssssssssssssssssssskfmlkasdsafasdfasdfsafassssssssssssssssssssssssssssssssss</p>
-                    </div>
                 </div>
                 <button>Add to Cart</button>
                 <button>Delete</button>
-                <Link to={`/books/edit/${book.id}`}>
+                <Link to={`/books/edit/${book?.id}`}>
                     <button>Edit</button>
                 </Link>
             </div>
