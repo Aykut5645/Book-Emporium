@@ -27,7 +27,7 @@ const BookCreate = () => {
                 price: enteredPrice,
                 enteredState: enteredState,
                 author: {
-                    name: auth.currentUser.displayName,
+                    email: auth.currentUser.email,
                     id: auth.currentUser.uid
                 }
             });
