@@ -1,6 +1,9 @@
 .books {
-    margin: 90px 60px;
-    padding: 70px;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: space-between;
+    padding: 20px 60px;
+    margin: 0;
     height: 100%;
-    display: block;
 }

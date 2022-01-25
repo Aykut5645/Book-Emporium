@@ -3,13 +3,15 @@ import BookItem from '../BookItem/BookItem';
 import classes from './AvailableBooks.module.css';
 
 const array = [
-    {   id: 'b1',
+    {
+        id: 'b1',
         title: 'asfas',
         author: 'assssfssfsffsa',
         price: 'asdfsdfsfsasf',
         imageUrl: 'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1334416842l/830502.jpg'
     },
-    {   id: 'b2',
+    {
+        id: 'b2',
         title: 'asfssssfsdfas',
         author: 'asfsa',
         price: 'asdfasf',
@@ -29,7 +31,21 @@ const array = [
         price: 'asdfasf',
         imageUrl: 'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1334416842l/830502.jpg'
     },
-    {   
+    {
+        id: 'b5',
+        title: 'asfas',
+        author: 'asfsa',
+        price: 'asdfasf',
+        imageUrl: 'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1334416842l/830502.jpg'
+    },
+    {
+        id: 'b5',
+        title: 'asfas',
+        author: 'asfsa',
+        price: 'asdfasf',
+        imageUrl: 'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1334416842l/830502.jpg'
+    },
+    {
         id: 'b5',
         title: 'asfas',
         author: 'asfsa',
@@ -40,11 +56,11 @@ const array = [
 
 const AvailableBooks = ({ books }) => {
     return (
-        <div className={classes.books}>
-            {books.map(book =>
+        <ul className={classes.books}>
+            {array.map(book =>
                 <BookItem key={book.id} book={book} />
             )}
-        </div>
+        </ul>
     );
 };
 

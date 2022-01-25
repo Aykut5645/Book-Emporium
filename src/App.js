@@ -43,10 +43,10 @@ const App = () => {
                 <Route path="/books" exact>
                     <Books />
                 </Route>
-                <Route path="/books/details/:bookId">
+                <Route path="/books/:bookId/details">
                     <Details />
                 </Route>
-                <Route path="/books/edit/:bookId">
+                <Route path="/books/:bookId/edit">
                     <Edit />
                 </Route>
                 <Route path="/books/create">

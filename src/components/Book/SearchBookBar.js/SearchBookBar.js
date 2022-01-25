@@ -6,7 +6,7 @@ const SearchBookBar = props => {
 
         const formData = new FormData(event.currentTarget);
         const enteredValue = formData.get('search').trim();
-        
+
         props.onSearch(enteredValue);
     };
 

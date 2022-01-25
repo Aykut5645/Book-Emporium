@@ -4,11 +4,11 @@
     color: rgba(255, 255, 255, 0.85);;
     border-top: 8px solid rgba(156, 72, 72, 0.603);
     display: flex;
+    bottom: 0;
     justify-content: space-evenly;
     padding: 15px 50px;
-    position: relative;
-    bottom: 0;
-    background: #540D1A;
+    background: hsl(349, 73%, 19%);
+    width: 100%;
 }
 
 .footer_col_list {

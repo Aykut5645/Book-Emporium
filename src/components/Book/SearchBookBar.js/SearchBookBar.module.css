@@ -1,9 +1,7 @@
 .example {
-    position: relative;
-    top: 20%;
-    left: 13%;
-    right: 13%;
-    /* display: block; */
+    display: flex;
+    margin: 10rem auto auto auto;
+    width: 80%;
 }
 
 .example input[type=text] {
@@ -11,7 +9,7 @@
     font-size: 14px;
     border: 1px solid grey;
     float: left;
-    width: 60%;
+    width: 90%;
     background: #f1f1f1;
 }
 
@@ -30,10 +28,4 @@
 
 .example button:hover {
     background: #540D1A;
-}
-
-.example::after {
-    content: "";
-    clear: both;
-    display: table;
 }
