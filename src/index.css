@@ -20,9 +20,8 @@ main {
     text-align: center;
 }
 
-/* initial-image {
-    backgroundImage: `url(${booksImage})`,
-                height: '100vh',
-                width: '100%',
-                display: 'inline-block'
-} */
+.initial-image {
+    background-image: url('./assets/uU8wbS.jpg');
+    height: 100vh;
+    width: 100vw;
+}

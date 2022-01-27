@@ -1,10 +1,10 @@
 import BookSummary from "../components/Book/BookSummary/BookSummary";
 
-import booksImage from '../assets/uU8wbS.jpg';
+// import booksImage from '../assets/uU8wbS.jpg';
 
 const Home = () => {
     return (
-        <div style={initial-image}>
+        <div className={'initial-image'}>
             <BookSummary />
         </div>
     );
