@@ -7,6 +7,9 @@
     list-style-type: none;
     border-radius: 10px;
     border: 2px solid #c69f26;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .book-content {
@@ -21,6 +24,7 @@
 .book-info {
     background-color: rgb(51, 0, 0);
     max-width: 40%;
+    min-height: 13rem;
     padding: 1rem;
     border: 2px solid #c69f26;
     border-radius: 5px;
@@ -36,7 +40,7 @@ p {
 }
 
 .book-img-wrapper {
-    width: 30%;
+    width: 40%;
 }
 
 .book-img-wrapper img {
@@ -57,7 +61,7 @@ span {
 
 .btn-detail,
 .btn-add-cart {
-    width: 40%;
+    width: 45%;
     padding: 0;
     color: #c69f26;
     font-weight: bold;
