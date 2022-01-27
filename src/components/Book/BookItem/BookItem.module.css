@@ -1,12 +1,12 @@
 .book {
-    background-color: #540D1A;
+    /* background-color: #540D1A; */
     max-width: 30%;
     padding: 2rem 0.3rem;
     color: white;
     font-style: 0.8rem;
     list-style-type: none;
-    border-radius: 10px;
-    border: 2px solid #c69f26;
+    /* border-radius: 10px;
+    border: 2px solid #c69f26; */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -30,9 +30,10 @@
     border-radius: 5px;
 }
 
-span {
+.book-info span {
     color: #c69f26;
     font-size: 0.9rem;
+    font-weight: bold;
 }
 
 p {
@@ -49,10 +50,6 @@ p {
     border: 2px solid #c69f26;
     border-radius: 5px;
     display: inline-block;
-}
-
-span {
-    font-weight: bold;
 }
 
 .buttons {
