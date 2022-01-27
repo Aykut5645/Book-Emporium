@@ -1,0 +1,15 @@
+.button {
+    color: white;
+    border-radius: 5px;
+    border: 2px solid #c69f26;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+    background-color: rgb(51, 0, 0);
+    font-weight: bold;
+}
+
+.button:hover {
+    background-color: #c69f26;
+    border: 2px solid rgb(51, 0, 0);
+    color: rgb(51, 0, 0);
+    cursor: pointer;
+}

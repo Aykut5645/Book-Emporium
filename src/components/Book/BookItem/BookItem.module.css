@@ -1,12 +1,9 @@
 .book {
-    /* background-color: #540D1A; */
     max-width: 30%;
     padding: 2rem 0.3rem;
     color: white;
     font-style: 0.8rem;
     list-style-type: none;
-    /* border-radius: 10px;
-    border: 2px solid #c69f26; */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -61,18 +58,5 @@
     width: 45%;
     padding: 0;
     color: #c69f26;
-    font-weight: bold;
-    background-color: rgb(51, 0, 0);
     padding: 0.6rem 1rem;
-    font-style: inherit;
-    border-radius: 5px;
-    border: 2px solid #c69f26;
-}
-
-.btn-detail:hover,
-.btn-add-cart:hover {
-    background-color: #c69f26;
-    border-color: rgb(51, 0, 0);
-    border: 2px solid rgb(51, 0, 0);
-    color: rgb(51, 0, 0);
 }

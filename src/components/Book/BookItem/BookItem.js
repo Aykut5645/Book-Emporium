@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 
 import CartContext from '../../../contexts/cart-context/cart-context';
+import Button from '../../UI/Button/Button';
 import Card from '../../UI/Card/Card';
 
 import classes from './BookItem.module.css';
@@ -19,6 +20,7 @@ const BookItem = (props) => {
 
     //TODO: const isDisabled = Boolean(cartCtx.items.find(item => item.id === props.book.id));
     const editedPrice = Number(props.book.price).toFixed(2);
+
     return (
         <Card className={classes.book}>
             <div className={classes['book-content']}>
@@ -32,9 +34,9 @@ const BookItem = (props) => {
                 </div>
             </div>
             <div className={classes.buttons}>
-                <button className={classes['btn-add-cart']} onClick={addToCartHandler}>Add to Cart</button>
+                <Button className={classes['btn-add-cart']} onClick={addToCartHandler}>Add to Cart</Button>
                 <Link to={`/books/${props.book.id}/details`}>
-                    <button className={classes['btn-detail']}>See more...</button>
+                    <Button className={classes['btn-detail']}>See more...</Button>
                 </Link>
             </div>
         </Card>
