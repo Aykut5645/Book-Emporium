@@ -2,7 +2,7 @@
 
 .footer {
     color: rgba(255, 255, 255, 0.85);;
-    border-top: 8px solid rgba(156, 72, 72, 0.603);
+    border-top: 8px solid #c69f26;
     display: flex;
     bottom: 0;
     justify-content: space-evenly;

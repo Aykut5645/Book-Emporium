@@ -12,7 +12,7 @@ const SearchBookBar = props => {
 
     return (
         <form onSubmit={submitHandler} className={classes.example}>
-            <input type="text" placeholder="Search.." name="search" />
+            <input type="text" placeholder="Search by title and author..." name="search" />
             <button type="submit"><i className="fa fa-search"></i></button>
         </form>
     );

@@ -20,7 +20,7 @@ const BookDetails = () => {
                 book.data()
             );
         })();
-    }, []);
+    }, [booksCollectionRef]);
 
     return (
         <div className={classes.container}>

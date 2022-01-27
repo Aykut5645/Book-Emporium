@@ -19,7 +19,7 @@ const BookItem = (props) => {
     };
 
     //TODO: const isDisabled = Boolean(cartCtx.items.find(item => item.id === props.book.id));
-    const editedPrice = Number(props.book.price).toFixed(2);
+    const editedPrice = '$' + Number(props.book.price).toFixed(2);
 
     return (
         <Card className={classes.book}>
@@ -34,7 +34,9 @@ const BookItem = (props) => {
                 </div>
             </div>
             <div className={classes.buttons}>
-                <Button className={classes['btn-add-cart']} onClick={addToCartHandler}>Add to Cart</Button>
+                <Button className={classes['btn-add-cart']} onClick={addToCartHandler}>
+                    Add to Cart
+                </Button>
                 <Link to={`/books/${props.book.id}/details`}>
                     <Button className={classes['btn-detail']}>See more...</Button>
                 </Link>
