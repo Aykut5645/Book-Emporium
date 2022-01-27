@@ -55,6 +55,6 @@ const App = () => {
             </Switch>
         </Layout>
     );
-}
+};
 
 export default App;

@@ -57,7 +57,7 @@ const array = [
 const AvailableBooks = ({ books }) => {
     return (
         <ul className={classes.books}>
-            {array.map(book =>
+            {books.map(book =>
                 <BookItem key={book.id} book={book} />
             )}
         </ul>
