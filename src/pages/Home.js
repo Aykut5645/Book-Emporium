@@ -1,11 +1,11 @@
 import BookSummary from "../components/Book/BookSummary/BookSummary";
-
-// import booksImage from '../assets/uU8wbS.jpg';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
     return (
         <div className={'initial-image'}>
             <BookSummary />
+            <Link to="/profil">PROFILE</Link>
         </div>
     );
 };

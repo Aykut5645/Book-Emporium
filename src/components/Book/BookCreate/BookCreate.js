@@ -44,7 +44,7 @@ const BookCreate = () => {
     return (
         <Card className={classes.container}>
             <h1>Create Book</h1>
-            <form className={classes.form}>
+            <form onSubmit={submitHandler} className={classes.form}>
                 <div className={classes['book-info']}>
                     <div className={classes.control}>
                         <label htmlFor='title'>Title</label>

@@ -1,6 +1,21 @@
-.button {
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.container {
+    width: 60%;
+    margin: 10rem auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2rem 1rem;
+}
+
+.user-img-wrapper {
+    width: 30%;
+    height: 12rem;
+}
+
+.user-img-wrapper img {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    border: 5px solid #c69f26;
 }

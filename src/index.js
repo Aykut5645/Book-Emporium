@@ -5,6 +5,9 @@ import './index.css';
 import App from './App';
 import CartProvider from './contexts/cart-context/CartProvider';
 import { AuthContextProvider } from './contexts/auth-context';
+import { auth } from './firebase-config';
+
+console.log(auth);
 
 ReactDOM.render(
     <Router>
