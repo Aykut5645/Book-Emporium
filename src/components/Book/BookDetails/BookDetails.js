@@ -40,7 +40,7 @@ const BookDetails = () => {
                 </div>
                 <Button>Add to Cart</Button>
                 <Button>Delete</Button>
-                <Link to={`/books/edit/${book?.id}`}>
+                <Link to={`/books/${book?.id}/edit`}>
                     <Button>Edit</Button>
                 </Link>
             </div>

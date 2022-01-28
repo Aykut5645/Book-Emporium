@@ -1,74 +1,72 @@
-.form {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 30%;
-    color: white;
-    max-height: 800px;
-    background-color: #540D1A;
-    padding: 30px;
-    border-radius: 10px;
-    margin-top: 30px;
+.container {
+    width: 90%;
+    margin: 8rem auto;
+    display: inline-block;
+    padding: 3rem;
 }
 
-/* .loading {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.7);
+.container form {
     display: flex;
-    justify-content: center;
     align-items: center;
-} */
+    width: 100%;
+}
+
+.book-info,
+.book-edition {
+    margin: auto;
+    width: 40%;
+    color: white;
+}
 
 .control {
-    margin-bottom: 0.5rem;
-    text-align: center;
+    margin: 1rem 0;
+    font-weight: bold;
+    font-size: 1rem;
 }
 
-.control label {
-    font-weight: bold;
-    display: block;
-    margin-bottom: 0.5rem;
+.container h1 {
+    text-align: center;
+    color: white;
+    margin: auto;
 }
 
 .control input,
-.control textarea,
 .control select {
-    font: inherit;
-    padding: 0.35rem;
+    font-size: 1.24rem;
+    margin-top: 0.5rem;
+    background-color: #f1e1fc;
     border-radius: 4px;
-    background-color: #f0f0f0;
-    border: 1px solid #c1d1d1;
+}
+
+.control input {
+    width: 80%;
+}
+
+.control label {
     display: block;
-    width: 100%;
-    font-size: 12px;
-}
-
-.actions {
-    text-align: center;
-}
-
-.actions button {
-    font-size: 1.25rem;
+    color: #c69f26;
+    font-size: 1.24rem;
 }
 
 .inline {
-    display: flex;
-    flex-direction: row;
+    color: white;
+}
+
+.inline .control {
+    display: inline-block;
+    margin-top: 0;
+    margin-right: 0.3rem;
+    width: 30%;
+}
+
+.inline .control select,
+.inline .control input {
     width: 100%;
-    align-items: center;
 }
 
-.inline div {
-    width: 50%;
-}
-
-.inline div:first-child {
-    margin-right: 35px;
-}
-
-.inline div input {
-    margin-right: 12px;
+.edit-btn {
+    height: 4rem;
+    width: 15rem;
+    margin: auto;
+    font-size: 1.2rem;
 }
