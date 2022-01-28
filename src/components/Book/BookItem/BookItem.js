@@ -38,7 +38,7 @@ const BookItem = (props) => {
                     Add to Cart
                 </Button>
                 <Link to={`/books/${props.book.id}/details`}>
-                    <Button className={classes['btn-detail']}>See more...</Button>
+                    <Button className={classes['btn-detail']}>Details</Button>
                 </Link>
             </div>
         </Card>

@@ -51,6 +51,11 @@
 
 .buttons {
     padding: 1rem 0 0 0;
+    margin-right: 0.3rem;
+}
+
+.btn-add-cart {
+    margin-right: 0.5rem;
 }
 
 .btn-detail,

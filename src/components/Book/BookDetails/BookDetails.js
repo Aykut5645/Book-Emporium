@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 
+import Card from '../../UI/Card/Card';
+import Button from '../../UI/Button/Button';
+
 import { getDoc, doc } from 'firebase/firestore';
 import { db } from '../../../firebase-config';
 
@@ -20,27 +23,42 @@ const BookDetails = () => {
                 book.data()
             );
         })();
-    }, [booksCollectionRef]);
+    }, []);
+
+    console.log(document.getElementById('last-btn'));
 
     return (
-        <div className={classes.container}>
+        <Card className={classes.container}>
+            <div className={classes['book-content']}>
+                <h2>About Book</h2>
+                <div className={classes['content-info']}>
+                    <p><span>Title: </span>{book?.title}</p>
+                    <p><span>Author: </span>{book?.author}</p>
+                    <p><span>Genre: </span>{book?.genre}</p>
+                    <p><span>Price: </span>{book?.price}</p>
+                    <p><span>Contacts: </span>{book?.contacts}</p>
+                </div>
+                <Button>Add to Cart</Button>
+                <Button>Delete</Button>
+                <Link to={`/books/edit/${book?.id}`}>
+                    <Button>Edit</Button>
+                </Link>
+            </div>
             <div className={classes['book-img-wrapper']}>
                 <img src={book?.imageUrl} alt="" />
             </div>
-            <div className={classes['book-content']}>
+            <div className={classes['book-content-edition']}>
+                <h2>About Edition</h2>
                 <div className={classes['content-info']}>
-                    <p><span>Title: {book?.title}</span></p>
-                    <p>Author: {book?.author}</p>
-                    <p>Price: {book?.price}</p>
-                    <p>Condition: good</p>
+                    <p><span>Edition: </span>{book?.edition}</p>
+                    <p><span>Condition: </span>{book?.condition}</p>
+                    <p><span>Year: </span>{book?.year}</p>
+                    <p><span>Pages: </span>{book?.pages}</p>
+                    <p><span>Covers: </span>{book?.covers}</p>
                 </div>
-                <button>Add to Cart</button>
-                <button>Delete</button>
-                <Link to={`/books/edit/${book?.id}`}>
-                    <button>Edit</button>
-                </Link>
+                <Button className={'last-btn'}>Add to Cart</Button>
             </div>
-        </div>
+        </Card>
     );
 };
 
