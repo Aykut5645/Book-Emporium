@@ -1,15 +1,15 @@
 .container {
-    width: 60%;
+    width: 90%;
     margin: 10rem auto;
-    display: flex;
+    display: inline-flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    padding: 2rem 1rem;
+    padding: 4rem 1.5rem;
 }
 
 .user-img-wrapper {
-    width: 30%;
+    width: 20%;
     height: 12rem;
 }
 
@@ -18,4 +18,52 @@
     width: 100%;
     border-radius: 50%;
     border: 5px solid #c69f26;
+    margin-right: 0.5rem;
+}
+
+.file-wrapper {
+    padding: 1rem;
+}
+
+.file-label {
+    background-color: white;
+    color: rgb(51, 0, 0);
+    border: 3px solid rgb(51, 0, 0);
+    padding: 0.5rem 0.5rem;
+    font-family: sans-serif;
+    border-radius: 0.3rem;
+    cursor: pointer;
+}
+
+.file-label:hover {
+    background-color: #c69f26;
+}
+
+.user-info {
+    text-align: center;
+    display: flex;
+}
+
+.user-info h2 {
+    color: #c69f26;
+}
+
+.user-credentials label {
+    margin-right: 1rem;
+    display: block;
+    color: #c69f26;
+    font-weight: bold;
+    font-size: 1.24rem;
+}
+
+.user-credentials input {
+    font-size: 1.24rem;
+    margin-top: 1rem;
+    background-color: #f1e1fc;
+    border-radius: 4px;
+}
+
+.user-btn {
+    padding: 0.5rem 1.5rem;
+    margin-top: 1rem;
 }
