@@ -1,44 +1,17 @@
 import Card from '../../UI/Card/Card';
 import Button from '../../UI/Button/Button';
 
-import { addDoc, collection } from 'firebase/firestore';
-import { auth, db } from '../../../firebase-config';
-
 import classes from './BookCreate.module.css';
 
-const BookCreate = () => {
-    const submitHandler = async (event) => {
+const BookCreate = props => {
+    const submitHandler = event => {
         event.preventDefault();
         const formData = new FormData(event.currentTarget);
+        const finalData = Object.fromEntries(formData);
+        
+        // VALIDATION!!!
 
-        const enteredTitle = formData.get('title').trim();
-        const enteredAuthor = formData.get('author').trim();
-        const enteredImageUrl = formData.get('image-url').trim();
-        const enteredGenre = formData.get('genre').trim();
-        const enteredDescription = formData.get('description').trim();
-        const enteredPrice = formData.get('price').trim();
-        const enteredState = formData.get('state').trim();
-
-        const postsCollectionRef = collection(db, 'books');
-
-        try {
-            await addDoc(postsCollectionRef, {
-                title: enteredTitle,
-                author: enteredAuthor,
-                imageUrl: enteredImageUrl,
-                genre: enteredGenre,
-                description: enteredDescription,
-                price: enteredPrice,
-                enteredState: enteredState,
-                author: {
-                    email: auth.currentUser.email,
-                    id: auth.currentUser.uid
-                }
-            });
-        } catch (error) {
-            console.log('CREATE CATCH ERROR');
-            console.log(error.message);
-        }
+        props.onInput(finalData);
     };
 
     return (
