@@ -21,20 +21,6 @@
     margin-right: 0.5rem;
 }
 
-.file-wrapper {
-    padding: 1rem;
-}
-
-.file-label {
-    background-color: white;
-    color: rgb(51, 0, 0);
-    border: 3px solid rgb(51, 0, 0);
-    padding: 0.5rem 0.5rem;
-    font-family: sans-serif;
-    border-radius: 0.3rem;
-    cursor: pointer;
-}
-
 .file-label:hover {
     background-color: #c69f26;
 }
