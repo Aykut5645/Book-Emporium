@@ -8,7 +8,7 @@
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    padding: 2rem;
+    padding: 4rem;
     margin: 10rem auto;
     text-align: left;
 }
@@ -31,26 +31,12 @@
 .book-content,
 .book-content-edition {
     height: 100%;
-    min-width: 30rem;
+    min-width: 25rem;
     background: #c69f26;
     padding: 2rem;
     border: 2px solid #c69f26;
     border-radius: 5px;
     background-color: rgb(51, 0, 0);
-}
-
-.book-content button,
-.book-content-edition button {
-    background: #540D1A;
-    margin-right: 0.5rem;
-    padding: 0.5rem;
-    width: 30%;
-    margin-top: 0.5rem;
-}
-
-.book-content-edition button {
-    margin: auto;
-    display: block;
 }
 
 .container h2 {
@@ -62,3 +48,12 @@
     color: #c69f26;
 }
 
+.buttons {
+    position: absolute;
+    top: 39rem;
+}
+
+.buttons button {
+    padding: 0.4rem 2rem;
+    margin-right: 0.9rem;
+}
