@@ -9,11 +9,12 @@ const Create = () => {
         try {
             await addDoc(postsCollectionRef, {
                 ...data,
-                author: {
+                credentials: {
                     email: auth.currentUser.email,
                     id: auth.currentUser.uid
                 }
             });
+            console.log('CREATED!!!');
         } catch (error) {
             console.log('IN CATCH BLOCK => CREATE PAGE');
             console.log(error.message);

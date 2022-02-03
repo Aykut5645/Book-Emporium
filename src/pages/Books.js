@@ -35,7 +35,7 @@ const Books = () => {
             return book.title.toLocaleLowerCase().includes(searchValue.toLocaleLowerCase())
         });
     }
-
+    
     return (
         <Fragment>
             <SearchBookBar onSearch={searchHandler} />
