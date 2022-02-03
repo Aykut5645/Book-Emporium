@@ -46,7 +46,7 @@ const BookDetails = () => {
                 <div className={classes['book-content-edition']}>
                     <h2>About Edition</h2>
                     <div className={classes['content-info']}>
-                        <p><span>Edition: </span>{book?.edition}</p>
+                        <p><span>Publisher: </span>{book?.publisher}</p>
                         <p><span>Condition: </span>{book?.condition}</p>
                         <p><span>Year: </span>{book?.year}</p>
                         <p><span>Pages: </span>{book?.pages}</p>

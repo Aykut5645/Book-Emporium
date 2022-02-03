@@ -30,10 +30,10 @@ const BookEdit = () => {
                         <input type='number' id='price' name='price' />
                     </div>
                 </div>
-                <div className={classes['book-edition']}>
+                <div className={classes['book-publisher']}>
                     <div className={classes.control}>
-                        <label htmlFor='edition'>Edition</label>
-                        <input type='text' id='edition' name='edition' />
+                        <label htmlFor='publisher'>Publisher</label>
+                        <input type='text' id='publisher' name='publisher' />
                     </div>
                     <div className={classes.inline}>
                         <div className={classes.control}>
