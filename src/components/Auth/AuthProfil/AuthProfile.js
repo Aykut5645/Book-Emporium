@@ -9,7 +9,7 @@ import Button from '../../UI/Button/Button';
 import classes from './AuthProfil.module.css';
 // import image from '../../../assets/avatar.jpg';
 
-const AuthProfil = () => {
+const AuthProfile = () => {
     // const [photo, setPhoto] = useState(null);
     // const [photoUrl, setPhotoUrl] = useState(image);
 
@@ -81,4 +81,4 @@ const AuthProfil = () => {
     );
 };
 
-export default AuthProfil;
+export default AuthProfile;

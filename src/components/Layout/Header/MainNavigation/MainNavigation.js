@@ -42,8 +42,13 @@ const MainNavigation = () => {
                         {authCtx.isLoggedIn && (
                             <>
                                 <li>
-                                    <NavLink activeClassName={classes.active} to='/profil'>
-                                        Profil
+                                    <NavLink activeClassName={classes.active} to='/profile'>
+                                        Profile
+                                    </NavLink>
+                                </li>
+                                <li>
+                                    <NavLink activeClassName={classes.active} to='/create'>
+                                        Create
                                     </NavLink>
                                 </li>
                                 <li>
