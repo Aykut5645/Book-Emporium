@@ -7,8 +7,8 @@
 .spinner:after {
     content: '';
     display: block;
-    width: 64px;
-    height: 64px;
+    width: 94px;
+    height: 94px;
     margin: 8px;
     border-radius: 50%;
     border: 6px solid #c69f26;
