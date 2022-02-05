@@ -39,7 +39,7 @@ const AuthProfile = () => {
             console.log('change email => FAILED');
             console.log(err);
         }
-    }
+    };
 
     const changePasswordHandler = async () => {
         try {

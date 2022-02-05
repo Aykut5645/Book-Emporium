@@ -11,7 +11,8 @@ import Register from "./pages/Register";
 import Details from "./pages/Details";
 import Edit from "./pages/Edit";
 import Create from "./pages/Create";
-import Profil from "./pages/Profile";
+import Profile from "./pages/Profile";
+
 
 const App = () => {
     const [cartIsShown, setCartIsShown] = useState(false); //TODO: try to refactoring it using context!!!
@@ -38,7 +39,7 @@ const App = () => {
                     <Register />
                 </Route>
                 <Route path="/profile">
-                    <Profil />
+                    <Profile />
                 </Route>
                 <Route path="/create">
                     <Create />
