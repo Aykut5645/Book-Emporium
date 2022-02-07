@@ -1,6 +1,5 @@
 .auth {
     margin: 0;
-    width: 95%;
     max-width: 35rem;
     border-radius: 6px;
     background-color: #540D1A;
@@ -8,10 +7,7 @@
     padding: 45px;
     text-align: center;
     color: white;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    margin: 10rem auto;
 }
 
 .auth h1 {

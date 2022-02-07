@@ -1,4 +1,5 @@
-import { useContext } from 'react/cjs/react.development';
+import { useState, useContext } from 'react';
+
 import { auth } from '../../../firebase-config';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 
@@ -7,6 +8,8 @@ import { AuthContext } from '../../../contexts/auth-context';
 import classes from './AuthLogin.module.css';
 
 const AuthLogin = () => {
+    // const = useState('');
+
     const authCtx = useContext(AuthContext);
 
     const submitHandler = async (event) => {
@@ -35,11 +38,11 @@ const AuthLogin = () => {
             <form onSubmit={submitHandler}>
                 <div className={classes.control}>
                     <label htmlFor='email'>Your Email</label>
-                    <input type='email' name="email" id='email' required />
+                    <input type='email' name="email" id='email' />
                 </div>
                 <div className={classes.control}>
                     <label htmlFor='password'>Your Password</label>
-                    <input type='password' name="password" id='password' required />
+                    <input type='password' name="password" id='password' />
                 </div>
                 <div className={classes.actions}>
                     <button>Login</button>

@@ -1,4 +1,4 @@
-import { useContext } from 'react/cjs/react.development';
+import { useState, useContext } from 'react';
 
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { AuthContext } from '../../../contexts/auth-context';
@@ -7,31 +7,43 @@ import { auth } from '../../../firebase-config';
 import classes from './AuthRegister.module.css';
 
 const AuthRegister = () => {
+    const [enteredEmail, setEnteredEmail] = useState('');
+    const [touchedEmail, setTouchedEmail] = useState(false);
     const authCtx = useContext(AuthContext);
-    
+
+    const emailChangeHandler = event => {
+        console.log(event.target.value);
+    };
+    const emailBlurHandler = event => {
+    };
+    // const passwordInputHandler = event => {
+
+    // };
+    // const repeatPasswordInputHandler = event => {
+
+    // };
+
     const submitHandler = async (event) => {
         event.preventDefault();
 
-        const formData = new FormData(event.currentTarget);
-        const enteredEmail = formData.get('email').trim();
-        const enteredPassword = formData.get('password').trim();
-        const enteredRepeatPassword = formData.get('repeatPassword').trim();
+        // try {
+        //     // if (enteredPassword !== enteredRepeatPassword) {
+        //     //     throw new Error('Passwords don\'t match!');
+        //     // }
 
-        try {
-            if (enteredPassword !== enteredRepeatPassword) {
-                throw new Error('Passwords don\'t match!');
-            }
-
-            const user = await createUserWithEmailAndPassword(
-                auth,
-                enteredEmail,
-                enteredPassword
-            );
-            authCtx.login(user._tokenResponse.idToken);
-        } catch (error) {
-            console.log('IN ERROR');
-            console.log(error.message);
-        }
+        //     const user = await createUserWithEmailAndPassword(
+        //         auth,
+        //         enteredEmail,
+        //         enteredPassword
+        //     );
+        //     authCtx.login(user._tokenResponse.idToken);
+        // } catch (error) {
+        //     console.log('IN ERROR');
+        //     console.log('>>> ', error.message);
+        //     if (!error.message) {
+        //         console.log('Passwords don\'t match!');
+        //     }
+        // }
     };
 
     return (
@@ -40,15 +52,32 @@ const AuthRegister = () => {
             <form onSubmit={submitHandler}>
                 <div className={classes.control}>
                     <label htmlFor='email'>Your Email</label>
-                    <input type='email' name="email" id='email' required />
+                    <input
+                        type='email'
+                        name="email"
+                        id='email'
+                        onChange={emailChangeHandler}
+                        onBlur={emailBlurHandler}
+                    />
+                    <p className={'error-text'}>Something went wrong!</p>
                 </div>
                 <div className={classes.control}>
                     <label htmlFor='password'>Your Password</label>
-                    <input type='password' name="password" id='password' required />
+                    <input
+                        type='password'
+                        name="password"
+                        id='password'
+                    // onChange={passwordInputHandler}
+                    />
                 </div>
                 <div className={classes.control}>
                     <label htmlFor='password'>Repeat Password</label>
-                    <input type='password' name="repeatPassword" id='repeatPassword' required />
+                    <input
+                        type='password'
+                        name="repeatPassword"
+                        id='repeatPassword'
+                    // onChange={repeatPasswordInputHandler}
+                    />
                 </div>
                 <div className={classes.actions}>
                     <button>Register</button>
