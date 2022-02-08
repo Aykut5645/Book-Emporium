@@ -65,7 +65,7 @@ const AuthRegister = () => {
                 />
                 <Input
                     id="RepeatPassword"
-                    type="RepeatPassword"
+                    type="password"
                     label="Repeat Password"
                 />
                 <div className={classes.actions}>

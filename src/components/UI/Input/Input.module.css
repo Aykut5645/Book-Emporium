@@ -24,14 +24,14 @@
     border-radius: 4px;
 }
 
-.form-control--invalid label,
-.form-control--invalid p {
-    color: red;
-}
-
-.form-control--invalid input,
-.form-control--invalid textarea,
-.form-control--invalid select {
+.invalid input,
+.invalid textarea,
+.invalid select {
     border-color: red;
     background: #ffd1d1;
+}
+
+.invalid label,
+.invalid p {
+    color: red;
 }
