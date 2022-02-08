@@ -1,11 +1,11 @@
 import { useState, useContext } from 'react';
 
-import { auth } from '../../../firebase-config';
+import { auth } from '../../firebase-config';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 
-import { AuthContext } from '../../../contexts/auth-context';
+import { AuthContext } from '../../contexts/auth-context';
 
-import classes from './AuthLogin.module.css';
+import classes from './Authenticate.module.css';
 
 const AuthLogin = () => {
     // const = useState('');

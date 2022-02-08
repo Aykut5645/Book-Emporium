@@ -1,10 +1,11 @@
 import { useState, useContext } from 'react';
 
 import { createUserWithEmailAndPassword } from 'firebase/auth';
-import { AuthContext } from '../../../contexts/auth-context';
-import { auth } from '../../../firebase-config';
+import { AuthContext } from '../../contexts/auth-context';
+import { auth } from '../../firebase-config';
 
-import classes from './AuthRegister.module.css';
+import classes from './Authenticate.module.css';
+import Input from '../UI/Input/Input';
 
 const AuthRegister = () => {
     const [enteredEmail, setEnteredEmail] = useState('');
@@ -50,7 +51,13 @@ const AuthRegister = () => {
         <section className={classes.auth}>
             <h1>Register</h1>
             <form onSubmit={submitHandler}>
-                <div className={classes.control}>
+                <Input 
+                    id="email"
+                    type="email"
+                    name="email"
+                    label="Email"
+                />
+                {/* <div className={classes.control}>
                     <label htmlFor='email'>Your Email</label>
                     <input
                         type='email'
@@ -60,7 +67,7 @@ const AuthRegister = () => {
                         onBlur={emailBlurHandler}
                     />
                     <p className={'error-text'}>Something went wrong!</p>
-                </div>
+                </div> */}
                 <div className={classes.control}>
                     <label htmlFor='password'>Your Password</label>
                     <input
