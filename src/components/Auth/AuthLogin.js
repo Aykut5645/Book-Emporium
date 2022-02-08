@@ -6,6 +6,9 @@ import { signInWithEmailAndPassword } from 'firebase/auth';
 import { AuthContext } from '../../contexts/auth-context';
 
 import classes from './Authenticate.module.css';
+import Input from '../UI/Input/Input';
+import Card from '../UI/Card/Card';
+import Button from '../UI/Button/Button';
 
 const AuthLogin = () => {
     // const = useState('');
@@ -33,30 +36,26 @@ const AuthLogin = () => {
     };
 
     return (
-        <section className={classes.auth}>
+        <Card className={classes.auth}>
             <h1>Login</h1>
             <form onSubmit={submitHandler}>
-                <div className={classes.control}>
-                    <label htmlFor='email'>Your Email</label>
-                    <input type='email' name="email" id='email' />
-                </div>
-                <div className={classes.control}>
-                    <label htmlFor='password'>Your Password</label>
-                    <input type='password' name="password" id='password' />
-                </div>
+                <Input
+                    id="email"
+                    type="email"
+                    label="Email"
+                />
+                <Input
+                    id="password"
+                    type="password"
+                    label="Password"
+                />
                 <div className={classes.actions}>
-                    <button>Login</button>
-                    {/* {!isLoading && <button>{isLogin ? 'Login' : 'Create Account'}</button>}
-                    {isLoading && <p>Sending request...</p>} */}
-                    {/* <button
-                        type='button'
-                        className={classes.toggle}
-                    >
-                        Create new account
-                    </button> */}
+                    <Button type="submit" className={classes["auth-btn"]}>
+                        Login
+                    </Button>
                 </div>
             </form>
-        </section>
+        </Card >
     );
 };
 
