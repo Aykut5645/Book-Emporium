@@ -1,13 +1,16 @@
 import { useReducer } from 'react';
+import { validator } from '../../../util/validators';
 
 import classes from './Input.module.css';
 
 const inputReducer = (state, action) => {
     switch (action.type) {
         case 'INPUT_CHANGE':
+            console.log(validator(action.payload, action.validators).isValid);
             return {
                 ...state,
-                value: action.payload
+                value: action.payload,
+                isValid: validator(action.payload, action.validators)
             };
         case 'INPUT_BLUR':
             return {
@@ -29,7 +32,8 @@ const Input = props => {
     const inputChangeHandler = event => {
         dispatch({
             type: 'INPUT_CHANGE',
-            payload: event.target.value
+            payload: event.target.value,
+            validators: props.validators
         });
     };
 

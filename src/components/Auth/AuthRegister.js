@@ -1,30 +1,29 @@
 import { useState, useContext } from 'react';
 
-import { createUserWithEmailAndPassword } from 'firebase/auth';
-import { AuthContext } from '../../contexts/auth-context';
-import { auth } from '../../firebase-config';
+// import { createUserWithEmailAndPassword } from 'firebase/auth';
+// import { AuthContext } from '../../contexts/auth-context';
+// import { auth } from '../../firebase-config';
 
 import classes from './Authenticate.module.css';
 import Input from '../UI/Input/Input';
 import Card from '../UI/Card/Card';
 import Button from '../UI/Button/Button';
+import { VALIDATOR_EMAIL, VALIDATOR_REQUIRE } from '../../util/validators';
 
 const AuthRegister = () => {
-    const [enteredEmail, setEnteredEmail] = useState('');
-    const [touchedEmail, setTouchedEmail] = useState(false);
-    const authCtx = useContext(AuthContext);
+    // const authCtx = useContext(AuthContext);
 
-    const emailChangeHandler = event => {
-        console.log(event.target.value);
-    };
-    const emailBlurHandler = event => {
-    };
-    // const passwordInputHandler = event => {
-
+    // const emailChangeHandler = event => {
+    //     console.log(event.target.value);
     // };
-    // const repeatPasswordInputHandler = event => {
-
+    // const emailBlurHandler = event => {
     // };
+    // // const passwordInputHandler = event => {
+
+    // // };
+    // // const repeatPasswordInputHandler = event => {
+
+    // // };
 
     const submitHandler = async (event) => {
         event.preventDefault();
@@ -57,6 +56,7 @@ const AuthRegister = () => {
                     id="email"
                     type="email"
                     label="Email"
+                    validators={[VALIDATOR_REQUIRE()]}
                 />
                 <Input
                     id="password"
