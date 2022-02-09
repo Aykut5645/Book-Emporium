@@ -11,6 +11,7 @@
 .form-control label {
     font-weight: bold;
     margin-bottom: 0.5rem;
+    font-size: 1.24rem;
 }
 
 .form-control input,
@@ -31,7 +32,7 @@
     background: #ffd1d1;
 }
 
-.invalid label,
 .invalid p {
     color: red;
+    font-style: italic;
 }

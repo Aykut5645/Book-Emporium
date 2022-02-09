@@ -6,7 +6,7 @@ import classes from './Input.module.css';
 const inputReducer = (state, action) => {
     switch (action.type) {
         case 'INPUT_CHANGE':
-            console.log(validator(action.payload, action.validators).isValid);
+            // console.log(validator(action.payload, action.validators));
             return {
                 ...state,
                 value: action.payload,
@@ -30,6 +30,7 @@ const Input = props => {
     });
 
     const inputChangeHandler = event => {
+        console.log(props.validators);
         dispatch({
             type: 'INPUT_CHANGE',
             payload: event.target.value,
@@ -54,6 +55,7 @@ const Input = props => {
                 onChange={inputChangeHandler}
                 onBlur={inputBlurHandler}
             />
+            {!inputState.isValid && inputState.isTouched && <p className={classes.invalid}>sdfaassdf</p>}
         </div>
     );
 };
