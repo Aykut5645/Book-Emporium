@@ -6,16 +6,15 @@ import classes from './Input.module.css';
 const inputReducer = (state, action) => {
     switch (action.type) {
         case 'INPUT_CHANGE':
-            // console.log(validator(action.payload, action.validators));
             return {
                 ...state,
                 value: action.payload,
-                isValid: validator(action.payload, action.validators)
+                isValid: validator(action.payload, action.validators).isValid
             };
         case 'INPUT_BLUR':
             return {
                 ...state,
-                isTouched: true
+                isTouched: true,
             };
         default:
             return state;
@@ -30,7 +29,6 @@ const Input = props => {
     });
 
     const inputChangeHandler = event => {
-        console.log(props.validators);
         dispatch({
             type: 'INPUT_CHANGE',
             payload: event.target.value,
@@ -41,7 +39,7 @@ const Input = props => {
     const inputBlurHandler = () => {
         dispatch({ type: 'INPUT_BLUR' });
     };
-
+    console.log(inputState);
     return (
         <div className={`
             ${classes['form-control']} 
@@ -55,7 +53,11 @@ const Input = props => {
                 onChange={inputChangeHandler}
                 onBlur={inputBlurHandler}
             />
-            {!inputState.isValid && inputState.isTouched && <p className={classes.invalid}>sdfaassdf</p>}
+            {!inputState.isValid && inputState.isTouched &&
+                <p className={classes.invalid}>
+                    {props.errorMessage}
+                </p>
+            }
         </div>
     );
 };

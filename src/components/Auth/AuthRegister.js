@@ -56,12 +56,14 @@ const AuthRegister = () => {
                     id="email"
                     type="email"
                     label="Email"
-                    validators={[VALIDATOR_REQUIRE()]}
+                    validators={[VALIDATOR_REQUIRE(), VALIDATOR_EMAIL()]}
+                    errorMessage={'Please enter a valid email.'}
                 />
                 <Input
                     id="password"
                     type="password"
                     label="Password"
+                    validators={[VALIDATOR_REQUIRE()]}
                 />
                 <Input
                     id="RepeatPassword"

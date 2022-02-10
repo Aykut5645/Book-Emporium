@@ -1,16 +1,18 @@
 const VALIDATOR_TYPE_REQUIRE = 'REQUIRE';
-const VALIDATION_TYPE_EMAIL = 'EMAIL';
+const VALIDATOR_TYPE_EMAIL = 'EMAIL';
 
 export const VALIDATOR_REQUIRE = () => ({ type: VALIDATOR_TYPE_REQUIRE, errorMessage: 'EMPTYYYYY' });
-export const VALIDATOR_EMAIL = () => ({ type: VALIDATION_TYPE_EMAIL });
+export const VALIDATOR_EMAIL = () => ({ type: VALIDATOR_TYPE_EMAIL, errorMessage: 'EMAILLLL' });
 
 export const validator = (value, validators) => {
-    validators.forEach(validator => {
+    let finalResult = {};
+    for (const validator of validators) {
         if (validator.type === VALIDATOR_TYPE_REQUIRE) {
-            return {
+            finalResult = {
                 isValid: value.trim().length > 0,
                 errorMessage: validator.errorMessage
             };
         }
-    });
+    }
+    return finalResult;
 };
