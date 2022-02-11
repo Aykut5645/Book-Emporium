@@ -13,3 +13,12 @@
     color: rgb(51, 0, 0);
     cursor: pointer;
 }
+
+.button:disabled,
+.button:hover:disabled,
+.button:active:disabled {
+    background: #ccc;
+    color: #979797;
+    border-color: #ccc;
+    cursor: not-allowed;
+}

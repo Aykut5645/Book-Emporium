@@ -1,4 +1,4 @@
-import { useReducer } from 'react';
+import { useEffect, useReducer } from 'react';
 import { validator } from '../../../util/validators';
 
 import classes from './Input.module.css';
@@ -14,7 +14,7 @@ const inputReducer = (state, action) => {
         case 'INPUT_BLUR':
             return {
                 ...state,
-                isTouched: true,
+                isTouched: true
             };
         default:
             return state;
@@ -39,7 +39,14 @@ const Input = props => {
     const inputBlurHandler = () => {
         dispatch({ type: 'INPUT_BLUR' });
     };
-    console.log(inputState);
+
+    const { onInput, id } = props;
+    const { value, isValid } = inputState;
+
+    useEffect(() => {
+        onInput(id, value, isValid);
+    }, [id, value, isValid, onInput]);
+
     return (
         <div className={`
             ${classes['form-control']} 
