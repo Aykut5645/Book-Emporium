@@ -1,4 +1,4 @@
-import BookEdit from "../components/Book/BookEdit/BookEdit";
+import BookEdit from "../components/Book/CreateAndUpdateBook/BookEdit";
 
 const Edit = () => {
     return (

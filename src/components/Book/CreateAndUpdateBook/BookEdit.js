@@ -1,7 +1,7 @@
 import Button from '../../UI/Button/Button';
 import Card from '../../UI/Card/Card';
 
-import classes from './BookEdit.module.css';
+import classes from './CreateAndUpdateBook.module.css';
 import Input from '../../UI/Input/Input';
 
 const BookEdit = () => {

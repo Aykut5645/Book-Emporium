@@ -3,7 +3,7 @@ import { Fragment, useState } from "react";
 import { addDoc, collection } from "firebase/firestore";
 import { auth, db } from "../firebase-config";
 
-import BookCreate from "../components/Book/BookCreate/BookCreate";
+import BookCreate from "../components/Book/CreateAndUpdateBook/BookCreate";
 import LoadingSpinner from "../components/UI/LoadingSpinner/LoadingSpinner";
 
 const Create = () => {

@@ -61,7 +61,6 @@ const Input = props => {
             />
         );
     } else if (props.element === 'select') {
-        console.log(props);
         element = (
             <select name={props.id}>
                 {props.options}
