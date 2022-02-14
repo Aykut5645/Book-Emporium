@@ -22,6 +22,7 @@ const inputReducer = (state, action) => {
 };
 
 const Input = props => {
+    console.log(props);
     const [inputState, dispatch] = useReducer(inputReducer, {
         value: '',
         isValid: false,
@@ -43,16 +44,14 @@ const Input = props => {
     const { onInput, id } = props;
     const { value, isValid } = inputState;
 
-    useEffect(() => {
-        onInput(id, value, isValid);
-    }, [id, value, isValid, onInput]);
+    // useEffect(() => {
+    //     onInput(id, value, isValid);
+    // }, [id, value, isValid, onInput]);
 
-    return (
-        <div className={`
-            ${classes['form-control']} 
-            ${!inputState.isValid && inputState.isTouched && classes.invalid}`}
-        >
-            <label htmlFor={props.id}>{props.label}</label>
+    let element;
+
+    if (props.element === 'input') {
+        element = (
             <input
                 id={props.id}
                 name={props.id}
@@ -60,6 +59,24 @@ const Input = props => {
                 onChange={inputChangeHandler}
                 onBlur={inputBlurHandler}
             />
+        );
+    } else if (props.element === 'select') {
+        console.log(props);
+        element = (
+            <select name={props.id}>
+                {props.options}
+            </select>
+        );
+    }
+
+    return (
+        <div className={`
+            ${classes['form-control']} 
+            ${props.className}
+            ${!inputState.isValid && inputState.isTouched && classes.invalid}`}
+        >
+            <label htmlFor={props.id}>{props.label}</label>
+            {element}
             {!inputState.isValid && inputState.isTouched &&
                 <p className={classes.invalid}>
                     {props.errorMessage}

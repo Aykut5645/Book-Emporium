@@ -2,6 +2,7 @@ import Button from '../../UI/Button/Button';
 import Card from '../../UI/Card/Card';
 
 import classes from './BookEdit.module.css';
+import Input from '../../UI/Input/Input';
 
 const BookEdit = () => {
     return (
@@ -9,65 +10,91 @@ const BookEdit = () => {
             <h1>Edit Book Info</h1>
             <form className={classes.form}>
                 <div className={classes['book-info']}>
-                    <div className={classes.control}>
-                        <label htmlFor='title'>Title</label>
-                        <input type='text' id='title' name='title' />
-                    </div>
-                    <div className={classes.control}>
-                        <label htmlFor='author'>Author</label>
-                        <input type='text' id='author' name='author' />
-                    </div>
-                    <div className={classes.control}>
-                        <label htmlFor='image-url'>ImageUrl</label>
-                        <input type='text' id='image-url' name='image-url' />
-                    </div>
-                    <div className={classes.control}>
-                        <label htmlFor='genre'>Genre</label>
-                        <input type='text' id='genre' name='genre' />
-                    </div>
-                    <div className={classes.control}>
-                        <label htmlFor='price'>Price</label>
-                        <input type='number' id='price' name='price' />
-                    </div>
+                    <Input
+                        id="title"
+                        type="text"
+                        label="Title"
+                        element="input"
+                    />
+                    <Input
+                        id="author"
+                        type="text"
+                        label="Author"
+                        element="input"
+                    />
+                    <Input
+                        id="imageUrl"
+                        type="text"
+                        label="ImageUrl"
+                        element="input"
+                    />
+                    <Input
+                        id="genre"
+                        type="text"
+                        label="Genre"
+                        element="input"
+                    />
+                    <Input
+                        id="price"
+                        type="number"
+                        label="price"
+                        element="input"
+                    />
                 </div>
                 <div className={classes['book-publisher']}>
-                    <div className={classes.control}>
-                        <label htmlFor='publisher'>Publisher</label>
-                        <input type='text' id='publisher' name='publisher' />
+                    <Input
+                        id="publisher"
+                        type="text"
+                        label="Publisher"
+                        element="input"
+                    />
+                    <div className={classes.inline}>
+                        <Input
+                            id="year"
+                            type="number"
+                            label="Year"
+                            element="input"
+                        />
+                        <Input
+                            id="pages"
+                            type="number"
+                            label="Pages"
+                            element="input"
+                        />
                     </div>
                     <div className={classes.inline}>
-                        <div className={classes.control}>
-                            <label htmlFor='year'>Year</label>
-                            <input type='number' id='year' name='year' />
-                        </div>
-                        <div className={classes.control}>
-                            <label htmlFor='pages'>Pages</label>
-                            <input type='number' id='pages' name='pages' />
-                        </div>
+                        <Input
+                            id="state"
+                            label="Condition"
+                            element="select"
+                            options={
+                                <>
+                                    <option value="Excellent">Excellent</option>
+                                    <option value="Very Good">Very Good</option>
+                                    <option value="Good">Good</option>
+                                    <option value="Bad">Bad</option>
+                                    <option value="Very Bad">Very Bad</option>
+                                </>
+                            }
+                        />
+                        <Input
+                            id="covers"
+                            label="Covers"
+                            element="select"
+                            options={
+                                <>
+                                    <option value="Soft">Soft</option>
+                                    <option value="Hard">Hard</option>
+                                </>
+                            }
+                        />
                     </div>
-                    <div className={classes.inline}>
-                        <div className={classes.control}>
-                            <label>Condition</label>
-                            <select name='state'>
-                                <option value="Excellent">Excellent</option>
-                                <option value="Very Good">Very Good</option>
-                                <option value="Good">Good</option>
-                                <option value="Bad">Bad</option>
-                                <option value="Very Bad">Very Bad</option>
-                            </select>
-                        </div>
-                        <div className={classes.control}>
-                            <label>Covers</label>
-                            <select name='covers'>
-                                <option value="Soft">Soft</option>
-                                <option value="Hard">Hard</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div className={classes.control}>
-                        <label htmlFor='pages'>Contacts</label>
-                        <input type='text' id='contacts' name='contacts' />
-                    </div>
+                    <Input
+                        id="contacts"
+                        type="text"
+                        label="Contacts"
+                        element="input"
+                    />
                 </div>
                 <Button type="submit" className={classes['edit-btn']}>Edit</Button>
             </form>
@@ -76,15 +103,3 @@ const BookEdit = () => {
 };
 
 export default BookEdit;
-
-/*
-<p><span>Edition: </span>{book?.edition}</p>
-                    <p><span>Condition: </span>{book?.condition}</p>
-                    <p><span>Year: </span>{book?.year}</p>
-                    <p><span>Pages: </span>{book?.pages}</p>
-                    <p><span>Covers: </span>{book?.covers}</p>
-*/
-
-{/* <div className={classes.loading}>
-                <LoadingSpinner />
-            </div> */}

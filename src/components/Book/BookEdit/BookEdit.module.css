@@ -1,72 +1,38 @@
 .container {
-    width: 90%;
-    margin: 8rem auto;
-    display: inline-block;
-    padding: 3rem;
+    width: 80%;
+    margin: 9rem auto;
 }
 
 .container form {
+    padding: 0 1rem 2rem 1rem;
     display: flex;
+    flex-wrap: nowrap;
     align-items: center;
-    width: 100%;
+    justify-content: space-around;
 }
 
 .book-info,
 .book-publisher {
-    margin: auto;
-    width: 40%;
-    color: white;
-}
-
-.control {
-    margin: 1rem 0;
-    font-weight: bold;
-    font-size: 1rem;
-}
-
-.container h1 {
-    text-align: center;
-    color: white;
-    margin: auto;
-}
-
-.control input,
-.control select {
-    font-size: 1.24rem;
-    margin-top: 0.5rem;
-    background-color: #f1e1fc;
-    border-radius: 4px;
-}
-
-.control input {
-    width: 80%;
-}
-
-.control label {
-    display: block;
-    color: #c69f26;
-    font-size: 1.24rem;
-}
-
-.inline {
-    color: white;
-}
-
-.inline .control {
-    display: inline-block;
-    margin-top: 0;
-    margin-right: 0.3rem;
     width: 30%;
 }
 
-.inline .control select,
-.inline .control input {
-    width: 100%;
+.container .inline {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
-.edit-btn {
-    height: 4rem;
-    width: 15rem;
-    margin: auto;
-    font-size: 1.2rem;
+.container .inline div,
+.container .inline div {
+    width: 40%;
+}
+
+.container label {
+    color: #c69f26;
+}
+
+.form button {
+    padding: 2rem 4rem;
+    font: inherit;
 }

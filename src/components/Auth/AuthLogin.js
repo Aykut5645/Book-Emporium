@@ -39,7 +39,7 @@ const AuthLogin = () => {
         <Card className={classes.auth}>
             <h1>Login</h1>
             <form onSubmit={submitHandler}>
-                <Input
+                {/* <Input
                     id="email"
                     type="email"
                     label="Email"
@@ -48,7 +48,7 @@ const AuthLogin = () => {
                     id="password"
                     type="password"
                     label="Password"
-                />
+                /> */}
                 <div className={classes.actions}>
                     <Button type="submit" className={classes["auth-btn"]}>
                         Login
