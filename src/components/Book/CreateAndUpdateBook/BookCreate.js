@@ -58,7 +58,7 @@ const BookCreate = props => {
     const submitHandler = event => {
         event.preventDefault();
         // props.onInput();
-        console.log(formState);
+        // console.log(formState);
     };
 
     return (

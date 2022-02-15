@@ -23,8 +23,8 @@ const inputReducer = (state, action) => {
 
 const Input = props => {
     const [inputState, dispatch] = useReducer(inputReducer, {
-        value: '',
-        isValid: false,
+        value: props.value || '',
+        isValid: props.isValid || false,
         isTouched: false
     });
 
@@ -57,6 +57,7 @@ const Input = props => {
                 type={props.type}
                 onChange={inputChangeHandler}
                 onBlur={inputBlurHandler}
+                value={inputState.value}
             />
         );
     } else if (props.element === 'select') {
@@ -64,6 +65,7 @@ const Input = props => {
             <select
                 name={props.id}
                 onChange={inputChangeHandler}
+                value={inputState.value}
             >
                 {props.options}
             </select>

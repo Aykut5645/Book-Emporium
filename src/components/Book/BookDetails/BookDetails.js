@@ -11,21 +11,19 @@ import classes from './BookDetails.module.css';
 
 const BookDetails = () => {
     const [book, setBook] = useState(null);
-
+    
     const { bookId } = useParams();
     const booksCollectionRef = doc(db, 'books', bookId);
 
     useEffect(() => {
         (async () => {
             const book = await getDoc(booksCollectionRef);
-            console.log(book.data());
-            setBook(
-                book.data()
-            );
+            setBook({
+                id: book.id,
+                ...book.data()
+            });
         })();
     }, []);
-
-    console.log(document.getElementById('last-btn'));
 
     return (
         <React.Fragment>
