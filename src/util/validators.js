@@ -7,12 +7,18 @@ export const VALIDATOR_EMAIL = () => ({ type: VALIDATOR_TYPE_EMAIL, errorMessage
 export const validator = (value, validators) => {
     let finalResult = {};
     for (const validator of validators) {
-        if (validator.type === VALIDATOR_TYPE_REQUIRE) {
+        if (validator.type === VALIDATOR_TYPE_REQUIRE && value.trim().length > 0) {
             finalResult = {
-                isValid: value.trim().length > 0,
+                isValid: true,
                 errorMessage: validator.errorMessage
             };
         }
+        // if (validator.type === VALIDATOR_TYPE_EMAIL && value.includes('@')) {
+        //     finalResult = {
+        //         isValid: true,
+        //         errorMessage: validator.errorMessage
+        //     };
+        // }
     }
     return finalResult;
 };

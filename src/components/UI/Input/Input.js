@@ -22,7 +22,6 @@ const inputReducer = (state, action) => {
 };
 
 const Input = props => {
-    console.log(props);
     const [inputState, dispatch] = useReducer(inputReducer, {
         value: '',
         isValid: false,
@@ -44,9 +43,9 @@ const Input = props => {
     const { onInput, id } = props;
     const { value, isValid } = inputState;
 
-    // useEffect(() => {
-    //     onInput(id, value, isValid);
-    // }, [id, value, isValid, onInput]);
+    useEffect(() => {
+        onInput(id, value, isValid);
+    }, [id, value, isValid, onInput]);
 
     let element;
 

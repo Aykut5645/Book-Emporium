@@ -8,46 +8,20 @@ import classes from './Authenticate.module.css';
 import Input from '../UI/Input/Input';
 import Card from '../UI/Card/Card';
 import Button from '../UI/Button/Button';
-import { VALIDATOR_EMAIL, VALIDATOR_REQUIRE } from '../../util/validators';
-
-const formReducer = (state, action) => {
-    let formIsValid;
-    switch (action.type) {
-        case 'INPUT_CHANGE':
-            for (const inputId in state.inputs) {
-                if (inputId === action.inputs) {
-                    formIsValid = action.isValid;
-                } else {
-                    formIsValid = state.inputs[inputId].isValid;
-                }
-            }
-            return {
-                ...state,
-                inputs: {
-                    ...state.inputs,
-                    [action.inputId]: { value: action.value, isValid: action.isValid }
-                },
-                isValid: formIsValid
-            };
-        default:
-            return state;
-    }
-};
+import { VALIDATOR_REQUIRE } from '../../util/validators';
+import useForm from '../../hooks/form-hook';
 
 const AuthRegister = () => {
-    const [formState, dispatch] = useReducer(formReducer, {
-        inputs: {
-            email: {
-                value: '',
-                isValid: false
-            },
-            password: {
-                value: '',
-                isValid: false
-            }
+    const [formState, inputHandler] = useForm({
+        email: {
+            value: '',
+            isValid: false
         },
-        formIsValid: false
-    });
+        password: {
+            value: '',
+            isValid: false
+        }
+    }, false);
     // const authCtx = useContext(AuthContext);
 
     // const emailChangeHandler = event => {
@@ -62,18 +36,9 @@ const AuthRegister = () => {
 
     // // };
 
-    const inputHandler = useCallback((id, value, isValid) => {
-        dispatch({
-            type: 'INPUT_CHANGE',
-            inputId: id,
-            value: value,
-            isValid: isValid
-        });
-    }, []);
-
     const submitHandler = async (event) => {
         event.preventDefault();
-        console.log('SUBMITED'); // send this to backend!!!
+        // console.log('SUBMITED'); // send this to backend!!!
         // try {
         //     // if (enteredPassword !== enteredRepeatPassword) {
         //     //     throw new Error('Passwords don\'t match!');
@@ -102,7 +67,8 @@ const AuthRegister = () => {
                     id="email"
                     type="email"
                     label="Email"
-                    validators={[VALIDATOR_REQUIRE(), VALIDATOR_EMAIL()]}
+                    element="input"
+                    validators={[VALIDATOR_REQUIRE()]}
                     errorMessage={'Please enter a valid email.'}
                     onInput={inputHandler}
                 />
@@ -110,6 +76,7 @@ const AuthRegister = () => {
                     id="password"
                     type="password"
                     label="Password"
+                    element="input"
                     validators={[VALIDATOR_REQUIRE()]}
                     errorMessage={'Please enter a valid password'}
                     onInput={inputHandler}
@@ -118,6 +85,7 @@ const AuthRegister = () => {
                     id="repeatPassword"
                     type="password"
                     label="Repeat Password"
+                    element="input"
                     validators={[VALIDATOR_REQUIRE()]}
                     errorMessage={'Please enter a valid password'}
                     onInput={inputHandler}

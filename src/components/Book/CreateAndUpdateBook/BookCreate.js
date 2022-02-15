@@ -18,7 +18,7 @@ const BookCreate = props => {
     return (
         <Card className={classes.container}>
             <h1>Create Book</h1>
-            <form className={classes.form}>
+            <form className={classes.form} onSubmit={submitHandler}>
                 <div className={classes['book-info']}>
                     <Input
                         id="title"
@@ -106,7 +106,9 @@ const BookCreate = props => {
                         element="input"
                     />
                 </div>
-                <Button type="submit" className={classes['edit-btn']}>Create</Button>
+                <Button type="submit" className={classes['edit-btn']}>
+                    Create
+                </Button>
             </form>
         </Card >
     );
