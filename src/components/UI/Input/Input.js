@@ -61,7 +61,10 @@ const Input = props => {
         );
     } else if (props.element === 'select') {
         element = (
-            <select name={props.id}>
+            <select
+                name={props.id}
+                onChange={inputChangeHandler}
+            >
                 {props.options}
             </select>
         );

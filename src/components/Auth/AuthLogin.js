@@ -26,7 +26,6 @@ const AuthLogin = () => {
     }, false);
     // const = useState('');
     // const authCtx = useContext(AuthContext);
-
     const submitHandler = async (event) => {
         event.preventDefault();
 
