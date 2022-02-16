@@ -9,7 +9,7 @@ export const validator = (value, validators) => {
     for (const validator of validators) {
         if (validator.type === VALIDATOR_TYPE_REQUIRE && value.trim().length > 0) {
             finalResult = {
-                isValid: true,
+                isValid: value.trim().length > 0,
                 errorMessage: validator.errorMessage
             };
         }

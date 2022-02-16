@@ -65,6 +65,7 @@ const Input = props => {
             <select
                 name={props.id}
                 onChange={inputChangeHandler}
+                onBlur={inputBlurHandler}
                 value={inputState.value}
             >
                 {props.options}

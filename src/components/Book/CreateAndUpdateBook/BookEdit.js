@@ -32,51 +32,50 @@ const BookEdit = () => {
     const [formState, inputHandler] = useForm({
         title: {
             value: '',
-            isValid: false
+            isValid: true
         },
         author: {
             value: '',
-            isValid: false
+            isValid: true
         },
         imageUrl: {
             value: '',
-            isValid: false
+            isValid: true
         },
         genre: {
             value: '',
-            isValid: false
+            isValid: true
         },
         price: {
             value: '',
-            isValid: false
+            isValid: true
         },
         publisher: {
             value: '',
-            isValid: false
+            isValid: true
         },
         year: {
             value: '',
-            isValid: false
+            isValid: true
         },
         pages: {
             value: '',
-            isValid: false
+            isValid: true
         },
-        state: {
+        condition: {
             value: '',
-            isValid: false
+            isValid: true
         },
         covers: {
             value: '',
-            isValid: false
+            isValid: true
         },
         contacts: {
             value: '',
-            isValid: false
+            isValid: true
         }
-    }, false);
+    }, true);
 
-    console.log(book?.title);
 
     const submitHandler = async (event) => {
         event.preventDefault();
@@ -85,7 +84,7 @@ const BookEdit = () => {
         // } catch (err) {
         //     console.error(err);
         // }
-        console.log(formState);
+        console.log(book);
     };
 
     return (
@@ -99,52 +98,56 @@ const BookEdit = () => {
                             id="title"
                             type="text"
                             label="Title"
+                            element="input"
+                            isValid={true}
+                            value={book.title}
                             validators={[VALIDATOR_REQUIRE()]}
                             errorMessage={'Please enter a valid title.'}
                             onInput={inputHandler}
-                            element="input"
-                            value={book.title}
-                            isValid={true}
                         />
                         <Input
                             id="author"
                             type="text"
                             label="Author"
                             element="input"
-                            validators={[VALIDATOR_REQUIRE()]}
-                            errorMessage={'Please enter a valid Author.'}
-                            onInput={inputHandler}
+                            isValid={true}
                             value={book.author}
+                            validators={[VALIDATOR_REQUIRE()]}
+                            errorMessage={'Please enter a valid author.'}
+                            onInput={inputHandler}
                         />
                         <Input
                             id="imageUrl"
                             type="text"
                             label="ImageUrl"
                             element="input"
+                            isValid={true}
+                            value={book.imageUrl}
                             validators={[VALIDATOR_REQUIRE()]}
                             errorMessage={'Please enter a valid imageUrl.'}
                             onInput={inputHandler}
-                            value={book.imageUrl}
                         />
                         <Input
                             id="genre"
                             type="text"
                             label="Genre"
                             element="input"
+                            isValid={true}
+                            value={book.genre}
                             validators={[VALIDATOR_REQUIRE()]}
                             errorMessage={'Please enter a valid genre.'}
                             onInput={inputHandler}
-                            value={book.genre}
                         />
                         <Input
                             id="price"
                             type="number"
                             label="price"
                             element="input"
+                            isValid={true}
+                            value={book.price}
                             validators={[VALIDATOR_REQUIRE()]}
                             errorMessage={'Please enter a valid price.'}
                             onInput={inputHandler}
-                            value={book.price}
                         />
                     </div>
                     <div className={classes['book-publisher']}>
@@ -153,10 +156,11 @@ const BookEdit = () => {
                             type="text"
                             label="Publisher"
                             element="input"
+                            isValid={true}
+                            value={book.publisher}
                             validators={[VALIDATOR_REQUIRE()]}
                             errorMessage={'Please enter a valid publisher.'}
                             onInput={inputHandler}
-                            value={book.publisher}
                         />
                         <div className={classes.inline}>
                             <Input
@@ -164,30 +168,29 @@ const BookEdit = () => {
                                 type="number"
                                 label="Year"
                                 element="input"
+                                isValid={true}
+                                value={book.year}
                                 validators={[VALIDATOR_REQUIRE()]}
                                 errorMessage={'Please enter a valid year.'}
                                 onInput={inputHandler}
-                                value={book.year}
                             />
                             <Input
                                 id="pages"
                                 type="number"
                                 label="Pages"
                                 element="input"
+                                isValid={true}
+                                value={book.pages}
                                 validators={[VALIDATOR_REQUIRE()]}
                                 errorMessage={'Please enter a valid pages.'}
                                 onInput={inputHandler}
-                                value={book.pages}
-                                isValid={true}
                             />
                         </div>
                         <div className={classes.inline}>
                             <Input
-                                id="state"
+                                id="condition"
                                 label="Condition"
                                 element="select"
-                                validators={[VALIDATOR_REQUIRE()]}
-                                errorMessage={'Please enter a valid state.'}
                                 options={
                                     <>
                                         <option></option>
@@ -198,15 +201,16 @@ const BookEdit = () => {
                                         <option value="Very Bad">Very Bad</option>
                                     </>
                                 }
+                                isValid={true}
+                                value={book.condition}
+                                validators={[VALIDATOR_REQUIRE()]}
+                                errorMessage={'Please enter a valid state.'}
                                 onInput={inputHandler}
-                                value={book.state}
                             />
                             <Input
                                 id="covers"
                                 label="Covers"
                                 element="select"
-                                validators={[VALIDATOR_REQUIRE()]}
-                                errorMessage={'Please enter a valid covers.'}
                                 options={
                                     <>
                                         <option></option>
@@ -214,8 +218,11 @@ const BookEdit = () => {
                                         <option value="Hard">Hard</option>
                                     </>
                                 }
-                                onInput={inputHandler}
+                                isValid={true}
                                 value={book.covers}
+                                validators={[VALIDATOR_REQUIRE()]}
+                                errorMessage={'Please enter a valid covers.'}
+                                onInput={inputHandler}
                             />
                         </div>
                         <Input
@@ -223,15 +230,16 @@ const BookEdit = () => {
                             type="text"
                             label="Contacts"
                             element="input"
+                            isValid={true}
+                            value={book.contacts}
                             validators={[VALIDATOR_REQUIRE()]}
                             errorMessage={'Please enter a valid contacts.'}
                             onInput={inputHandler}
-                            value={book.contacts}
                         />
                     </div>
                     <Button
                         type="submit"
-                        // disabled={formState.isValid}
+                        disabled={!formState.isValid}
                         className={classes['edit-btn']}
                     >
                         Edit

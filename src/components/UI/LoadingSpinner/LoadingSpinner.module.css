@@ -6,7 +6,7 @@
 }
 .spinner:after {
     content: '';
-    display: block;
+    display: inline-block;
     width: 94px;
     height: 94px;
     margin: 8px;
