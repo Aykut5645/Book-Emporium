@@ -1,19 +1,19 @@
 import { useState, useEffect } from 'react';
-
 import { useParams } from 'react-router-dom';
+
+import classes from './CreateAndUpdateBook.module.css';
 
 import Button from '../../UI/Button/Button';
 import Card from '../../UI/Card/Card';
-
-import classes from './CreateAndUpdateBook.module.css';
 import Input from '../../UI/Input/Input';
 import { VALIDATOR_REQUIRE } from '../../../util/validators';
 import useForm from '../../../hooks/form-hook';
-import { doc, getDoc } from 'firebase/firestore';
-import { db } from '../../../firebase-config';
 import LoadingSpinner from '../../UI/LoadingSpinner/LoadingSpinner';
 
-const BookEdit = () => {
+import { doc, getDoc } from 'firebase/firestore';
+import { db } from '../../../firebase-config';
+
+const BookEdit = props => {
     const [book, setBook] = useState(null);
     const bookId = useParams().bookId;
 
@@ -76,15 +76,16 @@ const BookEdit = () => {
         }
     }, true);
 
-
-    const submitHandler = async (event) => {
+    const submitHandler = event => {
         event.preventDefault();
-        // try {
-        //     await updateDoc(currentBookRef, { covers: 'pepe' });
-        // } catch (err) {
-        //     console.error(err);
-        // }
-        console.log(book);
+
+        let modifiedData = {};
+        for (const input in formState.inputs) {
+            modifiedData[input] = formState.inputs[input].value;
+        }
+        modifiedData.id = book.id;
+
+        props.onModifyData(modifiedData);
     };
 
     return (
