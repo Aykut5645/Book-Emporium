@@ -54,11 +54,14 @@ const BookCreate = props => {
         }
     }, false);
 
-    console.log(formState.isValid);
     const submitHandler = event => {
         event.preventDefault();
-        // props.onInput();
-        // console.log(formState);
+
+        let createdData = {};
+        for (const input in formState.inputs) {
+            createdData[input] = formState.inputs[input].value;
+        }
+        props.onCreateData();
     };
 
     return (

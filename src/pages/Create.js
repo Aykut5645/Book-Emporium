@@ -9,13 +9,12 @@ import LoadingSpinner from "../components/UI/LoadingSpinner/LoadingSpinner";
 const Create = () => {
     const [loading, setLoading] = useState(false);
     
-    const inputHandler = async (data) => {
+    const createDataHandler = async (createdData) => {
         const postsCollectionRef = collection(db, 'books');
         try {
             setLoading(true);
             await addDoc(postsCollectionRef, {
-                ...data,
-                contacts: auth.currentUser.email,
+                ...createdData,
                 credentials: {
                     email: auth.currentUser.email,
                     id: auth.currentUser.uid
@@ -32,7 +31,7 @@ const Create = () => {
     return (
         <Fragment>
             {loading && <LoadingSpinner />}
-            {!loading && <BookCreate onInput={inputHandler} />}
+            {!loading && <BookCreate onCreateData={createDataHandler} />}
         </Fragment>
     );
 };
