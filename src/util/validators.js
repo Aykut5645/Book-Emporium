@@ -20,5 +20,6 @@ export const validator = (value, validators) => {
         //     };
         // }
     }
+    
     return finalResult;
 };

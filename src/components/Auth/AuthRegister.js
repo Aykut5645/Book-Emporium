@@ -1,9 +1,3 @@
-import { useCallback, useReducer } from 'react';
-
-// import { createUserWithEmailAndPassword } from 'firebase/auth';
-// import { AuthContext } from '../../contexts/auth-context';
-// import { auth } from '../../firebase-config';
-
 import classes from './Authenticate.module.css';
 import Input from '../UI/Input/Input';
 import Card from '../UI/Card/Card';
@@ -11,7 +5,7 @@ import Button from '../UI/Button/Button';
 import { VALIDATOR_REQUIRE } from '../../util/validators';
 import useForm from '../../hooks/form-hook';
 
-const AuthRegister = () => {
+const AuthRegister = props => {
     const [formState, inputHandler] = useForm({
         email: {
             value: '',
@@ -22,41 +16,14 @@ const AuthRegister = () => {
             isValid: false
         }
     }, false);
-    // const authCtx = useContext(AuthContext);
 
-    // const emailChangeHandler = event => {
-    //     console.log(event.target.value);
-    // };
-    // const emailBlurHandler = event => {
-    // };
-    // // const passwordInputHandler = event => {
-
-    // // };
-    // // const repeatPasswordInputHandler = event => {
-
-    // // };
-
-    const submitHandler = async (event) => {
+    const submitHandler = event => {
         event.preventDefault();
-        // console.log('SUBMITED'); // send this to backend!!!
-        // try {
-        //     // if (enteredPassword !== enteredRepeatPassword) {
-        //     //     throw new Error('Passwords don\'t match!');
-        //     // }
 
-        //     const user = await createUserWithEmailAndPassword(
-        //         auth,
-        //         enteredEmail,
-        //         enteredPassword
-        //     );
-        //     authCtx.login(user._tokenResponse.idToken);
-        // } catch (error) {
-        //     console.log('IN ERROR');
-        //     console.log('>>> ', error.message);
-        //     if (!error.message) {
-        //         console.log('Passwords don\'t match!');
-        //     }
-        // }
+        props.onRegister(
+            formState.inputs.email.value,
+            formState.inputs.password.value
+        );
     };
 
     return (
