@@ -1,19 +1,12 @@
-// import { useState, useContext } from 'react';
-import { useCallback, useState, useReducer } from 'react';
-
-// import { auth } from '../../firebase-config';
-// import { signInWithEmailAndPassword } from 'firebase/auth';
-
-// import { AuthContext } from '../../contexts/auth-context';
-
-import classes from './Authenticate.module.css';
 import Input from '../UI/Input/Input';
 import Card from '../UI/Card/Card';
 import Button from '../UI/Button/Button';
-import { VALIDATOR_REQUIRE } from '../../util/validators';
 import useForm from '../../hooks/form-hook';
+import { VALIDATOR_REQUIRE } from '../../util/validators';
 
-const AuthLogin = () => {
+import classes from './Authenticate.module.css';
+
+const AuthLogin = props => {
     const [formState, inputHandler] = useForm({
         email: {
             value: '',
@@ -24,22 +17,14 @@ const AuthLogin = () => {
             isValid: false
         }
     }, false);
-    // const = useState('');
-    // const authCtx = useContext(AuthContext);
+
     const submitHandler = async (event) => {
         event.preventDefault();
 
-        // try {
-        //     const user = await signInWithEmailAndPassword(
-        //         auth,
-        //         enteredEmail,
-        //         enteredPassword
-        //     );
-        //     authCtx.login(user._tokenResponse.idToken);
-        // } catch (error) {
-        //     console.log('IN ERROR');
-        //     console.log(error.message);
-        // }
+        props.onLogin(
+            formState.inputs.email.value,
+            formState.inputs.password.value
+        );
     };
 
     return (

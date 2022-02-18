@@ -6,7 +6,7 @@ import { updateEmail, updatePassword } from 'firebase/auth';
 
 import Card from '../../UI/Card/Card';
 import Button from '../../UI/Button/Button';
-import classes from './AuthProfil.module.css';
+import classes from './AuthProfile.module.css';
 // import image from '../../../assets/avatar.jpg';
 
 const AuthProfile = () => {

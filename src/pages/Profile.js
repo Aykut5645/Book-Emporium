@@ -1,4 +1,4 @@
-import AuthProfil from "../components/Auth/AuthProfile/AuthProfile";
+import AuthProfile from "../components/Auth/AuthProfile/AuthProfile";
 
 const Profile = () => {
     return (
