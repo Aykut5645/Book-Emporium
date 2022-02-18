@@ -1,9 +1,9 @@
-import AuthProfil from "../components/Auth/AuthProfil/AuthProfile";
+import AuthProfil from "../components/Auth/AuthProfile/AuthProfile";
 
-const Profil = () => {
+const Profile = () => {
     return (
-        <AuthProfil />
+        <AuthProfile />
     );
 };
 
-export default Profil;
+export default Profile;

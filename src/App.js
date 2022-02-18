@@ -13,7 +13,6 @@ import Edit from "./pages/Edit";
 import Create from "./pages/Create";
 import Profile from "./pages/Profile";
 
-
 const App = () => {
     const [cartIsShown, setCartIsShown] = useState(false); //TODO: try to refactoring it using context!!!
 
