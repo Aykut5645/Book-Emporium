@@ -54,10 +54,10 @@
     margin: 0;
 }
 
-h1 {
+.logo-header {
     color: white;
 }
 
-h1:hover {
+.logo-header:hover {
     color: #c69f26;
 }

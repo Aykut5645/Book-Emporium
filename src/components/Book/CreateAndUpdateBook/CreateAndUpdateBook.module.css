@@ -32,6 +32,10 @@
     color: #c69f26;
 }
 
+.container h1 {
+    color: white;
+}
+
 .form button {
     padding: 2rem 4rem;
     font: inherit;

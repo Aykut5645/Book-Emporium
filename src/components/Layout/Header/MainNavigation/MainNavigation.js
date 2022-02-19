@@ -15,7 +15,9 @@ const MainNavigation = () => {
     return (
         <Fragment>
             <Link to='/' style={{ textDecoration: 'none' }}>
-                <h1>Book Emporium</h1>
+                <h1 className={classes["logo-header"]}>
+                    Book Emporium
+                </h1>
             </Link>
             <header className={classes.header}>
                 <nav>
