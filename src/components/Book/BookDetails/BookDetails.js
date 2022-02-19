@@ -11,7 +11,7 @@ import classes from './BookDetails.module.css';
 
 const BookDetails = () => {
     const [book, setBook] = useState(null);
-    
+
     const { bookId } = useParams();
     const booksCollectionRef = doc(db, 'books', bookId);
 
@@ -24,7 +24,7 @@ const BookDetails = () => {
             });
         })();
     }, []);
-
+    
     return (
         <React.Fragment>
             <Card className={classes.container}>

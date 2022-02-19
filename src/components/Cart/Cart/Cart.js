@@ -17,12 +17,12 @@ const Cart = props => {
 
     const cartItems = (
         <ul className={classes['cart-items']}>
-            {cartCtx.items.map(item =>
+            {cartCtx.items.map((item, index) =>
                 <CartItem
-                    key={item.id}
+                    key={index}
                     title={item.title}
                     price={item.price}
-                    onRemove={cartItemRemoveHandler.bind(null, item.id)}
+                    onRemove={cartItemRemoveHandler.bind(null, index)}
                 />
             )}
         </ul>

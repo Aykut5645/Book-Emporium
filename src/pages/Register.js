@@ -1,6 +1,5 @@
 import { useContext } from "react";
 
-
 import AuthRegister from "../components/Auth/AuthRegister";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { AuthContext } from '../contexts/auth-context'

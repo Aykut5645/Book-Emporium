@@ -18,17 +18,19 @@ const cartReducer = (state, action) => {
         };
     }
     if (action.type === 'REMOVE_ITEM') {
-        const currentItem = state.items.find(item => item.id === action.payload);
+        const currentItem = state.items[action.payload];
         const updatedTotalAmount = state.totalAmount - currentItem.price;
-        const updatedItems = state.items.filter(i => i.id !== action.payload);
         
+        let clonedItems = [...state.items];
+        clonedItems.splice(action.payload, 1);
+
         return {
-            items: updatedItems,
+            items: clonedItems,
             totalAmount: updatedTotalAmount
         };
     }
 
-    return defaultCartState;
+    return state;
 };
 
 const CartProvider = (props) => {
@@ -41,10 +43,10 @@ const CartProvider = (props) => {
         });
     };
 
-    const removeItemFromCartHandler = (id) => {
+    const removeItemFromCartHandler = index => {
         dispatch({
             type: 'REMOVE_ITEM',
-            payload: id
+            payload: index
         });
     };
 
