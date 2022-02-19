@@ -20,12 +20,12 @@ const cartReducer = (state, action) => {
     if (action.type === 'REMOVE_ITEM') {
         const currentItem = state.items[action.payload];
         const updatedTotalAmount = state.totalAmount - currentItem.price;
-        
-        let clonedItems = [...state.items];
-        clonedItems.splice(action.payload, 1);
+
+        const updatedItems = [...state.items];
+        updatedItems.splice(action.payload, 1);
 
         return {
-            items: clonedItems,
+            items: updatedItems,
             totalAmount: updatedTotalAmount
         };
     }

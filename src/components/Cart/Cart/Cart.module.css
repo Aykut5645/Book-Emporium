@@ -3,8 +3,10 @@
     margin: 0;
     padding: 0;
     max-height: 20rem;
-    overflow: scroll;
+    overflow-y: scroll;
     scrollbar-color: #5a1a01;
+    border-bottom: 3px solid #5a1a01;
+    z-index: 5;
 }
 
 .total {
@@ -28,10 +30,11 @@
     font: inherit;
     cursor: pointer;
     background-color: white;
-    border: 1px solid #5a1a01;
+    border: 3px solid #5a1a01;
     padding: 0.5rem 2rem;
     border-radius: 25px;
     margin-left: 1rem;
+    font-weight: bold;
 }
 
 .actions button:hover,
@@ -48,4 +51,12 @@
 .actions .button {
     background-color: #5a1a01;
     color: white;
+}
+
+.message {
+    text-align: center;
+    margin: 3rem;
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #5a1a01;
 }
