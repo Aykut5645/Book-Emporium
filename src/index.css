@@ -23,18 +23,18 @@ main {
 .initial-image {
     background-image: url('./assets/uU8wbS.jpg');
     height: 100vh;
-    width: 100vw;
+    width: 100%;
 }
 
-/* .error-text {
-    color: #b40e0e;
-    border: 2px solid #b40e0e;
-    background-color: #f3bebe;
-    padding: 0.5rem;
-    border-radius: 4px;
+.initial-btn {
+    display: block;
+    margin: 0 auto;
+    padding: 2rem 4rem;
+    font-size: 1.1rem !important;
+    font-weight: bold !important;
+    border: 6px solid !important;
 }
 
-.invalid {
-    border: 1px solid #b40e0e;
-    background-color: #fddddd;
-} */
+a {
+    text-decoration: none;
+}
