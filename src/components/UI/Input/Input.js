@@ -1,6 +1,6 @@
 import { useEffect, useReducer } from 'react';
-import { validator } from '../../../util/validators';
 
+import { validator } from '../../../util/validators';
 import classes from './Input.module.css';
 
 const inputReducer = (state, action) => {
@@ -9,7 +9,7 @@ const inputReducer = (state, action) => {
             return {
                 ...state,
                 value: action.payload,
-                isValid: validator(action.payload, action.validators).isValid
+                isValid: validator(action.payload, action.validators)
             };
         case 'INPUT_BLUR':
             return {

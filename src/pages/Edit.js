@@ -7,7 +7,6 @@ import { db } from "../firebase-config";
 
 const Edit = () => {
     const modifyDataHandler = async (modifiedData) => {
-
         try {
             await updateDoc(
                 doc(db, 'books', modifiedData.id),
