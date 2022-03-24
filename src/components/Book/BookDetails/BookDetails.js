@@ -11,19 +11,17 @@ import classes from './BookDetails.module.css';
 
 const BookDetails = () => {
     const [book, setBook] = useState(null);
-
     const { bookId } = useParams();
-    const booksCollectionRef = doc(db, 'books', bookId);
 
     useEffect(() => {
         (async () => {
-            const book = await getDoc(booksCollectionRef);
+            const book = await getDoc(doc(db, 'books', bookId));
             setBook({
                 id: book.id,
                 ...book.data()
             });
         })();
-    }, []);
+    }, [bookId]);
 
     return (
         <Card className={classes.container}>

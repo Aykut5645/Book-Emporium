@@ -10,12 +10,10 @@ const Create = () => {
     const [loading, setLoading] = useState(false);
     
     const createDataHandler = async (createdData) => {
-        console.log('createdsdfsafsf')
-        const postsCollectionRef = collection(db, 'books');
         
         try {
             setLoading(true);
-            await addDoc(postsCollectionRef, {
+            await addDoc(collection(db, 'books'), {
                 ...createdData,
                 credentials: {
                     email: auth.currentUser.email,

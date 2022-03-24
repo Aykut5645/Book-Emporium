@@ -17,17 +17,15 @@ const BookEdit = props => {
     const [book, setBook] = useState(null);
     const bookId = useParams().bookId;
 
-    const booksCollectionRef = doc(db, 'books', bookId);
-
     useEffect(() => {
         (async () => {
-            const book = await getDoc(booksCollectionRef);
+            const book = await getDoc(doc(db, 'books', bookId));
             setBook({
                 id: book.id,
                 ...book.data()
             });
         })();
-    }, []);
+    }, [bookId]);
 
     const [formState, inputHandler] = useForm({
         title: {

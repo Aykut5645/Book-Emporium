@@ -12,12 +12,10 @@ const Books = () => {
     const [searchValue, setSearchValue] = useState(null);
     const [loading, setLoading] = useState(true);
 
-    const booksCollectionRef = collection(db, 'books');
-
     useEffect(() => {
         setLoading(true);
         (async () => {
-            const data = await getDocs(booksCollectionRef);
+            const data = await getDocs(collection(db, 'books'));
             setLoading(false);
             setBooks(
                 data.docs.map(doc => ({ ...doc.data(), id: doc.id }))
