@@ -1,4 +1,4 @@
-.container {
+.profile_container {
     width: 90%;
     margin: 10rem auto;
     display: inline-flex;
@@ -52,4 +52,8 @@
 .user-btn {
     padding: 0.5rem 1.5rem;
     margin-top: 1rem;
+}
+
+.books_container {
+    width: 90%;
 }

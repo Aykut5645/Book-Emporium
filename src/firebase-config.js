@@ -21,7 +21,6 @@ const app = initializeApp(firebaseConfig);
 
 export const db = getFirestore(app);
 export const auth = getAuth(app);
-
 // storage
 // export const upload = async (file, currentUser) => {
 //     const fileRef = ref(storage, currentUser.uid + '.jpeg');

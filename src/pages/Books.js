@@ -1,5 +1,4 @@
-import { useState, useEffect } from "react";
-import { Fragment } from "react/cjs/react.production.min";
+import { Fragment, useState, useEffect } from "react";
 
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from "../firebase-config";

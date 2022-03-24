@@ -61,7 +61,7 @@ const BookCreate = props => {
         for (const input in formState.inputs) {
             createdData[input] = formState.inputs[input].value;
         }
-        props.onCreateData();
+        props.onCreateData(createdData);
     };
 
     return (

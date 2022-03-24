@@ -26,4 +26,4 @@ const PortalProvider = props => {
     );
 };
 
-export default PortalProvider;
+export default PortalProvider; 

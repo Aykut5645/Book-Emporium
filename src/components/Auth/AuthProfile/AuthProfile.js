@@ -1,8 +1,6 @@
-// import { useState, useEffect } from 'react';
-
-// import { auth, upload } from '../../../firebase-config';
-import { auth } from '../../../firebase-config';
 import { updateEmail, updatePassword } from 'firebase/auth';
+
+import { auth } from '../../../firebase-config';
 
 import Card from '../../UI/Card/Card';
 import Button from '../../UI/Button/Button';
@@ -10,6 +8,8 @@ import classes from './AuthProfile.module.css';
 // import image from '../../../assets/avatar.jpg';
 
 const AuthProfile = () => {
+    // const [books, setBooks] = useState();
+    // const [loading, setLoading] = useState(true);
     // const [photo, setPhoto] = useState(null);
     // const [photoUrl, setPhotoUrl] = useState(image);
 
@@ -52,7 +52,7 @@ const AuthProfile = () => {
     };
 
     return (
-        <Card className={classes.container}>
+        <Card className={classes['profile_container']} >
             <div className={classes["user-img-wrapper"]}>
                 <img /*src={photoUrl}*/ alt="" />
                 <div className={classes['file-wrapper']}>
@@ -77,7 +77,7 @@ const AuthProfile = () => {
                     </Button>
                 </div>
             </div>
-        </Card>
+        </Card >
     );
 };
 
