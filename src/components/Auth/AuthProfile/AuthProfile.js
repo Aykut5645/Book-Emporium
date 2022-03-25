@@ -35,7 +35,7 @@ const AuthProfile = () => {
         const fileUrl = await getDownloadURL(imageRef);
         // console.log(fileRef)
         setPhotoUrl(fileUrl);
-        // updateProfile(auth.currentUser, { photoURL: fileUrl });
+        updateProfile(auth.currentUser, { photoURL: fileUrl });
     };
 
     const changeEmailHandler = async () => {

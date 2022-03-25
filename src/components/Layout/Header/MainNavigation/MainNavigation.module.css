@@ -15,7 +15,7 @@
 }
 
 .header li {
-    margin: 0 12px;
+    margin: 0 2.5rem;
 }
 
 .header a {
@@ -60,4 +60,18 @@
 
 .logo-header:hover {
     color: #c69f26;
+}
+
+.image-wrapper {
+    display: inline-block;
+    height: 3rem;
+    bottom: 17px;
+    min-width: 3.5rem;
+    position: absolute;
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
 }

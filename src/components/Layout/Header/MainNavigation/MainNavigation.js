@@ -1,16 +1,26 @@
-import { Fragment, useContext } from 'react';
+import { onAuthStateChanged } from 'firebase/auth';
+import { Fragment, useContext, useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 
 import { AuthContext } from '../../../../contexts/auth-context';
+import { auth } from '../../../../firebase-config';
 
 import classes from './MainNavigation.module.css';
 
+import avatar from '../../../../assets/avatar.jpg';
 const MainNavigation = () => {
+    const [photoUrl, setPhotoUrl] = useState();
     const authCtx = useContext(AuthContext);
-
     const logoutHandler = () => {
         authCtx.logout();
     };
+    useEffect(() => {
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                setPhotoUrl(user.photoURL);
+            }
+        });
+    }, []);
 
     return (
         <Fragment>
@@ -44,11 +54,6 @@ const MainNavigation = () => {
                         {authCtx.isLoggedIn && (
                             <>
                                 <li>
-                                    <NavLink activeClassName={classes.active} to='/profile'>
-                                        Profile
-                                    </NavLink>
-                                </li>
-                                <li>
                                     <NavLink activeClassName={classes.active} to='/create'>
                                         Create
                                     </NavLink>
@@ -57,6 +62,15 @@ const MainNavigation = () => {
                                     <button onClick={logoutHandler}>
                                         Logout
                                     </button>
+                                </li>
+                                <li>
+                                    <NavLink activeClassName={classes.active} to='/profile'>
+                                        <div className={classes["image-wrapper"]}>
+                                            {photoUrl && <img src={photoUrl} />}
+                                            {!photoUrl && <img src={avatar} />}
+                                            {/* <img src={avatar} alt="" /> */}
+                                        </div>
+                                    </NavLink>
                                 </li>
                             </>
                         )}
