@@ -10,10 +10,9 @@ import LoadingSpinner from "../components/UI/LoadingSpinner/LoadingSpinner";
 const Profile = () => {
     const [books, setBooks] = useState([]);
     const [loading, setLoading] = useState(true);
-    
+
     useEffect(() => {
         setLoading(true);
-        console.log('ssss');
         (async () => {
             const data = await getDocs(collection(db, 'books'));
             setLoading(false);
@@ -27,6 +26,7 @@ const Profile = () => {
             {!loading && (
                 <>
                     <AuthProfile />
+                    <h1 style={{ color: "white" }}>Your Books</h1>
                     <AvailableBooks books={books} />
                 </>
             )}

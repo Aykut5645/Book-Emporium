@@ -10,7 +10,6 @@ const Create = () => {
     const [loading, setLoading] = useState(false);
     
     const createDataHandler = async (createdData) => {
-        
         try {
             setLoading(true);
             await addDoc(collection(db, 'books'), {

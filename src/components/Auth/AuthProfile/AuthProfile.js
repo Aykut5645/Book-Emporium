@@ -1,35 +1,42 @@
-import { updateEmail, updatePassword } from 'firebase/auth';
+import { updateEmail, updatePassword, updateProfile } from 'firebase/auth';
 
-import { auth } from '../../../firebase-config';
+import { auth, storage } from '../../../firebase-config';
 
 import Card from '../../UI/Card/Card';
 import Button from '../../UI/Button/Button';
 import classes from './AuthProfile.module.css';
+import { useState, useEffect } from 'react';
+import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
+// import { useState } from 'react';
 // import image from '../../../assets/avatar.jpg';
 
 const AuthProfile = () => {
     // const [books, setBooks] = useState();
     // const [loading, setLoading] = useState(true);
-    // const [photo, setPhoto] = useState(null);
+    const [image, setImage] = useState(null);
+    const [photoUrl, setPhotoUrl] = useState(null);
     // const [photoUrl, setPhotoUrl] = useState(image);
 
-    // useEffect(() => {
-    //     console.log('outside');
-    //     if (auth.currentUser?.photoURL) {
-    //         console.log('inside');
-    //         setPhotoUrl(auth.currentUser.photoURL);
-    //     }
-    // }, []);
+    useEffect(() => {
+        if (auth.currentUser?.photoURL) {
+            setPhotoUrl(auth.currentUser.photoURL);
+        }
+    }, []);
 
-    // const changeInputFileHandler = event => {
-    //     if (event.target.files[0]) {
-    //         setPhoto(event.target.files[0]);
-    //     }
-    // };
-
-    // const uploadHandler = () => {
-    //     upload(photo, auth.currentUser);
-    // };
+    const fileHandler = async (event) => {
+        if (event.target.files[0]) {
+            setImage(event.target.files[0]);
+        }
+    };
+    console.log(image);
+    const uploadHandler = async () => {
+        const imageRef = await ref(storage, "wwwimage");
+        await uploadBytes(imageRef, image);
+        const fileUrl = await getDownloadURL(imageRef);
+        // console.log(fileRef)
+        setPhotoUrl(fileUrl);
+        // updateProfile(auth.currentUser, { photoURL: fileUrl });
+    };
 
     const changeEmailHandler = async () => {
         try {
@@ -50,14 +57,14 @@ const AuthProfile = () => {
             console.log(err);
         }
     };
-
+    console.log(auth.currentUser?.photoURL);
     return (
         <Card className={classes['profile_container']} >
             <div className={classes["user-img-wrapper"]}>
-                <img /*src={photoUrl}*/ alt="" />
+                <img src={photoUrl} alt="" />
                 <div className={classes['file-wrapper']}>
-                    <input type="file" /*onChange={changeInputFileHandler}*/ />
-                    <Button /*onClick={uploadHandler}*/ className={classes["user-btn"]}>Upload</Button>
+                    <input type="file" onChange={fileHandler} />
+                    <Button onClick={uploadHandler} className={classes["user-btn"]}>Upload</Button>
                 </div>
             </div>
             <div className={classes["user-info"]}>
