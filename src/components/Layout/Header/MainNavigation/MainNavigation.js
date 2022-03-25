@@ -58,19 +58,19 @@ const MainNavigation = () => {
                                         Create
                                     </NavLink>
                                 </li>
-                                <li>
-                                    <button onClick={logoutHandler}>
-                                        Logout
-                                    </button>
-                                </li>
+                                
                                 <li>
                                     <NavLink activeClassName={classes.active} to='/profile'>
                                         <div className={classes["image-wrapper"]}>
                                             {photoUrl && <img src={photoUrl} />}
                                             {!photoUrl && <img src={avatar} />}
-                                            {/* <img src={avatar} alt="" /> */}
                                         </div>
                                     </NavLink>
+                                </li>
+                                <li>
+                                    <button onClick={logoutHandler}>
+                                        Logout
+                                    </button>
                                 </li>
                             </>
                         )}
