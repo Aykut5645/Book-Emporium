@@ -21,7 +21,6 @@ const MainNavigation = () => {
             }
         });
     }, []);
-
     return (
         <Fragment>
             <Link to='/' style={{ textDecoration: 'none' }}>
@@ -58,12 +57,11 @@ const MainNavigation = () => {
                                         Create
                                     </NavLink>
                                 </li>
-                                
                                 <li>
                                     <NavLink activeClassName={classes.active} to='/profile'>
                                         <div className={classes["image-wrapper"]}>
-                                            {photoUrl && <img src={photoUrl} />}
-                                            {!photoUrl && <img src={avatar} />}
+                                            {photoUrl && <img src={photoUrl} alt=""/>}
+                                            {!photoUrl && <img src={avatar} alt=""/>}
                                         </div>
                                     </NavLink>
                                 </li>
