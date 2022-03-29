@@ -60,8 +60,8 @@ const MainNavigation = () => {
                                 <li>
                                     <NavLink activeClassName={classes.active} to='/profile'>
                                         <div className={classes["image-wrapper"]}>
-                                            {photoUrl && <img src={photoUrl} alt=""/>}
-                                            {!photoUrl && <img src={avatar} alt=""/>}
+                                            {photoUrl && <img src={photoUrl} alt="" />}
+                                            {!photoUrl && <img src={avatar} alt="" />}
                                         </div>
                                     </NavLink>
                                 </li>

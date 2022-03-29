@@ -11,6 +11,9 @@ const Header = props => {
             <header className={classes.header}>
                 <MainNavigation />
                 <HeaderCartButton onShowCart={props.onShowCart} />
+                <button className={classes['hamburger-btn']}>
+                    <i class="fas fa-bars"></i>
+                </button>
             </header>
         </Fragment>
     );

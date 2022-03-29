@@ -13,3 +13,18 @@
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
     z-index: 1;
 }
+
+.hamburger-btn {
+    padding: 0.6rem 0.8rem;
+    border: none;
+    border-radius: 3px;
+}
+
+.hamburger-btn:hover {
+    background-color: #c69f26;
+    cursor: pointer;
+}
+
+.hamburger-btn i {
+    font-size: 1.3rem;
+}
