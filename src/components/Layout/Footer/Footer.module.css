@@ -4,7 +4,6 @@
     color: rgba(255, 255, 255, 0.85);;
     border-top: 8px solid #c69f26;
     display: flex;
-    bottom: 0;
     justify-content: space-evenly;
     padding: 15px 50px;
     background: hsl(349, 73%, 19%);

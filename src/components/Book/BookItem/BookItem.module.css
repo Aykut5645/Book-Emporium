@@ -1,5 +1,6 @@
 .book {
     width: 30%;
+    min-width: 270px;
     padding: 2rem 0.3rem;
     color: white;
     font-style: 0.8rem;
