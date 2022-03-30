@@ -11,13 +11,18 @@
     align-items: center;
     padding: 20px 60px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-    z-index: 1;
+}
+
+.initial-header {
+    font-size: 1.8rem;
+    color: white;
 }
 
 .hamburger-btn {
     padding: 0.6rem 0.8rem;
     border: none;
     border-radius: 3px;
+    display: none;
 }
 
 .hamburger-btn:hover {
@@ -27,4 +32,23 @@
 
 .hamburger-btn i {
     font-size: 1.3rem;
+}
+
+.side-nav {
+    display: none;
+
+}
+
+@media (max-width: 1085px) {
+    .main-nav {
+        display: none;
+    }
+
+    .hamburger-btn {
+        display: block;
+    }
+
+    .side-nav {
+        display: block;
+    }
 }

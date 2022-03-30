@@ -1,10 +1,17 @@
+import { Fragment } from 'react';
+
+import Backdrop from '../../../UI/Backdrop/Backdrop';
 import classes from './SideDrawer.module.css';
 
-const SideDrawer = ({ children }) => {
+const SideDrawer = props => {
+    console.log(props);
     return (
-        <aside className={classes['side-drawer']}>
-            {children}
-        </aside>
+        <Fragment>
+            <Backdrop onClick={props.onClose} width={'55%'} />
+            <aside className={classes['side-drawer']} onClick={props.onClose}>
+                {props.children}
+            </aside>
+        </Fragment>
     );
 };
 

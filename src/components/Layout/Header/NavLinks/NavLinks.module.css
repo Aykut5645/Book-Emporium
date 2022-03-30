@@ -69,34 +69,12 @@
     border: 3px solid #c69f26;
 }
 
-@media (max-width: 800px) {
-    .nav {
-        background-color: aquamarine;
+@media (max-width: 1085px) {
+    .list {
+        flex-direction: column;
     }
 
-    .nav ul {
-      flex-direction: column;
+    .list li {
+        margin: 2rem 0;
     }
-  
-    /* /* .nav li {
-      margin: 0 0.5rem;
-    }
-  
-    .nav a {
-      color: white;
-      text-decoration: none;
-    } 
-  /*
-    .nav button {
-      border: 1px solid white;
-      color: white;
-      background: transparent;
-    }
-    
-    .nav button:hover,
-    .nav button:active {
-      background: #f8df00;
-      color: #292929;
-    } */
 }
-  

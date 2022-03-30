@@ -4,7 +4,12 @@ import classes from './Backdrop.module.css';
 
 const Backdrop = props => {
     return createPortal(
-        <div className={classes.backdrop} onClick={props.onClick}></div>,
+        <div
+            style={{ width: props.width }}
+            className={classes.backdrop}
+            onClick={props.onClick}
+        >
+        </div>,
         document.getElementById('backdrop')
     );
 };
