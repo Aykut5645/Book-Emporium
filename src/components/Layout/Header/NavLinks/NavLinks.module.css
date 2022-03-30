@@ -1,11 +1,5 @@
-.nav {
+.list {
     height: 5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
@@ -14,17 +8,17 @@
     text-align: center;
 }
 
-.nav li {
+.list li {
     margin: 0 2rem;
 }
 
-.nav a {
+.list a {
     text-decoration: none;
     color: white;
     font-weight: bold;
 }
 
-.nav button {
+.list button {
     font: inherit;
     background-color: transparent;
     border: 1px solid white;
@@ -35,14 +29,14 @@
     cursor: pointer;
 }
 
-.nav a:hover,
-.nav a:active,
-.nav a.active {
+.list a:hover,
+.list a:active,
+.list a.active {
     color: #c69f26;
     border-bottom: 3px solid #c69f26;
 }
 
-.nav button:hover {
+.list button:hover {
     background-color: #c69f26;
     color: #540D1A;
     border-color: #540D1A;
@@ -54,11 +48,11 @@
     margin: 0;
 }
 
-.logo-nav {
+.logo-list {
     color: white;
 }
 
-.logo-nav:hover {
+.logo-list:hover {
     color: #c69f26;
 }
 
