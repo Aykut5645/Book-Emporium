@@ -8,8 +8,10 @@ import { auth } from '../../../../firebase-config';
 import classes from './MainNavigation.module.css';
 
 import avatar from '../../../../assets/avatar.jpg';
+
 const MainNavigation = () => {
     const [photoUrl, setPhotoUrl] = useState();
+    
     const authCtx = useContext(AuthContext);
     const logoutHandler = () => {
         authCtx.logout();
@@ -21,61 +23,53 @@ const MainNavigation = () => {
             }
         });
     }, []);
+
     return (
-        <Fragment>
-            <Link to='/' style={{ textDecoration: 'none' }}>
-                <h1 className={classes["logo-header"]}>
-                    Book Emporium
-                </h1>
-            </Link>
-            <header className={classes.header}>
-                <nav>
-                    <ul>
-                        {!authCtx.isLoggedIn && (
-                            <>
-                                <li>
-                                    <NavLink activeClassName={classes.active} to='/register'>
-                                        Register
-                                    </NavLink>
-                                </li>
-                                <li>
-                                    <NavLink activeClassName={classes.active} to='/login'>
-                                        Login
-                                    </NavLink>
-                                </li>
-                            </>
-                        )}
+        <nav className={classes.nav}>
+            <ul>
+                {!authCtx.isLoggedIn && (
+                    <>
                         <li>
-                            <NavLink activeClassName={classes.active} to='/books'>
-                                Books
+                            <NavLink activeClassName={classes.active} to='/register'>
+                                Register
                             </NavLink>
                         </li>
-                        {authCtx.isLoggedIn && (
-                            <>
-                                <li>
-                                    <NavLink activeClassName={classes.active} to='/create'>
-                                        Create
-                                    </NavLink>
-                                </li>
-                                <li>
-                                    <NavLink activeClassName={classes.active} to='/profile'>
-                                        <div className={classes["image-wrapper"]}>
-                                            {photoUrl && <img src={photoUrl} alt="" />}
-                                            {!photoUrl && <img src={avatar} alt="" />}
-                                        </div>
-                                    </NavLink>
-                                </li>
-                                <li>
-                                    <button onClick={logoutHandler}>
-                                        Logout
-                                    </button>
-                                </li>
-                            </>
-                        )}
-                    </ul>
-                </nav>
-            </header>
-        </Fragment>
+                        <li>
+                            <NavLink activeClassName={classes.active} to='/login'>
+                                Login
+                            </NavLink>
+                        </li>
+                    </>
+                )}
+                <li>
+                    <NavLink activeClassName={classes.active} to='/books'>
+                        Books
+                    </NavLink>
+                </li>
+                {authCtx.isLoggedIn && (
+                    <>
+                        <li>
+                            <NavLink activeClassName={classes.active} to='/create'>
+                                Create
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink activeClassName={classes.active} to='/profile'>
+                                <div className={classes["image-wrapper"]}>
+                                    {photoUrl && <img src={photoUrl} alt="" />}
+                                    {!photoUrl && <img src={avatar} alt="" />}
+                                </div>
+                            </NavLink>
+                        </li>
+                        <li>
+                            <button onClick={logoutHandler}>
+                                Logout
+                            </button>
+                        </li>
+                    </>
+                )}
+            </ul>
+        </nav>
     );
 };
 
