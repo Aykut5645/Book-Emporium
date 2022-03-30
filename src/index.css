@@ -26,15 +26,6 @@ main {
     width: 100%;
 }
 
-.initial-btn {
-    display: block;
-    margin: 0 auto;
-    padding: 2rem 4rem;
-    font-size: 1.1rem !important;
-    font-weight: bold !important;
-    border: 6px solid !important;
-}
-
 a {
     text-decoration: none;
 }

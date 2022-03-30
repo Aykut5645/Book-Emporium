@@ -1,6 +1,7 @@
 .summary {
     padding: 3rem;
     width: 60%;
+    min-width: 25rem;
     text-align: center;
     color: white;
     background-color: #540D1A;
@@ -14,4 +15,17 @@
 .summary h2 {
     font-size: 2rem;
     margin-top: 0;
+}
+
+.summary button {
+    padding: 1.5rem 6rem;
+    margin-top: 2rem;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+@media (max-width: 680px) {
+    .summary {
+        margin-top: 20rem;
+    }
 }

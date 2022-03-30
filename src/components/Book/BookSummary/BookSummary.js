@@ -1,3 +1,7 @@
+import { Link } from 'react-router-dom';
+
+import Button from '../../UI/Button/Button';
+
 import classes from './BookSummary.module.css';
 
 const BookSummary = () => {
@@ -10,6 +14,9 @@ const BookSummary = () => {
             <p>
                 Here you can find the title you are looking for!
             </p>
+            <Link to="/books">
+                <Button>See Books</Button>
+            </Link>
         </section>
     );
 };
