@@ -24,6 +24,12 @@
     font-size: 1.5rem;
 }
 
+
+.summary button:hover {
+    color: #540D1A;
+    background-color: #c69f26;
+}
+
 @media (max-width: 680px) {
     .summary {
         margin-top: 18rem;

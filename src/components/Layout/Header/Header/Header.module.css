@@ -18,6 +18,10 @@
     color: white;
 }
 
+.initial-header:hover {
+    color: #c69f26;
+}
+
 .hamburger-btn {
     padding: 0.6rem 0.8rem;
     border: none;
