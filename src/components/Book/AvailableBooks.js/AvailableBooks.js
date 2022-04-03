@@ -55,6 +55,7 @@ import classes from './AvailableBooks.module.css';
 // ];
 
 const AvailableBooks = ({ books }) => {
+    console.log(books);
     return (
         <ul className={classes.books}>
             {books.map(book =>

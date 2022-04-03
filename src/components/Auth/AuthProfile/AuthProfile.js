@@ -2,6 +2,8 @@ import { updateEmail, updatePassword, updateProfile } from 'firebase/auth';
 
 import { auth, storage } from '../../../firebase-config';
 
+import avatar from '../../../assets/avatar.jpg';
+
 import Card from '../../UI/Card/Card';
 import Button from '../../UI/Button/Button';
 import classes from './AuthProfile.module.css';
@@ -57,11 +59,11 @@ const AuthProfile = () => {
             console.log(err);
         }
     };
-    console.log(auth.currentUser?.photoURL);
+
     return (
         <Card className={classes['profile_container']} >
             <div className={classes["user-img-wrapper"]}>
-                <img src={photoUrl} alt="" />
+                <img src={photoUrl || avatar} alt="" />
                 <div className={classes['file-wrapper']}>
                     <input type="file" onChange={fileHandler} />
                     <Button onClick={uploadHandler} className={classes["user-btn"]}>Upload</Button>

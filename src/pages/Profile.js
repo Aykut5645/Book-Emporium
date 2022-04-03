@@ -16,7 +16,9 @@ const Profile = () => {
         (async () => {
             const data = await getDocs(collection(db, 'books'));
             setLoading(false);
-            setBooks(data.docs.filter(doc => auth.currentUser.uid === doc.data().credentials.id));
+            setBooks(
+                data.docs.filter(doc => auth.currentUser?.uid === doc.data().credentials.id)
+            );
         })();
     }, []);
 
