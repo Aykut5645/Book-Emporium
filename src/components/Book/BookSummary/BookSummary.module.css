@@ -26,6 +26,22 @@
 
 @media (max-width: 680px) {
     .summary {
-        margin-top: 20rem;
+        margin-top: 18rem;
+    }
+
+    .summary h2 {
+        font-size: 1.6rem;
+        margin-top: 0;
+    }
+
+    .summary p {
+        font-size: 0.8rem;
+    }
+
+    .summary button {
+        padding: 1.5rem 6rem;
+        margin-top: 2rem;
+        font-weight: bold;
+        font-size: 1.2rem;
     }
 }

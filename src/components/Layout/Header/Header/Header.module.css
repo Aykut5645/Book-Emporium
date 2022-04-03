@@ -63,3 +63,9 @@
         margin-top: 1.3rem;
     }
 }
+
+@media (max-width: 370px) {
+    .initial-header {
+        text-align: center;
+    }
+}

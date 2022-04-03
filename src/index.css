@@ -21,9 +21,11 @@ main {
 }
 
 .initial-image {
-    background-image: url('./assets/uU8wbS.jpg');
+    background: url('./assets/uU8wbS.jpg') center/cover;
     height: 100vh;
     width: 100%;
+    position: fixed;
+    z-index: -1;
 }
 
 a {

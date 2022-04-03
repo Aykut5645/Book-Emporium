@@ -9,6 +9,7 @@ import { Fragment } from 'react/cjs/react.production.min';
 
 const Cart = props => {
     const cartCtx = useContext(CartContext);
+    console.log(cartCtx.totalAmount);
     const totalAmount = `$${cartCtx.totalAmount.toFixed(2)}`;
     // const hasItems = cartCtx.items.length > 0;
     
