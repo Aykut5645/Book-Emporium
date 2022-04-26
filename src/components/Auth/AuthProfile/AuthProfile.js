@@ -30,7 +30,6 @@ const AuthProfile = () => {
             setImage(event.target.files[0]);
         }
     };
-    console.log(image);
     const uploadHandler = async () => {
         const imageRef = await ref(storage, "wwwimage");
         await uploadBytes(imageRef, image);

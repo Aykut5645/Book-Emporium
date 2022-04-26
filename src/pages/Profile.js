@@ -15,13 +15,14 @@ const Profile = () => {
         setLoading(true);
         (async () => {
             const data = await getDocs(collection(db, 'books'));
-            setLoading(false);
             setBooks(
-                data.docs.filter(doc => auth.currentUser?.uid === doc.data().credentials.id)
+                data.docs
+                    .filter(doc => auth.currentUser?.uid === doc.data().credentials.id)
+                    .map(doc => ({ ...doc.data(), id: doc.id }))
             );
         })();
+        setLoading(false);
     }, []);
-
     return (
         <Fragment>
             {loading && <LoadingSpinner />}

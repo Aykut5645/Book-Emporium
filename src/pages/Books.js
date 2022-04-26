@@ -11,18 +11,18 @@ const Books = () => {
     let [books, setBooks] = useState([]);
     const [searchValue, setSearchValue] = useState(null);
     const [loading, setLoading] = useState(true);
-    
+
     useEffect(() => {
         setLoading(true);
         (async () => {
             const data = await getDocs(collection(db, 'books'));
-            setLoading(false);
             setBooks(
                 data.docs.map(doc => ({ ...doc.data(), id: doc.id }))
             );
         })();
+        setLoading(false);
     }, []);
-    
+
     const searchHandler = enteredValue => {
         setSearchValue(enteredValue);
     };
@@ -32,7 +32,7 @@ const Books = () => {
             return book.title.toLocaleLowerCase().includes(searchValue.toLocaleLowerCase())
         });
     }
-    
+
     return (
         <Fragment>
             <SearchBookBar onSearch={searchHandler} />
