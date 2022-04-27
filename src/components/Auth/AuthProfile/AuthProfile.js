@@ -9,19 +9,18 @@ import Button from '../../UI/Button/Button';
 import classes from './AuthProfile.module.css';
 import { useState, useEffect } from 'react';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
-// import { useState } from 'react';
-// import image from '../../../assets/avatar.jpg';
 
 const AuthProfile = () => {
-    // const [books, setBooks] = useState();
-    // const [loading, setLoading] = useState(true);
     const [image, setImage] = useState(null);
     const [photoUrl, setPhotoUrl] = useState(null);
-    // const [photoUrl, setPhotoUrl] = useState(image);
 
     useEffect(() => {
+        console.log('started!!!');
         if (auth.currentUser?.photoURL) {
+            console.log(auth.currentUser.photoURL);
             setPhotoUrl(auth.currentUser.photoURL);
+        } else {
+            console.log(auth.currentUser);
         }
     }, []);
 
@@ -34,7 +33,6 @@ const AuthProfile = () => {
         const imageRef = await ref(storage, "wwwimage");
         await uploadBytes(imageRef, image);
         const fileUrl = await getDownloadURL(imageRef);
-        // console.log(fileRef)
         setPhotoUrl(fileUrl);
         updateProfile(auth.currentUser, { photoURL: fileUrl });
     };
@@ -60,24 +58,29 @@ const AuthProfile = () => {
     };
 
     return (
-        <Card className={classes['profile_container']} >
-            <div className={classes["user-img-wrapper"]}>
-                <img src={photoUrl || avatar} alt="" />
-                <div className={classes['file-wrapper']}>
-                    <input type="file" onChange={fileHandler} />
-                    <Button onClick={uploadHandler} className={classes["user-btn"]}>Upload</Button>
+        <Card className={classes.container} >
+            <h1 className={classes['user-title']}>Change your credentials</h1>
+            <div className={classes["user-img"]}>
+                <div className={classes["user-img-wrapper"]}>
+                    <img src={photoUrl} alt="" />
+                </div>
+                <div className={classes['user-img-file-wrapper']}>
+                    <input id="file-upload" type="file" onChange={fileHandler} />
+                    <label htmlFor="file-upload">Choose a file...</label>
+                    <Button onClick={uploadHandler} className={classes["user-btn"]}>
+                        Upload
+                    </Button>
                 </div>
             </div>
             <div className={classes["user-info"]}>
-                <h2>Change your credentials</h2>
-                <div className={classes["user-credentials"]}>
+                <div className={classes["user-info-credential"]}>
                     <label htmlFor='title'>New Email</label>
                     <input type='email' id='email' name='email' />
                     <Button className={classes['user-btn']} onClick={changeEmailHandler}>
                         Change Email
                     </Button>
                 </div>
-                <div className={classes["user-credentials"]}>
+                <div className={classes["user-info-credential"]}>
                     <label htmlFor='password'>New Password</label>
                     <input type='password' id='password' name='password' />
                     <Button className={classes['user-btn']} onClick={changePasswordHandler}>

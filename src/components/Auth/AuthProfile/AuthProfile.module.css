@@ -1,17 +1,30 @@
-.profile_container {
+.container {
     width: 90%;
     margin: 10rem auto;
     display: inline-flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    padding: 4rem 1.5rem;
     margin-bottom: 2.5rem;
+    padding: 3rem 0;
+}
+
+.user-title {
+    color: white;
+    text-align: center;
+    max-width: 15rem;
+}
+
+.user-img {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 .user-img-wrapper {
-    width: 20%;
-    height: 12rem;
+    width: 17rem;
+    height: 17rem;
+    margin-right: 3rem;
 }
 
 .user-img-wrapper img {
@@ -19,7 +32,12 @@
     width: 100%;
     border-radius: 50%;
     border: 5px solid #c69f26;
-    margin-right: 0.5rem;
+}
+
+.user-img-file-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
 }
 
 .file-label:hover {
@@ -29,32 +47,60 @@
 .user-info {
     text-align: center;
     display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
-.user-info h2 {
-    color: #c69f26;
+.user-info-credential {
+    margin: 1rem 0;
 }
 
-.user-credentials label {
+.user-info-credential label {
+    margin-top: 1rem;
     margin-right: 1rem;
     display: block;
     color: #c69f26;
     font-weight: bold;
     font-size: 1.24rem;
+    text-align: center;
 }
 
-.user-credentials input {
+.user-info-credential input {
     font-size: 1.24rem;
     margin-top: 1rem;
+    margin-right: 1rem;
     background-color: #f1e1fc;
     border-radius: 4px;
+    display: block;
 }
 
 .user-btn {
     padding: 0.5rem 1.5rem;
     margin-top: 1rem;
+    font-size: 1rem;
 }
 
 .books_container {
     width: 90%;
+}
+
+[type="file"] {
+    display: none;
+}
+
+[type="file"]+label {
+    color: white;
+    border-radius: 5px;
+    border: 2px solid #c69f26;
+    box-shadow: 0 1px 4px rgb(0 0 0 / 50%);
+    background-color: rgb(51, 0, 0);
+    padding: 0.5rem 1.5rem;
+    margin-top: 1rem;
+}
+
+[type="file"]+label:hover {
+    background-color: #c69f26;
+    border: 2px solid rgb(51, 0, 0);
+    color: rgb(51, 0, 0);
+    cursor: pointer;
 }
