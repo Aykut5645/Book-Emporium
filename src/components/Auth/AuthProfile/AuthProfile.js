@@ -1,6 +1,6 @@
-import { updateEmail, updatePassword, updateProfile } from 'firebase/auth';
+import { onAuthStateChanged, updateEmail, updatePassword, updateProfile } from 'firebase/auth';
 
-import { auth, storage } from '../../../firebase-config';
+import { storage, auth } from '../../../firebase-config';
 
 import avatar from '../../../assets/avatar.jpg';
 
@@ -9,19 +9,19 @@ import Button from '../../UI/Button/Button';
 import classes from './AuthProfile.module.css';
 import { useState, useEffect } from 'react';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
+import useAuth from '../../../hooks/use-hook';
 
 const AuthProfile = () => {
+    const currentUser = useAuth();
     const [image, setImage] = useState(null);
     const [photoUrl, setPhotoUrl] = useState(null);
 
     useEffect(() => {
-        console.log('started!!!');
-        if (auth.currentUser?.photoURL) {
-            console.log(auth.currentUser.photoURL);
-            setPhotoUrl(auth.currentUser.photoURL);
-        } else {
-            console.log(auth.currentUser);
-        }
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                setPhotoUrl(user.photoURL);
+            }
+        });
     }, []);
 
     const fileHandler = async (event) => {
@@ -34,12 +34,12 @@ const AuthProfile = () => {
         await uploadBytes(imageRef, image);
         const fileUrl = await getDownloadURL(imageRef);
         setPhotoUrl(fileUrl);
-        updateProfile(auth.currentUser, { photoURL: fileUrl });
+        updateProfile(currentUser, { photoURL: fileUrl });
     };
 
     const changeEmailHandler = async () => {
         try {
-            await updateEmail(auth.currentUser, 'po@po.sx');
+            await updateEmail(currentUser, 'po@po.sx');
             console.log('email updated!!!');
         } catch (err) {
             console.log('change email => FAILED');
@@ -49,7 +49,7 @@ const AuthProfile = () => {
 
     const changePasswordHandler = async () => {
         try {
-            await updatePassword(auth.currentUser, '555555');
+            await updatePassword(currentUser, '555555');
             console.log('password updated!!!');
         } catch (err) {
             console.log('change password => FAILED');

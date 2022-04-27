@@ -17,20 +17,7 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-export const storage = getStorage();
 
+export const storage = getStorage();
 export const db = getFirestore(app);
 export const auth = getAuth(app);
-
-// storage
-// export const upload = async (file, currentUser) => {
-//     const fileRef = ref(storage, currentUser.uid + '.jpeg');
-
-//     setLoading(true);
-//     const snapshot = await uploadBytes(fileRef, file);
-//     const photoUrl = await getDownloadURL(fileRef);
-
-//     updateProfile(currentUser, { photoUrl });
-//     setLoading(false);
-//     alert('Uploaded file!!!');
-// };

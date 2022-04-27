@@ -4,7 +4,6 @@ import Backdrop from '../../../UI/Backdrop/Backdrop';
 import classes from './SideDrawer.module.css';
 
 const SideDrawer = props => {
-    console.log(props);
     return (
         <Fragment>
             <Backdrop onClick={props.onClose} width={'55%'} />
