@@ -1,33 +1,19 @@
 @import url("https://use.fontawesome.com/releases/v5.15.3/css/all.css");
 
 .footer {
-    color: rgba(255, 255, 255, 0.85);;
+    color: rgba(255, 255, 255, 0.85);
     border-top: 8px solid #c69f26;
     display: flex;
-    justify-content: space-evenly;
-    padding: 15px 50px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2.2rem 4rem;
     background: hsl(349, 73%, 19%);
     width: 100%;
 }
 
-.footer_col_list {
-    padding-left: 0;
-}
-
-.footer_col_item {
-    list-style-type: none;
-}
-
-.footer_col_item a {
-    text-decoration: none;
-    color: white;
-    line-height: 28px;
-}
-
-.footer_col span i {
-    font-size: 30px;
-}
-
-.footer_col span i:nth-child(1) {
-    margin-right: 10px;
+.footer-icons {
+    display: flex;
+    justify-content: space-around;
+    font-size: 2rem;
+    width: 30%;
 }
