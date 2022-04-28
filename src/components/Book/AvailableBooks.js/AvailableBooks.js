@@ -55,11 +55,10 @@ import classes from './AvailableBooks.module.css';
 // ];
 
 const AvailableBooks = ({ books }) => {
-    console.log(books);
     return (
         <ul className={classes.books}>
             {books.map(book =>
-                <BookItem key={book.credentials.id} book={book} />
+                <BookItem key={book.id} book={book} />
             )}
         </ul>
     );
