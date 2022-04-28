@@ -34,6 +34,7 @@
 .list a.active {
     color: #c69f26;
     border-bottom: 3px solid #c69f26;
+    text-decoration: none;
 }
 
 .list button:hover {

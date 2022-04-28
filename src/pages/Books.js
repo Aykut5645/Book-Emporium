@@ -9,7 +9,7 @@ import LoadingSpinner from '../components/UI/LoadingSpinner/LoadingSpinner';
 
 const Books = () => {
     let [books, setBooks] = useState([]);
-    const [searchValue, setSearchValue] = useState(null);
+    const [searchData, setSearchData] = useState({});
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
@@ -23,15 +23,23 @@ const Books = () => {
         setLoading(false);
     }, []);
 
-    const searchHandler = enteredValue => {
-        setSearchValue(enteredValue);
+    const searchHandler = searchData => {
+        setSearchData(searchData);
     };
 
-    if (searchValue) {
-        books = books.filter(book => {
-            return book.title.toLocaleLowerCase().includes(searchValue.toLocaleLowerCase())
-        });
+    if (searchData.search) {
+        let names = books.filter(book => book.title.toLocaleLowerCase().includes(searchData.search.toLocaleLowerCase()));
+        let authors = books.filter(book => book.author.toLocaleLowerCase().includes(searchData.search.toLocaleLowerCase()));
+
+        books = [...names, ...authors];
     }
+    if (searchData.from) {
+        books = books.filter(book => book.price >= searchData.from);
+    }
+    if (searchData.to) {
+        books = books.filter(book => book.price <= searchData.to);
+    }
+
 
     return (
         <Fragment>
