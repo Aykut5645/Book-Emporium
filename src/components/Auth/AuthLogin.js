@@ -1,8 +1,10 @@
+import { Link } from 'react-router-dom';
+
 import Input from '../UI/Input/Input';
 import Card from '../UI/Card/Card';
 import Button from '../UI/Button/Button';
 import useForm from '../../hooks/form-hook';
-import { VALIDATOR_REQUIRE, VALIDATOR_EMAIL, VALIDATOR_MINLENGTH } from '../../util/validators';
+import { VALIDATOR_REQUIRE, VALIDATOR_EMAIL } from '../../util/validators';
 
 import classes from './Authenticate.module.css';
 
@@ -25,7 +27,6 @@ const AuthLogin = props => {
             formState.inputs.password.value
         );
     };
-    console.log(props.firebaseError);
 
     return (
         <Card className={classes.auth}>
@@ -49,7 +50,7 @@ const AuthLogin = props => {
                     errorMessage={'Please enter a valid password.'}
                     onInput={inputHandler}
                 />
-                {props.firebaseError && <p>There is no such user.</p>}
+                {props.firebaseErrorMessage && <p className="invalid-msg">Such a user does not exist. Please try again.</p>}
                 <div className={classes.actions}>
                     <Button
                         type="submit"
@@ -60,6 +61,7 @@ const AuthLogin = props => {
                     </Button>
                 </div>
             </form>
+            <p className={classes.offer}>Don't have an account? <Link to="/register">Sign up now</Link></p>
         </Card >
     );
 };

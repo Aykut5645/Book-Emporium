@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import classes from './Authenticate.module.css';
 import Input from '../UI/Input/Input';
@@ -83,6 +84,7 @@ const AuthRegister = props => {
                     </Button>
                 </div>
             </form>
+            <p className={classes.offer}>You already have an existing account. <Link to="/login">Sign in now</Link></p>
         </Card>
     );
 };
