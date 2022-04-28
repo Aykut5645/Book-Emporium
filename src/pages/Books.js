@@ -40,7 +40,6 @@ const Books = () => {
         books = books.filter(book => book.price <= searchData.to);
     }
 
-
     return (
         <Fragment>
             <SearchBookBar onSearch={searchHandler} />

@@ -1,6 +1,9 @@
+import { useHistory } from 'react-router-dom';
+
 import classes from './SearchBookBar.module.css';
 
 const SearchBookBar = props => {
+    const history = useHistory();
     const submitHandler = event => {
         event.preventDefault();
 
@@ -14,10 +17,15 @@ const SearchBookBar = props => {
             from: Number(searchFrom),
             to: Number(searchTo)
         });
+
+        history.push({
+            pathname: '/books',
+            search: `?search=${searchValue || ''}&from=${searchFrom || ''}&to=${searchTo || ''}`
+        });
     };
 
     return (
-        <form action="/" method="GET" onSubmit={submitHandler} className={classes.example}>
+        <form method="GET" onSubmit={submitHandler} className={classes.example}>
             <h2>Search Boooks</h2>
             <input type="text" name="search" placeholder="Search by title and author..." />
             <span>{'=>'}</span>
