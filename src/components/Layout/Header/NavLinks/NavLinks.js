@@ -2,6 +2,8 @@ import { onAuthStateChanged } from 'firebase/auth';
 import { useContext, useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
+import { useHistory } from 'react-router-dom';
+
 import { AuthContext } from '../../../../contexts/auth-context';
 import { auth } from '../../../../firebase-config';
 
@@ -11,10 +13,12 @@ import avatar from '../../../../assets/avatar.jpg';
 
 const NavLinks = () => {
     const [photoUrl, setPhotoUrl] = useState();
-
     const authCtx = useContext(AuthContext);
+    const history = useHistory();
+
     const logoutHandler = () => {
         authCtx.logout();
+        history.push('/books');
     };
     useEffect(() => {
         onAuthStateChanged(auth, (user) => {
