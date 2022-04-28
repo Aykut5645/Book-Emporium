@@ -11,9 +11,9 @@ const Modal = props => {
 
     return (
         <Fragment>
-            <Backdrop onClick={portalCtx.hideCart} />,
+            <Backdrop onClick={() => { portalCtx.hideCart(); props.onHideContacts && props.onHideContacts() }} />,
             {createPortal(
-                <div className={classes.modal}>
+                <div className={`${classes.modal} ${props.className}`}>
                     {props.children}
                 </div>,
                 document.getElementById('overlays')

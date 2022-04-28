@@ -1,22 +1,27 @@
-import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import Contacts from '../../Contacts/Contacts';
 
 import classes from './Footer.module.css';
 
 const Footer = () => {
-    const [show, setShow] = useState(false);
+    const [showContacts, setShowContacts] = useState(false);
 
-    const showModalHandler = () => {
-        // setShow(true);
+    const showContactsHandler = () => {
+        setShowContacts(true);
     };
+
+    const hideContactsHandler = () => {
+        setShowContacts(false);
+    }
+
     return (
         <div className={classes.footer}>
             <div className={classes['footer-info']}>
-                <button onClick={showModalHandler}>Contacts</button>
-                <Link to="/terms">Terms and Conditions</Link>
+                <button onClick={showContactsHandler}>Contacts</button>
                 <Link to="/about">About Us</Link>
+                <Link to="/terms">Terms and Conditions</Link>
             </div>
             <div className={classes['footer-icons']}>
                 <a href="http://facebook.com"><i className="fab fa-facebook-f"></i></a>
@@ -24,7 +29,7 @@ const Footer = () => {
                 <a href="http://twitter.com"><i className="fab fa-twitter"></i></a>
             </div>
             <p>© This site is made with educational purpose only! No rights reserved!</p>
-            {show && <Contacts />}
+            {showContacts && <Contacts onHideContacts={hideContactsHandler} />}
         </div>
     );
 };

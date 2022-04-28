@@ -6,12 +6,12 @@ import CartItem from '../CartItem/CartItem';
 
 import classes from './Cart.module.css';
 import { Fragment } from 'react/cjs/react.production.min';
+import PortalContext from '../../../contexts/portal-context/portal-context';
 
 const Cart = props => {
     const cartCtx = useContext(CartContext);
-    console.log(cartCtx.totalAmount);
+    const portalCtx = useContext(PortalContext);
     const totalAmount = `$${cartCtx.totalAmount.toFixed(2)}`;
-    // const hasItems = cartCtx.items.length > 0;
     
     const cartItemRemoveHandler = id => {
         cartCtx.removeItem(id);
@@ -43,7 +43,7 @@ const Cart = props => {
             <div className={classes.actions}>
                 <button
                     className={classes['button--alt']}
-                    onClick={props.onHideCart}
+                    onClick={portalCtx.hideCart}
                 >
                     Close
                 </button>

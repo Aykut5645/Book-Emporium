@@ -1,7 +1,5 @@
-import { useState } from "react";
 import { Route, Switch } from 'react-router-dom';
 
-import Cart from './components/Cart/Cart/Cart';
 import Layout from "./components/Layout/Layout";
 
 import Home from "./pages/Home";
@@ -16,19 +14,8 @@ import About from "./pages/About/About";
 import Terms from "./pages/Terms/Terms";
 
 const App = () => {
-    const [cartIsShown, setCartIsShown] = useState(false); //TODO: try to refactoring it using context!!!
-
-    const showCartHandler = () => {
-        setCartIsShown(true);
-    };
-
-    const hideCartHandler = () => {
-        setCartIsShown(false);
-    };
-
     return (
-        <Layout onShowCart={showCartHandler}>
-            {cartIsShown && <Cart onHideCart={hideCartHandler} />}
+        <Layout>
             <Switch>
                 <Route path="/" exact>
                     <Home />

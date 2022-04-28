@@ -11,9 +11,23 @@
     width: 100%;
 }
 
+.footer-info {
+    text-align: center;
+}
+
 .footer-info a {
     display: block;
     margin: 1rem 0;
+}
+
+.footer-info button {
+    background: transparent;
+    color: white;
+    border: 3px solid white;
+    padding: 0.4rem 1.8rem;
+    border-radius: 15px;
+    cursor: pointer;
+    font: inherit;
 }
 
 .footer-icons {

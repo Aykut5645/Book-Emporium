@@ -1,0 +1,44 @@
+.container {
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    border-radius: 0;
+}
+
+.person {
+    background: #c69f26;
+    padding: 1rem;
+    border: 3px solid #540D1A;
+    margin: 0.5rem;
+}
+
+.header,
+.person span {
+    color: #540D1A;
+}
+
+.header {
+    margin-bottom: 0;
+}
+
+.info {
+    font-style: italic;
+}
+
+.btn {
+    padding: 1rem 4rem;
+    border-radius: 18px;
+    font: inherit;
+    border: 3px solid #540D1A;
+    color: #540D1A;
+    display: block;
+    margin: 0 auto;
+    margin-top: 2rem;
+}
+
+.btn:hover {
+    background: #540D1A;
+    border-color: white;
+    color: white;
+    cursor: pointer;
+}
