@@ -13,6 +13,7 @@ import Edit from "./pages/Edit";
 import Create from "./pages/Create";
 import Profile from "./pages/Profile";
 import About from "./pages/About/About";
+import Terms from "./pages/Terms/Terms";
 
 const App = () => {
     const [cartIsShown, setCartIsShown] = useState(false); //TODO: try to refactoring it using context!!!
@@ -55,6 +56,9 @@ const App = () => {
                 </Route>
                 <Route path="/about">
                     <About />
+                </Route>
+                <Route path="/terms">
+                    <Terms />
                 </Route>
             </Switch>
         </Layout>
