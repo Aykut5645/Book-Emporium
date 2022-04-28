@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { useHistory } from "react-router-dom";
 
 import AuthRegister from "../components/Auth/AuthRegister";
@@ -7,12 +7,11 @@ import { AuthContext } from '../contexts/auth-context'
 import { auth } from "../firebase-config";
 
 const Register = () => {
+    let [firebaseErrorMessage, setfirebaseErrorMessage] = useState();
     const history = useHistory();
     const authCtx = useContext(AuthContext);
 
     const registerHandler = async (enteredEmail, enteredPassword) => {
-        console.log(enteredEmail, enteredPassword);
-
         try {
             const user = await createUserWithEmailAndPassword(
                 auth,
@@ -24,11 +23,12 @@ const Register = () => {
         } catch (error) {
             console.log('IN ERROR');
             console.log('>>> ', error.message);
+            setfirebaseErrorMessage(error.message);
         }
     };
 
     return (
-        <AuthRegister onRegister={registerHandler} />
+        <AuthRegister onRegister={registerHandler} firebaseErrorMessage={firebaseErrorMessage}/>
     );
 };
 

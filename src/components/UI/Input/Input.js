@@ -82,7 +82,7 @@ const Input = props => {
             <label htmlFor={props.id}>{props.label}</label>
             {element}
             {!inputState.isValid && inputState.isTouched &&
-                <p className={classes.invalid}>
+                <p className={'invalid-msg'}>
                     {props.errorMessage}
                 </p>
             }

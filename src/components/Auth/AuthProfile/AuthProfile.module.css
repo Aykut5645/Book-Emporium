@@ -56,7 +56,6 @@
 }
 
 .user-info-credential label {
-    margin-top: 1rem;
     margin-right: 1rem;
     display: block;
     color: #c69f26;
@@ -103,4 +102,11 @@
     border: 2px solid rgb(51, 0, 0);
     color: rgb(51, 0, 0);
     cursor: pointer;
+}
+
+@media (max-width: 1215px) {
+    .container {
+        width: 90%;
+        flex-direction: column;
+    }
 }

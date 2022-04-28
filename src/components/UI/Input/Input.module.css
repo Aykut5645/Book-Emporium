@@ -31,8 +31,3 @@
     border-color: red;
     background: #ffd1d1;
 }
-
-.invalid p {
-    color: red;
-    font-style: italic;
-}

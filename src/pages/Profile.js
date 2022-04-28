@@ -23,6 +23,7 @@ const Profile = () => {
         })();
         setLoading(false);
     }, []);
+    
     return (
         <Fragment>
             {loading && <LoadingSpinner />}

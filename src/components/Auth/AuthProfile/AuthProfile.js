@@ -62,7 +62,7 @@ const AuthProfile = () => {
             <h1 className={classes['user-title']}>Change your credentials</h1>
             <div className={classes["user-img"]}>
                 <div className={classes["user-img-wrapper"]}>
-                    <img src={photoUrl} alt="" />
+                    <img src={photoUrl || avatar} alt="" />
                 </div>
                 <div className={classes['user-img-file-wrapper']}>
                     <input id="file-upload" type="file" onChange={fileHandler} />
