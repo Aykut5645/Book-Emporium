@@ -40,7 +40,7 @@ const Header = props => {
                     </>
                 )
             }
-            <HeaderCartButton onShowCart={props.onShowCart} />
+            <HeaderCartButton />
             <button className={classes['hamburger-btn']} onClick={openDrawerHandler}>
                 <i className="fas fa-bars"></i>
             </button>

@@ -1,28 +1,21 @@
-import { Fragment } from 'react';
+import { Fragment, useContext } from 'react';
 import { createPortal } from 'react-dom';
+import PortalContext from '../../../contexts/portal-context/portal-context';
 
 import Backdrop from '../Backdrop/Backdrop';
 
 import classes from './Modal.module.css';
 
-const ModalOverlay = props => {
-    return (
-        <div className={classes.modal}>
-            <div className={classes.content}>
-                {props.children}
-            </div>
-        </div>
-    );
-};
-
 const Modal = props => {
+    const portalCtx = useContext(PortalContext);
+
     return (
         <Fragment>
-            <Backdrop onHideCart={props.onHideCart} />,
+            <Backdrop onClick={portalCtx.hideCart} />,
             {createPortal(
-                <ModalOverlay>
+                <div className={classes.modal}>
                     {props.children}
-                </ModalOverlay>,
+                </div>,
                 document.getElementById('overlays')
             )}
         </Fragment>

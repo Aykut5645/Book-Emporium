@@ -14,7 +14,7 @@ const PortalProvider = props => {
     };
 
     const portalContext = {
-        cartIsShow: cartIsShown,
+        cartIsShown,
         showCart: showCartHandler,
         hideCart: hideCartHandler
     };
