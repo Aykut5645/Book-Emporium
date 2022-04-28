@@ -11,6 +11,11 @@
     width: 100%;
 }
 
+.footer-info a {
+    display: block;
+    margin: 1rem 0;
+}
+
 .footer-icons {
     display: flex;
     justify-content: space-around;
