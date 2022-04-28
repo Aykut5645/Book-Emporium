@@ -1,0 +1,29 @@
+.container {
+    margin: 10rem 6rem;
+    padding: 4rem 6rem;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+}
+
+.container h1 {
+    margin-top: 0;
+    margin-bottom: 3rem;
+}
+
+.books-info {
+    width: 50%;
+}
+
+.books-img-wrapper {
+    width: 30%;
+    min-width: 380px;
+    height: 520px;
+}
+
+.books-img-wrapper img {
+    height: 100%;
+    width: 100%;
+    border: 5px solid #c69f26;
+    border-radius: 5px;
+}

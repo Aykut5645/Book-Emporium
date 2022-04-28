@@ -7,7 +7,6 @@ import Button from '../../UI/Button/Button';
 import classes from './BookDetails.module.css';
 
 const BookDetails = props => {
-    console.log(props);
     return (
         <Card className={classes.container}>
             <div className={classes['book-content']}>

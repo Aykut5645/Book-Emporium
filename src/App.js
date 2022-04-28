@@ -12,6 +12,7 @@ import Details from "./pages/Details";
 import Edit from "./pages/Edit";
 import Create from "./pages/Create";
 import Profile from "./pages/Profile";
+import About from "./pages/About/About";
 
 const App = () => {
     const [cartIsShown, setCartIsShown] = useState(false); //TODO: try to refactoring it using context!!!
@@ -51,6 +52,9 @@ const App = () => {
                 </Route>
                 <Route path="/books/:bookId/edit">
                     <Edit />
+                </Route>
+                <Route path="/about">
+                    <About />
                 </Route>
             </Switch>
         </Layout>
