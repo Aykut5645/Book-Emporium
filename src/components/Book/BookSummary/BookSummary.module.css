@@ -18,16 +18,17 @@
 }
 
 .summary button {
-    padding: 1.5rem 6rem;
+    padding: 1.5rem 3rem;
     margin-top: 2rem;
     font-weight: bold;
     font-size: 1.5rem;
+    color: #540D1A;
+    background-color: #c69f26;
 }
 
 
 .summary button:hover {
-    color: #540D1A;
-    background-color: #c69f26;
+    cursor: pointer;
 }
 
 @media (max-width: 680px) {

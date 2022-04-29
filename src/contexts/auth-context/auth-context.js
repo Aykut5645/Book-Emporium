@@ -1,13 +1,8 @@
-import { createContext, useState } from "react";
+import { useState } from "react";
 
-export const AuthContext = createContext({
-    token: '',
-    isLoggedIn: false,
-    login: token => { },
-    logout: () => { }
-});
+import AuthContext from "./AuthProvider";
 
-export const AuthContextProvider = props => {
+const AuthProvider = props => {
     const initialToken = localStorage.getItem('token');
     const [token, setToken] = useState(initialToken);
 
@@ -36,3 +31,5 @@ export const AuthContextProvider = props => {
         </AuthContext.Provider>
     );
 };
+
+export default AuthProvider;

@@ -1,15 +1,12 @@
-import { onAuthStateChanged } from 'firebase/auth';
 import { useContext, useEffect, useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { useHistory, NavLink } from 'react-router-dom';
 
-import { useHistory } from 'react-router-dom';
-
-import { AuthContext } from '../../../../contexts/auth-context';
+import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from '../../../../firebase-config';
+import AuthContext from '../../../../contexts/auth-context/AuthProvider';
+import avatar from '../../../../assets/avatar.jpg';
 
 import classes from './NavLinks.module.css';
-
-import avatar from '../../../../assets/avatar.jpg';
 
 const NavLinks = () => {
     const [photoUrl, setPhotoUrl] = useState();

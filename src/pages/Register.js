@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 
 import AuthRegister from "../components/Auth/AuthRegister";
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { AuthContext } from '../contexts/auth-context'
+import AuthContext from "../contexts/auth-context/AuthProvider";
 import { auth } from "../firebase-config";
 
 const Register = () => {

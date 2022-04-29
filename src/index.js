@@ -5,17 +5,17 @@ import './index.css';
 import App from './App';
 
 import CartProvider from './contexts/cart-context/CartProvider';
-import { AuthContextProvider } from './contexts/auth-context';
 import PortalProvider from './contexts/portal-context/PortalProvider';
+import AuthProvider from './contexts/auth-context/auth-context';
 
 ReactDOM.render(
     <Router>
         <PortalProvider>
-            <AuthContextProvider>
+            <AuthProvider>
                 <CartProvider>
                     <App />
                 </CartProvider>
-            </AuthContextProvider>
+            </AuthProvider>
         </PortalProvider>
     </Router>,
     document.getElementById('root')

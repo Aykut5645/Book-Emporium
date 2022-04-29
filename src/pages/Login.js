@@ -4,9 +4,9 @@ import { useHistory } from "react-router-dom";
 import { useContext } from "react";
 import AuthLogin from "../components/Auth/AuthLogin";
 
-import { AuthContext } from "../contexts/auth-context";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase-config";
+import AuthContext from '../contexts/auth-context/AuthProvider';
 
 const Login = () => {
     const [firebaseErrorMessage, setfirebaseErrorMessage] = useState();
