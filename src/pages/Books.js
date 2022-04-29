@@ -19,8 +19,8 @@ const Books = () => {
             setBooks(
                 data.docs.map(doc => ({ ...doc.data(), id: doc.id }))
             );
+            setLoading(false);
         })();
-        setLoading(false);
     }, []);
 
     const searchHandler = searchData => {
@@ -43,8 +43,9 @@ const Books = () => {
     return (
         <Fragment>
             <SearchBookBar onSearch={searchHandler} />
-            {loading && <LoadingSpinner />}
-            {!loading && <AvailableBooks books={books} />}
+            {/* {loading && <LoadingSpinner style={{ position: "relative" }} />}/ */}
+            {/* {!loading && <AvailableBooks books={books} />} */}
+            <AvailableBooks books={books} loading={loading}/>
         </Fragment>
     );
 };
