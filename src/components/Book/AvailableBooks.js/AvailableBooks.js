@@ -1,4 +1,4 @@
-import { Fragment } from 'react/cjs/react.production.min';
+import { Fragment } from 'react';
 
 import LoadingSpinner from '../../UI/LoadingSpinner/LoadingSpinner';
 import BookItem from '../BookItem/BookItem';
