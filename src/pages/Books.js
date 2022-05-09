@@ -43,8 +43,6 @@ const Books = () => {
     return (
         <Fragment>
             <SearchBookBar onSearch={searchHandler} />
-            {/* {loading && <LoadingSpinner style={{ position: "relative" }} />}/ */}
-            {/* {!loading && <AvailableBooks books={books} />} */}
             <AvailableBooks books={books} loading={loading}/>
         </Fragment>
     );

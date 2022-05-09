@@ -23,10 +23,8 @@ main {
 
 .initial-image {
     background: url('./assets/uU8wbS.jpg') center/cover;
-    height: 100vh;
     width: 100%;
-    /* position: fixed; */
-    z-index: -1;
+    height: 100vh;
 }
 
 a {

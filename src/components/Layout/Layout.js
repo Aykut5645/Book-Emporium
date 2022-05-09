@@ -11,7 +11,7 @@ const Layout = props => {
     return (
         <Fragment>
             {portalCtx.cartIsShown && <Cart />}
-            <Header onShowCart={props.onShowCart}/>
+            <Header onShowCart={props.onShowCart} />
             <main>
                 {props.children}
             </main>

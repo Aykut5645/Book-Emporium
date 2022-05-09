@@ -14,7 +14,7 @@ const Footer = () => {
 
     const hideContactsHandler = () => {
         setShowContacts(false);
-    }
+    };
 
     return (
         <div className={classes.footer}>
