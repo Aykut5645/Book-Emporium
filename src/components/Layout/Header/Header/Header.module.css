@@ -64,10 +64,12 @@
     .header {
         flex-direction: column;
         max-height: none;
+        text-align: center;
     }
 
     .initial-header {
         margin-top: 0;
+        font-size: 1.6rem;
     }
 
     .hamburger-btn {

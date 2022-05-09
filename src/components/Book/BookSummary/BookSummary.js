@@ -7,7 +7,7 @@ import classes from './BookSummary.module.css';
 const BookSummary = () => {
     return (
         <section className={classes.summary}>
-            <h2>Welcome to BookEmporium!</h2>
+            <h1>Welcome to BookEmporium!</h1>
             <p>
                 Book Emporium is an internet platform that offers mediation between those who sell and those who are looking for books to buy.
             </p>
