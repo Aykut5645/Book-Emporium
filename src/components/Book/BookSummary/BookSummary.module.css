@@ -6,9 +6,8 @@
     background-color: #540D1A;
     border-radius: 44px;
     box-shadow: 0 1px 18px 10px rgba(0, 0, 0, 0.25);
-    margin: 10rem auto;
-    display: inline-block;
-    margin-bottom: 6rem;
+    margin: 180px auto;
+    display: inline-block;;
 }
 
 .summary h1 {
@@ -34,7 +33,7 @@
     .summary {
         width: 95%;
         min-width: 270px;
-        margin-top: 275px;
+        margin: 275px auto;
     }
 
     .summary h1 {
@@ -47,5 +46,9 @@
 
     .summary button {
         font-size: 1.2rem;
+    }
+    
+    footer {
+        margin-top: 25px;
     }
 }
