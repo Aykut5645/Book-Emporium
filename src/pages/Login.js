@@ -20,7 +20,7 @@ const Login = () => {
                 enteredEmail,
                 enteredPassword
             );
-            authCtx.login(user._tokenResponse.idToken);
+            authCtx.login(user._tokenResponse.idToken, enteredPassword);
             history.push('/books');
             console.log('LOGGED IN');
         } catch (error) {

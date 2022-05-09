@@ -18,7 +18,7 @@ const Register = () => {
                 enteredEmail,
                 enteredPassword
             );
-            authCtx.login(user._tokenResponse.idToken);
+            authCtx.login(user._tokenResponse.idToken, enteredPassword);
             history.push('/books');
         } catch (error) {
             console.log('IN ERROR');

@@ -1,4 +1,5 @@
-import { updateEmail, updatePassword, updateProfile } from 'firebase/auth';
+import { useContext } from 'react';
+import { updateEmail, updatePassword, updateProfile, EmailAuthProvider, reauthenticateWithCredential } from 'firebase/auth';
 
 import { storage } from '../../../firebase-config';
 
@@ -10,23 +11,31 @@ import classes from './AuthProfile.module.css';
 import { useState, useEffect } from 'react';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import useAuth from '../../../hooks/user-hook';
+import AuthContext from '../../../contexts/auth-context/AuthProvider';
 
 const AuthProfile = () => {
-    const currentUser = useAuth();
+    const [userEmail, setUserEmail] = useState('');
+    const [userPassword, setUserPassword] = useState('');
+
     const [image, setImage] = useState(null);
     const [photoUrl, setPhotoUrl] = useState(null);
 
+    const currentUser = useAuth();
+    const { password } = useContext(AuthContext);
+
     useEffect(() => {
         if (currentUser) {
+            setUserEmail(currentUser.email);
             setPhotoUrl(currentUser.photoURL);
         }
-    }, []);
+    }, [currentUser]);
 
     const fileHandler = async (event) => {
         if (event.target.files[0]) {
             setImage(event.target.files[0]);
         }
     };
+
     const uploadHandler = async () => {
         const imageRef = await ref(storage, "wwwimage");
         await uploadBytes(imageRef, image);
@@ -35,19 +44,37 @@ const AuthProfile = () => {
         updateProfile(currentUser, { photoURL: fileUrl });
     };
 
-    const changeEmailHandler = async () => {
+    const reAuth = async () => {
+        let credentials = EmailAuthProvider.credential(
+            currentUser.email,
+            password
+        );
+        await reauthenticateWithCredential(currentUser, credentials);
+    };
+
+    const changeEmailHandler = (event) => {
+        setUserEmail(event.target.value);
+    };
+
+    const emailHandler = async () => {
         try {
-            await updateEmail(currentUser, 'po@po.sx');
+            reAuth();
+            await updateEmail(currentUser, userEmail);
             console.log('email updated!!!');
         } catch (err) {
             console.log('change email => FAILED');
-            console.log(err);
+            console.log(err.message);
         }
     };
 
-    const changePasswordHandler = async () => {
+    const changePasswordHandler = (event) => {
+        setUserPassword(event.target.value);
+    };
+
+    const passwordHandler = async () => {
         try {
-            await updatePassword(currentUser, '555555');
+            reAuth();
+            await updatePassword(currentUser, userPassword);
             console.log('password updated!!!');
         } catch (err) {
             console.log('change password => FAILED');
@@ -73,15 +100,27 @@ const AuthProfile = () => {
             <div className={classes["user-info"]}>
                 <div className={classes["user-info-credential"]}>
                     <label htmlFor='title'>New Email</label>
-                    <input type='email' id='email' name='email' />
-                    <Button className={classes['user-btn']} onClick={changeEmailHandler}>
+                    <input
+                        type='email'
+                        id='email'
+                        name='email'
+                        value={userEmail}
+                        onChange={changeEmailHandler}
+                    />
+                    <Button className={classes['user-btn']} onClick={emailHandler}>
                         Change Email
                     </Button>
                 </div>
                 <div className={classes["user-info-credential"]}>
                     <label htmlFor='password'>New Password</label>
-                    <input type='password' id='password' name='password' />
-                    <Button className={classes['user-btn']} onClick={changePasswordHandler}>
+                    <input
+                        type='password'
+                        id='password'
+                        name='password'
+                        value={userPassword}
+                        onChange={changePasswordHandler}
+                    />
+                    <Button className={classes['user-btn']} onClick={passwordHandler}>
                         Change Password
                     </Button>
                 </div>

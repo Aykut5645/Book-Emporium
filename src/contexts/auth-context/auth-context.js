@@ -4,13 +4,18 @@ import AuthContext from "./AuthProvider";
 
 const AuthProvider = props => {
     const initialToken = localStorage.getItem('token');
+    const initialPassword = localStorage.getItem('password');
+    
     const [token, setToken] = useState(initialToken);
+    const [password, setPassword] = useState(initialPassword);
 
     const isLoggedIn = Boolean(token);
 
-    const loginHandler = token => {
+    const loginHandler = (token, password) => {
         setToken(token);
+        setPassword(password);
         localStorage.setItem('token', token);
+        localStorage.setItem('password', password);
     };
 
     const logoutHandler = () => {
@@ -20,11 +25,12 @@ const AuthProvider = props => {
 
     const authContext = {
         token,
+        password,
         isLoggedIn,
         login: loginHandler,
         logout: logoutHandler
     };
-
+    console.log(password);
     return (
         <AuthContext.Provider value={authContext}>
             {props.children}
