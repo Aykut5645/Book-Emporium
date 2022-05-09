@@ -7,8 +7,10 @@ import Button from '../../UI/Button/Button';
 import classes from './BookDetails.module.css';
 import LoadingSpinner from '../../UI/LoadingSpinner/LoadingSpinner';
 import CartContext from '../../../contexts/cart-context/cart-context';
+import useAuth from '../../../hooks/user-hook';
 
 const BookDetails = props => {
+    const currentUser = useAuth();
     const cartCtx = useContext(CartContext);
 
     const addToCartHandler = () => {
@@ -18,6 +20,8 @@ const BookDetails = props => {
             price: props.book?.price
         });
     };
+    
+    let isOwner = currentUser?.uid === props.book?.credentials.id;
 
     return (
         <>
@@ -49,10 +53,14 @@ const BookDetails = props => {
                     </div>
                     <div className={classes.buttons}>
                         <Button onClick={addToCartHandler}>Add to Cart</Button>
-                        <Button>Delete</Button>
-                        <Link to={`/books/${props.book?.id}/edit`}>
-                            <Button>Edit</Button>
-                        </Link>
+                        {isOwner && (
+                            <>
+                                <Button>Delete</Button>
+                                <Link to={`/books/${props.book?.id}/edit`}>
+                                    <Button>Edit</Button>
+                                </Link>
+                            </>
+                        )}
                     </div>
                 </Card>
             )}

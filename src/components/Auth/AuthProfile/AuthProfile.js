@@ -9,7 +9,7 @@ import Button from '../../UI/Button/Button';
 import classes from './AuthProfile.module.css';
 import { useState, useEffect } from 'react';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
-import useAuth from '../../../hooks/use-hook';
+import useAuth from '../../../hooks/user-hook';
 
 const AuthProfile = () => {
     const currentUser = useAuth();
