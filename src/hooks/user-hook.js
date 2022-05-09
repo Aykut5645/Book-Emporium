@@ -11,6 +11,6 @@ const useAuth = () => {
     }, []);
     
     return currentUser;
-}
+};
 
 export default useAuth;

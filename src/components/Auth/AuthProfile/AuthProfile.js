@@ -1,6 +1,6 @@
-import { onAuthStateChanged, updateEmail, updatePassword, updateProfile } from 'firebase/auth';
+import { updateEmail, updatePassword, updateProfile } from 'firebase/auth';
 
-import { storage, auth } from '../../../firebase-config';
+import { storage } from '../../../firebase-config';
 
 import avatar from '../../../assets/avatar.jpg';
 
@@ -17,11 +17,9 @@ const AuthProfile = () => {
     const [photoUrl, setPhotoUrl] = useState(null);
 
     useEffect(() => {
-        onAuthStateChanged(auth, (user) => {
-            if (user) {
-                setPhotoUrl(user.photoURL);
-            }
-        });
+        if (currentUser) {
+            setPhotoUrl(currentUser.photoURL);
+        }
     }, []);
 
     const fileHandler = async (event) => {
