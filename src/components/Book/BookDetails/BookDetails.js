@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 
 import Card from '../../UI/Card/Card';
@@ -6,8 +6,19 @@ import Button from '../../UI/Button/Button';
 
 import classes from './BookDetails.module.css';
 import LoadingSpinner from '../../UI/LoadingSpinner/LoadingSpinner';
+import CartContext from '../../../contexts/cart-context/cart-context';
 
 const BookDetails = props => {
+    const cartCtx = useContext(CartContext);
+
+    const addToCartHandler = () => {
+        cartCtx.addItem({
+            id: props.book?.id,
+            title: props.book?.title,
+            price: props.book?.price
+        });
+    };
+
     return (
         <>
             {props.loading && <LoadingSpinner className={classes['book-details-spinner']} />}
@@ -37,7 +48,7 @@ const BookDetails = props => {
                         </div>
                     </div>
                     <div className={classes.buttons}>
-                        <Button>Add to Cart</Button>
+                        <Button onClick={addToCartHandler}>Add to Cart</Button>
                         <Button>Delete</Button>
                         <Link to={`/books/${props.book?.id}/edit`}>
                             <Button>Edit</Button>

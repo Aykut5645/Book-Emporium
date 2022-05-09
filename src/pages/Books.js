@@ -5,7 +5,6 @@ import { db } from "../firebase-config";
 
 import AvailableBooks from "../components/Book/AvailableBooks.js/AvailableBooks";
 import SearchBookBar from "../components/Book/SearchBookBar.js/SearchBookBar";
-import LoadingSpinner from '../components/UI/LoadingSpinner/LoadingSpinner';
 
 const Books = () => {
     let [books, setBooks] = useState([]);
