@@ -24,7 +24,7 @@
 .user-img-wrapper {
     width: 17rem;
     height: 17rem;
-    margin-right: 3rem;
+    margin-right: 32px;
 }
 
 .user-img-wrapper img {
@@ -107,6 +107,32 @@
 @media (max-width: 1215px) {
     .container {
         width: 90%;
+        flex-direction: column;
+    }
+
+    .user-img {
+        padding: 32px;
+    }
+
+    .user-title {
+        max-width: none;
+    }
+
+    .user-info {
+        flex-direction: row;
+    }
+}
+
+@media (max-width: 660px) {
+    .user-img {
+        flex-direction: column;
+    }
+
+    .user-img-wrapper {
+        margin-right: 0;
+    }
+
+    .user-info {
         flex-direction: column;
     }
 }

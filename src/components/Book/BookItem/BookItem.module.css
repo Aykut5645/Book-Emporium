@@ -1,8 +1,7 @@
 .book {
-    width: 35%;
+    width: 30%;
     max-width: 420px;
     min-width: 370px;
-    padding-bottom: 16px;
     color: white;
     list-style-type: none;
     display: flex;
@@ -52,7 +51,7 @@
 }
 
 .buttons {
-    padding: 16px 0 0 0;
+    padding: 16px 0 16px 0;
 }
 
 .btn-add-cart,
@@ -116,6 +115,7 @@
 }
 
 @media (max-width: 421px) {
+
     .btn-detail,
     .btn-add-cart {
         margin-bottom: 16px;
