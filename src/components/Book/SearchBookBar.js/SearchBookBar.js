@@ -25,15 +25,22 @@ const SearchBookBar = props => {
     };
 
     return (
-        <form method="GET" onSubmit={submitHandler} className={classes.example}>
+        <form method="GET" onSubmit={submitHandler} className={classes.searching}>
             <h2>Search Boooks</h2>
-            <input type="text" name="search" placeholder="Search by title and author..." />
-            <span>{'=>'}</span>
-            <input type="number" name="from" placeholder="Price from..." />
-            <span>-</span>
-            <input type="number" name="to" placeholder="Price to..." />
+            <div className={classes.search}>
+                <label htmlFor="search">Search by title and author</label>
+                <input id="search" type="text" name="search" placeholder="Search by title and author..." />
+            </div>
+            <div className={classes.from}>
+                <label htmlFor="from">Price from</label>
+                <input id="from" type="number" name="from" placeholder="Price from..." />
+            </div>
+            <div className={classes.to}>
+                <label htmlFor="to">Price to</label>
+                <input id="to" type="number" name="to" placeholder="Price to..." />
+            </div>
             <button type="submit"><i className="fa fa-search"></i></button>
-        </form >
+        </form>
     );
 };
 

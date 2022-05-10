@@ -1,49 +1,52 @@
-.example {
+.searching {
     display: flex;
     margin: 10rem auto auto auto;
-    width: 80%;
+    width: 90%;
     border-radius: 5px;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
     flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: center;
-    border: 2px solid #c69f26;;
+    border: 2px solid #c69f26;
 }
 
-.example h2 {
+.searching h2 {
     flex: 0 0 100%;
     color: white;
+    margin: 20px 0;
 }
 
-.example span {
+.searching label {
     color: white;
+    display: block;
+    padding-bottom: 8px;
+    font-size: 1.1rem;
 }
 
-.example input[type=text] {
-    padding: 10px;
-    font-size: 14px;
-    border: 1px solid #540D1A;
-    width: 50%;
-    background: #f1f1f1;
-    border-radius: 3px;
+.search {
+    width: 60%;
 }
 
-.example input[type=number] {
-    padding: 10px;
-    font-size: 14px;
-    border: 1px solid #540D1A;
-    width: 20%;
-    background: #f1f1f1;
-    border-radius: 3px;
+.search input,
+.from input,
+.to input {
+    width: 100%;
+    font-size: 0.9rem;
+    padding: 8px;
 }
 
-.example button {
-    flex: 0 0 50%;
-    margin: 1rem;
-    padding: 10px;
+.from,
+.to {
+    width: 15%;
+}
+
+.searching button {
+    flex: 0 0 25%;
+    margin: 20px;
+    padding: 16px;
     background: #540D1A;
     color: white;
-    font-size: 14px;
+    font-size: 1.1rem;
     border: 1px solid #540D1A;
     cursor: pointer;
     border: 2px solid #540D1A;
@@ -51,7 +54,34 @@
     border: 2px solid #c69f26;
 }
 
-.example button:hover {
+.searching button:hover {
     background: #540D1A;
     color: #c69f26;
+}
+
+@media(max-width: 1200px) {
+    .searching {
+        flex-direction: column;
+    }
+
+    .search {
+        width: 90%;
+        min-width: 205px;
+    }
+
+    .from,
+    .to {
+        min-width: 205px;
+        margin-top: 20px;
+    }
+
+    .searching button {
+        min-width: 120px;
+    }
+}
+
+@media(max-width: 270px) {
+    .searching {
+        min-width: 224px;
+    }
 }
