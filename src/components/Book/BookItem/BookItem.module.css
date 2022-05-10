@@ -55,8 +55,9 @@
     padding: 16px 0 0 0;
 }
 
-.btn-add-cart {
-    margin-right: 16px;
+.btn-add-cart,
+.btn-detail {
+    margin: 0 12px;
 }
 
 .btn-detail,
@@ -111,5 +112,12 @@
 
     .book-info {
         height: auto;
+    }
+}
+
+@media (max-width: 421px) {
+    .btn-detail,
+    .btn-add-cart {
+        margin-bottom: 16px;
     }
 }

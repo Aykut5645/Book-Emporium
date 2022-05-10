@@ -4,6 +4,7 @@
     text-align: center;
     color: #c69f26;
     margin: auto;
+    margin-top: 150px;
 }
 
 .auth h1 {
@@ -37,5 +38,6 @@ a:hover {
 @media (max-width: 720px) {
     .auth {
         width: 95%;
+        margin-top: 250px;
     }
 }

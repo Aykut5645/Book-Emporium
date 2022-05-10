@@ -1,7 +1,8 @@
 .container {
     width: 80%;
-    max-width: 500px;
+    max-width: 1500px;
     margin: 9rem auto;
+    display: inline-block;
 }
 
 .container form {
@@ -40,4 +41,22 @@
 .form button {
     padding: 2rem 4rem;
     font: inherit;
+}
+
+@media(max-width: 1080px) {
+    .container form {
+        flex-direction: column;
+    }
+
+    .book-info,
+    .book-publisher {
+        width: 90%;
+    }
+}
+
+@media(max-width: 720px) {
+    .container {
+        margin-top: 16rem;
+        margin-bottom: 25rem;
+    }
 }

@@ -15,5 +15,6 @@
 @media (max-width: 720px) {
     .books {
         padding: 0;
+        margin-bottom: 340px;
     }
 }
