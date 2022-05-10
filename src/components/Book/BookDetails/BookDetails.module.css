@@ -98,6 +98,8 @@
         flex-direction: column;
         width: 60%;
         margin: auto;
+        max-width: 220px;
+        min-width: 180px;
     }
 
     .buttons a {
