@@ -1,8 +1,9 @@
 .container {
     position: fixed;
     left: 0px;
-    bottom: 0px;
+    top: 0px;
     border-radius: 0;
+    max-width: 603px;
 }
 
 .person {
@@ -10,6 +11,7 @@
     padding: 1rem;
     border: 3px solid #540D1A;
     margin: 0.5rem;
+    min-width: 275px;
 }
 
 .header,
@@ -41,4 +43,16 @@
     border-color: white;
     color: white;
     cursor: pointer;
+}
+
+@media (max-width: 400px) {
+    .container {
+        text-align: center;
+        width: 100%;
+    }
+
+    .person {
+        width: 100%;
+        margin: 0 0 0.5rem 0;
+    }
 }

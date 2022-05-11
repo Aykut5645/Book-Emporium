@@ -27,6 +27,10 @@
     width: 60%;
 }
 
+.search input {
+    max-width: 638px;
+}
+
 .search input,
 .from input,
 .to input {
