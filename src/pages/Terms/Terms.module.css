@@ -1,8 +1,11 @@
 .container {
     color: white;
-    margin: 10rem 6rem;
-    padding: 4rem 6rem;
-    line-height: 1.8rem;
+    margin-top: 126px;
+    margin-bottom: 236px;
+    padding: 76px 28px;
+    line-height: 30px;
+    display: inline-block;
+    width: 80%;
 }
 
 .container h1, h2 {
@@ -15,4 +18,15 @@
 
 .container ol {
     text-align: left;
+}
+
+@media (max-width: 720px) {
+    .container {
+        margin-top: 226px;
+        margin-bottom: 386px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
 }
