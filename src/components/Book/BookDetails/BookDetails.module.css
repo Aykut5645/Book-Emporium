@@ -2,8 +2,8 @@
     width: 90%;
     max-width: 1100px;
     background-color: #540D1A;
-    margin-top: 160px;
-    margin-bottom: 360px;
+    margin-top: 150px;
+    margin-bottom: 300px;
     color: white;
     display: inline-flex;
     flex-direction: column;
@@ -42,6 +42,8 @@
     width: 60%;
     border-left: none;
     border-right: none;
+    padding: 0 5px;
+    min-height: 280px; 
 }
 
 .container h2 {
@@ -71,8 +73,6 @@
 @media (max-width: 1060px) {
     .container {
         width: 90%;
-        margin-top: 220px;
-        margin-bottom: 450px;
     }
 
     .details {
@@ -107,5 +107,12 @@
 
     .buttons a {
         width: 100%;
+    }
+}
+
+@media (max-width: 720px) {
+    .container {
+        margin-top: 240px;
+        margin-bottom: 380px;
     }
 }

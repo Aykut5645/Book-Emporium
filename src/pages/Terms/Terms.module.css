@@ -1,7 +1,7 @@
 .container {
     color: white;
-    margin-top: 126px;
-    margin-bottom: 236px;
+    margin-top: 140px;
+    margin-bottom: 260px;
     padding: 76px 28px;
     line-height: 30px;
     display: inline-block;
@@ -22,8 +22,8 @@
 
 @media (max-width: 720px) {
     .container {
-        margin-top: 226px;
-        margin-bottom: 386px;
+        margin-top: 250px;
+        margin-bottom: 380px;
     }
 
     h1 {

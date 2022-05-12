@@ -23,14 +23,13 @@ const Profile = () => {
         })();
         setLoading(false);
     }, []);
-    
+
     return (
         <Fragment>
             {loading && <LoadingSpinner />}
             {!loading && (
                 <>
                     <AuthProfile />
-                    <h1 style={{ color: "white" }}>Your Books</h1>
                     <AvailableBooks books={books} />
                 </>
             )}

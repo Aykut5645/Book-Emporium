@@ -1,18 +1,19 @@
 .container {
     width: 90%;
-    margin: 10rem auto;
+    margin: 140px auto;
     display: inline-flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    margin-bottom: 2.5rem;
+    margin-bottom: 60px;
     padding: 3rem 0;
 }
 
-.user-title {
+.user-title,
+.subtitle {
     color: white;
     text-align: center;
-    max-width: 15rem;
+    max-width: 15rem auto;
 }
 
 .user-img {
@@ -114,8 +115,11 @@
         padding: 32px;
     }
 
-    .user-title {
+    .user-title,
+    .subtitle {
         max-width: none;
+        font-size: 1.6rem;
+        margin: auto 16px auto 16px;
     }
 
     .user-info {
@@ -123,7 +127,13 @@
     }
 }
 
-@media (max-width: 660px) {
+@media (max-width: 720px) {
+    .container {
+        width: 90%;
+        margin-top: 240px;
+        flex-direction: column;
+    }
+
     .user-img {
         flex-direction: column;
     }

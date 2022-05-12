@@ -1,6 +1,6 @@
 .searching {
     display: flex;
-    margin: 10rem auto auto auto;
+    margin: 130px auto auto auto;
     width: 90%;
     border-radius: 5px;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
@@ -28,7 +28,7 @@
 }
 
 .search input {
-    max-width: 638px;
+    width: 100%;
 }
 
 .search input,
@@ -66,6 +66,7 @@
 @media(max-width: 1200px) {
     .searching {
         flex-direction: column;
+        margin: 130px auto auto auto;
     }
 
     .search {
@@ -84,8 +85,9 @@
     }
 }
 
-@media(max-width: 270px) {
+@media(max-width: 720px) {
     .searching {
         min-width: 224px;
+        margin: 240px auto auto auto;
     }
 }

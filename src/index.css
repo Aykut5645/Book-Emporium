@@ -15,9 +15,8 @@ body {
     margin: 0;
     padding: 0;
     background-color: rgb(51, 0, 0);
-    min-height: calc(100vh + 197px);
     position: relative;
-    /* min-height: 100vh; */
+    min-height: 100vh;
 }
 
 main {
@@ -26,9 +25,9 @@ main {
 
 .initial-image {
     background: url('./assets/uU8wbS.jpg') center/cover;
-    position: fixed;
+    position: relative;
     width: 100%;
-    height: 100vh;
+    min-height: calc(100vh + 200px);
 }
 
 a {
@@ -40,9 +39,8 @@ a {
     font-style: italic;
 }
 
-@media (max-width: 720px) {
-    body {
-        margin: 0;
+@media(max-width: 720px) {
+    .initial-image {
         min-height: calc(100vh + 322px);
     }
 }
