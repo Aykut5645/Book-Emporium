@@ -60,6 +60,10 @@
     align-items: center;
 }
 
+.buttons a {
+    text-decoration: none;
+}
+
 .buttons button {
     padding: 16px 24px;
     margin: 6px;

@@ -1,5 +1,8 @@
-import React, { useContext } from 'react';
+import React, {  useContext } from 'react';
 import { Link } from 'react-router-dom';
+
+import { deleteDoc, doc, getDoc } from 'firebase/firestore';
+import { db } from '../../../firebase-config';
 
 import Card from '../../UI/Card/Card';
 import Button from '../../UI/Button/Button';
@@ -19,6 +22,12 @@ const BookDetails = props => {
             title: props.book?.title,
             price: props.book?.price
         });
+    };
+
+    const deleteBook = async () => {
+        await deleteDoc(
+            doc(db, 'books', props.book?.id)
+        );
     };
 
     let isOwner = currentUser?.uid === props.book?.credentials.id;
@@ -57,7 +66,7 @@ const BookDetails = props => {
                         <Button onClick={addToCartHandler}>Add to Cart</Button>
                         {isOwner && (
                             <>
-                                <Button>Delete</Button>
+                                <Button onClick={deleteBook}>Delete</Button>
                                 <Link to={`/books/${props.book?.id}/edit`}>
                                     <Button>Edit</Button>
                                 </Link>

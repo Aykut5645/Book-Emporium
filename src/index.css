@@ -30,7 +30,9 @@ main {
     min-height: calc(100vh + 200px);
 }
 
-a {
+a,
+a:hover,
+a:active {
     text-decoration: none;
 }
 
