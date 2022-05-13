@@ -50,7 +50,7 @@ Fictional internet platform that offers mediation between those who sell and tho
 - About Us Page
 - Contacts Modal 
     - related to showing useful contacts
-Cart Modal
+- Cart Modal
     - related to list all the books that users added into cart
 
 ### Private (users)
