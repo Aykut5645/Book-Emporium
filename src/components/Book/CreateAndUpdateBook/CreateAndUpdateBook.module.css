@@ -8,7 +8,7 @@
 .container form {
     padding: 0 1rem 2rem 1rem;
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-around;
 }
@@ -16,6 +16,9 @@
 .book-info,
 .book-publisher {
     width: 30%;
+    min-width: 340px;
+    margin-left: 12px;
+    margin-right: 12px;
 }
 
 .container .inline {
@@ -28,10 +31,12 @@
 .container .inline div,
 .container .inline div {
     width: 40%;
+    min-width: 141px;
 }
 
 .container label {
     color: #c69f26;
+    font-size: 1.1rem;
 }
 
 .container h1 {
@@ -39,8 +44,10 @@
 }
 
 .form button {
-    padding: 2rem 4rem;
+    padding: 24px 48px;
     font: inherit;
+    font-size: 1.2rem;
+    min-width: 163px;
 }
 
 .loading {
@@ -48,13 +55,16 @@
 }
 
 @media(max-width: 1080px) {
-    .container form {
-        flex-direction: column;
+    .form button {
+        margin-top: 18px;
     }
+}
 
+@media(max-width: 973px) {
     .book-info,
     .book-publisher {
-        width: 90%;
+        min-width: 0;
+        width: 100%;
     }
 }
 
