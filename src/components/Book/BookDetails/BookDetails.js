@@ -9,11 +9,13 @@ import LoadingSpinner from '../../UI/LoadingSpinner/LoadingSpinner';
 import CartContext from '../../../contexts/cart-context/cart-context';
 import useAuth from '../../../hooks/user-hook';
 import Confirm from '../../UI/Confirm/Confirm';
+import AuthContext from '../../../contexts/auth-context/AuthProvider';
 
 const BookDetails = props => {
     const [showConfirm, setShowConfirm] = useState(false);
     const currentUser = useAuth();
     const cartCtx = useContext(CartContext);
+    const authCtx = useContext(AuthContext);
 
     const addToCartHandler = () => {
         cartCtx.addItem({
@@ -32,7 +34,7 @@ const BookDetails = props => {
     };
 
     let isOwner = currentUser?.uid === props.book?.credentials.id;
-    
+
     return (
         <>
             {props.loading && <LoadingSpinner className={classes['book-details-spinner']} />}
@@ -71,8 +73,9 @@ const BookDetails = props => {
                         </div>
                     </div>
                     <div className={classes.buttons}>
-                        {!isOwner && <Button onClick={addToCartHandler}>Add to Cart</Button>}
-                        {isOwner && (
+                        {!authCtx.isLoggedIn && <Button onClick={addToCartHandler}>Add to Cart</Button>}
+                        {authCtx.isLoggedIn && !isOwner && <Button onClick={addToCartHandler}>Add to Cart</Button>}
+                        {authCtx.isLoggedIn && isOwner && (
                             <>
                                 <Button onClick={showConfirmHandler}>Delete</Button>
                                 <Link to={`/books/${props.book?.id}/edit`}>
