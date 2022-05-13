@@ -39,7 +39,7 @@ Fictional internet platform that offers mediation between those who sell and tho
 
 ### Public (guests)
 
-- Home Page
+- **Home Page**
     - initial page with beautiful background image and button refers to catalog page)
 - Catalog Page
     - shows all books from database
