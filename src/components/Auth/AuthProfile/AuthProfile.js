@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import { updateEmail, updatePassword, updateProfile, EmailAuthProvider, reauthenticateWithCredential } from 'firebase/auth';
 
 import { storage } from '../../../firebase-config';
@@ -8,11 +8,9 @@ import avatar from '../../../assets/avatar.jpg';
 import Card from '../../UI/Card/Card';
 import Button from '../../UI/Button/Button';
 import classes from './AuthProfile.module.css';
-import { useState, useEffect } from 'react';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import useAuth from '../../../hooks/user-hook';
 import AuthContext from '../../../contexts/auth-context/AuthProvider';
-import LoadingSpinner from '../../UI/LoadingSpinner/LoadingSpinner';
 
 const AuthProfile = props => {
     const [userEmail, setUserEmail] = useState('');
