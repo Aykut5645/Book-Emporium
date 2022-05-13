@@ -1,8 +1,5 @@
-import React, {  useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
-
-import { deleteDoc, doc, getDoc } from 'firebase/firestore';
-import { db } from '../../../firebase-config';
 
 import Card from '../../UI/Card/Card';
 import Button from '../../UI/Button/Button';
@@ -11,8 +8,10 @@ import classes from './BookDetails.module.css';
 import LoadingSpinner from '../../UI/LoadingSpinner/LoadingSpinner';
 import CartContext from '../../../contexts/cart-context/cart-context';
 import useAuth from '../../../hooks/user-hook';
+import Confirm from '../../UI/Confirm/Confirm';
 
 const BookDetails = props => {
+    const [showConfirm, setShowConfirm] = useState(false);
     const currentUser = useAuth();
     const cartCtx = useContext(CartContext);
 
@@ -24,10 +23,12 @@ const BookDetails = props => {
         });
     };
 
-    const deleteBook = async () => {
-        await deleteDoc(
-            doc(db, 'books', props.book?.id)
-        );
+    const showConfirmHandler = () => {
+        setShowConfirm(true);
+    };
+
+    const hideConfirmHandler = () => {
+        setShowConfirm(false);
     };
 
     let isOwner = currentUser?.uid === props.book?.credentials.id;
@@ -35,6 +36,13 @@ const BookDetails = props => {
     return (
         <>
             {props.loading && <LoadingSpinner className={classes['book-details-spinner']} />}
+            {showConfirm && (
+                <Confirm
+                    bookId={props.book?.id}
+                    showConfirm={showConfirmHandler}
+                    hideConfirm={hideConfirmHandler}
+                />
+            )}
             {!props.loading && (
                 <Card className={classes.container}>
                     <div className={classes.details}>
@@ -66,7 +74,7 @@ const BookDetails = props => {
                         <Button onClick={addToCartHandler}>Add to Cart</Button>
                         {isOwner && (
                             <>
-                                <Button onClick={deleteBook}>Delete</Button>
+                                <Button onClick={showConfirmHandler}>Delete</Button>
                                 <Link to={`/books/${props.book?.id}/edit`}>
                                     <Button>Edit</Button>
                                 </Link>

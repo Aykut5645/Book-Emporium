@@ -8,10 +8,14 @@ import classes from './Modal.module.css';
 
 const Modal = props => {
     const portalCtx = useContext(PortalContext);
-
+    console.log(portalCtx.cartIsShown)
     return (
         <Fragment>
-            <Backdrop onClick={() => { portalCtx.hideCart(); props.onHideContacts && props.onHideContacts() }} />,
+            <Backdrop onClick={() => {
+                portalCtx.hideCart();
+                props.onHideContacts && props.onHideContacts();
+                props.onHideConfirm && props.onHideConfirm()
+            }} />,
             {createPortal(
                 <div className={`${classes.modal} ${props.className}`}>
                     {props.children}

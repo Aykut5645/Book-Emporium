@@ -43,6 +43,10 @@
     font: inherit;
 }
 
+.loading {
+    margin-top: 11rem;
+}
+
 @media(max-width: 1080px) {
     .container form {
         flex-direction: column;
@@ -58,5 +62,9 @@
     .container {
         margin-top: 240px;
         margin-bottom: 380px;
+    }
+
+    .loading {
+        margin-top: 14rem;
     }
 }
