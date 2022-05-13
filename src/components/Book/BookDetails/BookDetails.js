@@ -32,7 +32,7 @@ const BookDetails = props => {
     };
 
     let isOwner = currentUser?.uid === props.book?.credentials.id;
-    console.log(props.book);
+    
     return (
         <>
             {props.loading && <LoadingSpinner className={classes['book-details-spinner']} />}
@@ -71,7 +71,7 @@ const BookDetails = props => {
                         </div>
                     </div>
                     <div className={classes.buttons}>
-                        <Button onClick={addToCartHandler}>Add to Cart</Button>
+                        {!isOwner && <Button onClick={addToCartHandler}>Add to Cart</Button>}
                         {isOwner && (
                             <>
                                 <Button onClick={showConfirmHandler}>Delete</Button>

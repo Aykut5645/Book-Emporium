@@ -26,7 +26,7 @@ const SearchBookBar = props => {
 
     return (
         <form method="GET" onSubmit={submitHandler} className={classes.searching}>
-            <h2>Search Boooks</h2>
+            <h2>Search Books</h2>
             <div className={classes.search}>
                 <label htmlFor="search">Search by title and author</label>
                 <input id="search" type="text" name="search" placeholder="Search by title and author..." />

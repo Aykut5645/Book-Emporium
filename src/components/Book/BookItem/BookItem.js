@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 
 import CartContext from '../../../contexts/cart-context/cart-context';
+import useAuth from '../../../hooks/user-hook';
 import Button from '../../UI/Button/Button';
 import Card from '../../UI/Card/Card';
 
@@ -9,6 +10,7 @@ import classes from './BookItem.module.css';
 
 const BookItem = (props) => {
     const cartCtx = useContext(CartContext);
+    const currentUser = useAuth();
 
     const addToCartHandler = () => {
         cartCtx.addItem({
@@ -18,8 +20,8 @@ const BookItem = (props) => {
         });
     };
 
-    //TODO: const isDisabled = Boolean(cartCtx.items.find(item => item.id === props.book.id));
     const editedPrice = '$' + Number(props.book.price).toFixed(2);
+    const isOwner = currentUser?.uid === props.book?.credentials.id;
 
     return (
         <Card className={classes.book}>
@@ -34,9 +36,11 @@ const BookItem = (props) => {
                 </div>
             </div>
             <div className={classes.buttons}>
-                <Button className={classes['btn-add-cart']} onClick={addToCartHandler}>
-                    Add to Cart
-                </Button>
+                {!isOwner && (
+                    <Button className={classes['btn-add-cart']} onClick={addToCartHandler}>
+                        Add to Cart
+                    </Button>
+                )}
                 <Link to={`/books/${props.book.id}/details`}>
                     <Button className={classes['btn-detail']}>Details</Button>
                 </Link>
