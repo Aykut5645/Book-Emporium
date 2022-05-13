@@ -2,7 +2,9 @@
 
 Fictional internet platform that offers mediation between those who sell and those who are looking for books to buy. This project related to SoftUni's JS Web Developer learning path.
 
+
  ## Built With
+
 
 - IDE:
   - [Visual Studio Code](https://code.visualstudio.com/ "Visual Studio Code")
@@ -31,7 +33,9 @@ Fictional internet platform that offers mediation between those who sell and tho
   - [Font Awesome Icons](https://fontawesome.com/icons "Font Awesome Icons")
   - [Info about books](https://www.goodreads.com/ "Info about books")
 
+
 ## Functionality
+
 
 ### Public (guests)
 
@@ -70,6 +74,8 @@ Fictional internet platform that offers mediation between those who sell and tho
 - Sign Out Button
     - placed in Header and visible only to logged-in users
 
+
 ## License
+
 
 Distributed under the MIT License. See `LICENSE` for more information.
