@@ -11,12 +11,21 @@
 }
 
 .books-spinner {
-    margin-top: 11rem;
+    margin-top: 60px;
+}
+
+.message {
+    color: white;
+    margin: 60px auto;
 }
 
 @media (max-width: 720px) {
     .books {
         padding: 0;
         margin-bottom: 340px;
+    }
+
+    .message {
+        font-size: 1.6rem;
     }
 }

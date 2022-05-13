@@ -41,7 +41,7 @@ const BookCreate = props => {
             value: '',
             isValid: false
         },
-        state: {
+        condition: {
             value: '',
             isValid: false
         },
@@ -148,11 +148,11 @@ const BookCreate = props => {
                     </div>
                     <div className={classes.inline}>
                         <Input
-                            id="state"
+                            id="condition"
                             label="Condition"
                             element="select"
                             validators={[VALIDATOR_REQUIRE()]}
-                            errorMessage={'Please enter a valid state.'}
+                            errorMessage={'Please enter a valid condition.'}
                             options={
                                 <>
                                     <option></option>

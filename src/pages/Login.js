@@ -7,14 +7,17 @@ import AuthLogin from "../components/Auth/AuthLogin";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase-config";
 import AuthContext from '../contexts/auth-context/AuthProvider';
+import LoadingSpinner from '../components/UI/LoadingSpinner/LoadingSpinner';
 
 const Login = () => {
     const [firebaseErrorMessage, setfirebaseErrorMessage] = useState();
+    const [loading, setLoading] = useState(false);
     const history = useHistory();
     const authCtx = useContext(AuthContext);
 
     const loginHandler = async (enteredEmail, enteredPassword) => {
         try {
+            setLoading(true);
             const user = await signInWithEmailAndPassword(
                 auth,
                 enteredEmail,
@@ -28,10 +31,14 @@ const Login = () => {
             console.log(error.message);
             setfirebaseErrorMessage(error.message);
         }
+        setLoading(false);
     };
 
     return (
-        <AuthLogin onLogin={loginHandler} firebaseErrorMessage={firebaseErrorMessage} />
+        <>
+            {loading && <LoadingSpinner />}
+            {!loading && <AuthLogin onLogin={loginHandler} firebaseErrorMessage={firebaseErrorMessage} />}
+        </>
     );
 };
 

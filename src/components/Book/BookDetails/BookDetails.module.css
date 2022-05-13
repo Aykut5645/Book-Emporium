@@ -70,10 +70,6 @@
     min-width: 208px;
 }
 
-.book-details-spinner {
-    margin: 18rem auto;
-}
-
 @media (max-width: 1060px) {
     .container {
         width: 90%;

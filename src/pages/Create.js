@@ -13,6 +13,7 @@ const Create = () => {
     const [loading, setLoading] = useState(false);
     
     const createDataHandler = async (createdData) => {
+        console.log(createdData);
         try {
             setLoading(true);
             await addDoc(collection(db, 'books'), {

@@ -32,7 +32,7 @@ const BookDetails = props => {
     };
 
     let isOwner = currentUser?.uid === props.book?.credentials.id;
-
+    console.log(props.book);
     return (
         <>
             {props.loading && <LoadingSpinner className={classes['book-details-spinner']} />}
