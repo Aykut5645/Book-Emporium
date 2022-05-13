@@ -69,3 +69,7 @@ Fictional internet platform that offers mediation between those who sell and tho
     - visible for user who are the creator of book
 - Sign Out Button
     - placed in Header and visible only to logged-in users
+
+## License
+
+Distributed under the MIT License. See LICENSE for more information.
