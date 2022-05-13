@@ -1,0 +1,29 @@
+.container {
+    margin: 180px auto;
+    text-align: center;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.error {
+    font-size: 10rem;
+    margin-top: 0;
+    margin-bottom: 0;
+    min-width: 264;
+}
+
+.info {
+    min-width: 198px;
+    color: #c69f26;
+}
+
+@media (max-width: 720px) {
+    .container {
+        margin-top: 250px;
+        margin-bottom: 440px;
+        min-width: 0;
+    }
+}
