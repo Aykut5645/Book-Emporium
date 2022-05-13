@@ -13,7 +13,11 @@
 .subtitle {
     color: white;
     text-align: center;
-    max-width: 15rem auto;
+    max-width: 15rem;
+}
+
+.subtitle {
+    margin: auto;
 }
 
 .user-img {
