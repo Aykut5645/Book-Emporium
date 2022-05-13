@@ -2,8 +2,7 @@
 
 Fictional internet platform that offers mediation between those who sell and those who are looking for books to buy. This project related to SoftUni's JS Web Developer learning path.
 
- ## Built With
- --
+ ### Built With
 
 - IDE:
   - [Visual Studio Code](https://code.visualstudio.com/ "Visual Studio Code")
