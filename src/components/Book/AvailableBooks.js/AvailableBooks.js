@@ -6,6 +6,7 @@ import BookItem from '../BookItem/BookItem';
 import classes from './AvailableBooks.module.css';
 
 const AvailableBooks = ({ books, loading }) => {
+    console.log(loading);
     return (
         <Fragment>
             {loading && <LoadingSpinner className={classes['books-spinner']} />}

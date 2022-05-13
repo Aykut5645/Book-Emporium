@@ -5,7 +5,6 @@ import { auth, db } from "../firebase-config";
 
 import AuthProfile from "../components/Auth/AuthProfile/AuthProfile";
 import AvailableBooks from "../components/Book/AvailableBooks.js/AvailableBooks";
-import LoadingSpinner from "../components/UI/LoadingSpinner/LoadingSpinner";
 
 const Profile = () => {
     const [books, setBooks] = useState([]);
@@ -20,19 +19,14 @@ const Profile = () => {
                     .filter(doc => auth.currentUser?.uid === doc.data().credentials.id)
                     .map(doc => ({ ...doc.data(), id: doc.id }))
             );
+            setLoading(false);
         })();
-        setLoading(false);
     }, []);
 
     return (
         <Fragment>
-            {loading && <LoadingSpinner />}
-            {!loading && (
-                <>
-                    <AuthProfile />
-                    <AvailableBooks books={books} />
-                </>
-            )}
+            <AuthProfile loading={loading} />
+            <AvailableBooks books={books} loading={loading} />
         </Fragment>
     );
 };

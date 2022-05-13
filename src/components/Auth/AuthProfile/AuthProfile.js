@@ -12,8 +12,9 @@ import { useState, useEffect } from 'react';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import useAuth from '../../../hooks/user-hook';
 import AuthContext from '../../../contexts/auth-context/AuthProvider';
+import LoadingSpinner from '../../UI/LoadingSpinner/LoadingSpinner';
 
-const AuthProfile = () => {
+const AuthProfile = props => {
     const [userEmail, setUserEmail] = useState('');
     const [userPassword, setUserPassword] = useState('');
 
@@ -84,7 +85,7 @@ const AuthProfile = () => {
 
     return (
         <>
-            <Card className={classes.container} >
+            <Card className={classes.container}>
                 <h1 className={classes['user-title']}>Change your credentials</h1>
                 <div className={classes["user-img"]}>
                     <div className={classes["user-img-wrapper"]}>
