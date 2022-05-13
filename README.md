@@ -16,10 +16,10 @@ Fictional internet platform that offers mediation between those who sell and tho
   - [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS "CSS3")
 - Back-End:
   - [Firebase 9.4.1](https://firebase.google.com/ "Firebase 9.4.1")
-  -- Firebase SDK API (to interaction between front-end and back-end)
-  -- Cloud Firestore (as a database)
-  -- Cloud Storage (to uploading files)
-  -- Firebase Authentication API
+  --- Firebase SDK API (to interaction between front-end and back-end)
+  --- Cloud Firestore (as a database)
+  --- Cloud Storage (to uploading files)
+  --- Firebase Authentication API
 - Web Server:
   - [Firebase Hosting](https://firebase.google.com/docs/hosting "Firebase Hosting")
 - Version Control System:
@@ -27,5 +27,6 @@ Fictional internet platform that offers mediation between those who sell and tho
   - [Github](https://git-scm.com/ "Github")
 - Additionals:
   - [TortoiseGit](https://tortoisegit.org/ "TortoiseGit")
+  - [SVG](https://developer.mozilla.org/en-US/docs/Web/SVG "SVG")
   - [Font Awesome Icons](https://fontawesome.com/icons "Font Awesome Icons")
   - [Info about books](https://www.goodreads.com/ "Info about books")
