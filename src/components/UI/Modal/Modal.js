@@ -15,7 +15,7 @@ const Modal = props => {
                 portalCtx.hideCart();
                 props.onHideContacts && props.onHideContacts();
                 props.onHideConfirm && props.onHideConfirm()
-            }} />,
+            }} />
             {createPortal(
                 <div className={`${classes.modal} ${props.className}`}>
                     {props.children}

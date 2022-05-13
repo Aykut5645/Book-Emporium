@@ -6,6 +6,8 @@ import { db } from "../../../firebase-config";
 import Button from "../Button/Button";
 import Modal from "../Modal/Modal";
 
+import classes from './Confirm.module.css';
+
 const Confirm = props => {
     const history = useHistory();
 
@@ -17,9 +19,9 @@ const Confirm = props => {
     };
 
     return (
-        <Modal onHideConfirm={props.hideConfirm}>
-            <h2>Are you sure that you want to delete this book?</h2>
-            <div>
+        <Modal className={classes.container} onHideConfirm={props.hideConfirm}>
+            <p className={classes.question}>Are you sure that you want to delete this book?</p>
+            <div className={classes.buttons}>
                 <Button onClick={deleteBook}>Yes</Button>
                 <Button onClick={props.hideConfirm}>No</Button>
             </div>

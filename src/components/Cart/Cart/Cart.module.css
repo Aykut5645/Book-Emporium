@@ -60,3 +60,10 @@
     font-size: 1.5rem;
     color: #5a1a01;
 }
+
+@media (max-width: 600px){
+    .message,
+    .total span {
+        font-size: 1.2rem;
+    }
+}

@@ -1,0 +1,40 @@
+.container {
+    padding: 16px;
+    text-align: center;
+}
+
+.question {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding-bottom: 33px;
+    border-bottom: 3px solid #5a1a01;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.buttons button {
+    font: inherit;
+    cursor: pointer;
+    color: #5a1a01;
+    background-color: white;
+    border: 3px solid #5a1a01;
+    padding: 0.5rem 2rem;
+    border-radius: 25px;
+    font-weight: bold;
+}
+
+.buttons button:hover,
+.buttons button:active {
+    color: white;
+    border-color: #5a1a01;
+    background-color: #5a1a01;
+}
+
+@media (max-width: 600px){
+    .question {
+        font-size: 1.2rem;
+    }
+}
