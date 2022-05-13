@@ -17,10 +17,10 @@ Fictional internet platform that offers mediation between those who sell and tho
   - [CSS Media Queries](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries "CSS Media Queries")
 - Back-End:
   - [Firebase 9.4.1](https://firebase.google.com/ "Firebase 9.4.1")
-     - Firebase SDK API (to interaction between front-end and back-end)
-     - Cloud Firestore (as a database)
-     - Cloud Storage (to uploading files)
-     - Firebase Authentication API
+    Firebase SDK API (to interaction between front-end and back-end)
+    Cloud Firestore (as a database)
+    Cloud Storage (to uploading files)
+    Firebase Authentication API
 - Web Server:
   - [Firebase Hosting](https://firebase.google.com/docs/hosting "Firebase Hosting")
 - Version Control System:
