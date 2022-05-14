@@ -24,7 +24,7 @@ const BookItem = (props) => {
 
     const editedPrice = '$' + Number(props.book.price).toFixed(2);
     const isOwner = currentUser?.uid === props.book?.credentials.id;
-    console.log(currentUser)
+    
     return (
         <Card className={classes.book}>
             <div className={classes['book-content']}>
