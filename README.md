@@ -2,7 +2,7 @@
 
 Fictional internet platform that offers mediation between those who sell and those who are looking for books to buy. This project related to SoftUni's JS Web Developer learning path.
 
-### Live Demo
+## Live Demo
 
 [https://bookemporium-project.web.app/](https://bookemporium-project.web.app/)
 
