@@ -57,7 +57,7 @@ Fictional internet platform that offers mediation between those who sell and tho
 - **Terms and Condition Page**
 - **About Us Page**
 - **Not Found Page**
-    - if user access to get invalid adress
+    - if the user tries to access an invalid address
 - **Contacts Modal**
     - related to showing useful contacts (administrator and technical person)
 - **Cart Modal**
