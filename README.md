@@ -40,38 +40,45 @@ Fictional internet platform that offers mediation between those who sell and tho
 ### Public (guests)
 
 - **Home Page**
-    - initial page with beautiful background image and button refers to catalog page)
-- Catalog Page
+    - initial page with beautiful background image and button refers to catalog page
+- **Catalog Page**
     - shows all books from database
     - can make orders and see all the details related to specific book
-- Details Page 
+    - can search books by title, author and price range (from - to )
+- **Details Page**
     - shows all details related to specific book
-- Login Page (Sign In)
+    - can make orders, but cannot delete or edit book
+- **Login Page (Sign In)**
     - can only be accessed by public users
-- Register Page (Sign Up)
+    - must meet the validation criteria upon entering credentials
+- **Register Page (Sign Up)**
     - can only be accessed by public users
-- Terms and Condition Page
-- About Us Page
-- Contacts Modal 
-    - related to showing useful contacts
-- Cart Modal
-    - related to list all the books that users added into cart
+    - must meet the validation criteria upon entering credentials
+- **Terms and Condition Page**
+- **About Us Page**
+- **Not Found Page**
+    - if user access to get invalid adress
+- **Contacts Modal**
+    - related to showing useful contacts (administrator and technical person)
+- **Cart Modal**
+    - related to list all the books that user added into cart
+    - can only add books that are not created by him
 
 ### Private (users)
 
-- Create Page
+- **Create Page**
     - logic related to adding new book in database
     - only registered and logged in users can create books
     - creators cannot place orders to their books
-- Profile Page 
+- **Profile Page** 
     - registration is required for accessibility
     - user can add your own profile picture
     - user can change his credentials (email and password)
     - list all books that user have created
-- Edit Page
+- **Edit Page**
     - creator can edit his own book
     - visible for user who are the creator of book
-- Sign Out Button
+- **Sign Out Button**
     - placed in Header and visible only to logged-in users
 
 
