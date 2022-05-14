@@ -22,10 +22,6 @@ Fictional internet platform that offers mediation between those who sell and tho
   - [CSS Media Queries](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries "CSS Media Queries")
 - Back-End:
   - [Firebase 9.4.1](https://firebase.google.com/ "Firebase 9.4.1")
-	-- Firebase SDK - to interaction between front-end and back-end
-	-- Cloud Firestore - as a database
-	-- Cloud Storage - to uploading files
-	-- Firebase Authentication  - I have used localStorage API in order to keep user logged in after refreshing
 - Web Server:
   - [Firebase Hosting](https://firebase.google.com/docs/hosting "Firebase Hosting")
 - Version Control System:
@@ -55,6 +51,7 @@ Fictional internet platform that offers mediation between those who sell and tho
 - **Login Page (Sign In)**
     - can only be accessed by public users
     - must meet the validation criteria upon entering credentials
+    - used localStorage API in order to keep user logged in after refreshing
 - **Register Page (Sign Up)**
     - can only be accessed by public users
     - must meet the validation criteria upon entering credentials
