@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Prompt } from 'react-router-dom';
 
 import classes from './CreateAndUpdateBook.module.css';
 
@@ -15,6 +15,8 @@ import { db } from '../../../firebase-config';
 
 const BookEdit = props => {
     const [book, setBook] = useState(null);
+    const [isEntering, setIsEntering] = useState(false);
+
     const bookId = useParams().bookId;
 
     useEffect(() => {
@@ -86,13 +88,22 @@ const BookEdit = props => {
         props.onModifyData(modifiedData);
     };
 
+    const focusHandler = () => {
+        setIsEntering(true);
+    };
+
     return (
         <>
-            {!book && <LoadingSpinner className={classes.loading}/>}
+            <Prompt
+                when={isEntering}
+                message={() => 'Are you sure that you want to leave? All your changes and entered data can be lost!'
+                }
+            />
+            {!book && <LoadingSpinner className={classes.loading} />}
             {book &&
                 <Card className={classes.container}>
                     <h1>Edit Book Info</h1>
-                    <form className={classes.form} onSubmit={submitHandler}>
+                    <form className={classes.form} onSubmit={submitHandler} onFocus={focusHandler}>
                         <div className={classes['book-info']}>
                             <Input
                                 id="title"

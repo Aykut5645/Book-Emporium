@@ -1,13 +1,18 @@
+import { useState } from 'react';
+import { Prompt } from 'react-router-dom';
+
 import Card from '../../UI/Card/Card';
 import Button from '../../UI/Button/Button';
-
 import Input from '../../UI/Input/Input';
+
 import { VALIDATOR_REQUIRE } from '../../../util/validators';
 import useForm from '../../../hooks/form-hook';
 
 import classes from './CreateAndUpdateBook.module.css';
 
 const BookCreate = props => {
+    const [isEntering, setIsEntering] = useState(false);
+
     const [formState, inputHandler] = useForm({
         title: {
             value: '',
@@ -65,141 +70,152 @@ const BookCreate = props => {
         props.onCreateData(createdData);
     };
 
+    const focusHandler = () => {
+        setIsEntering(true);
+    };
+
     return (
-        <Card className={classes.container}>
-            <h1>Create Book</h1>
-            <form className={classes.form} onSubmit={submitHandler}>
-                <div className={classes['book-info']}>
-                    <Input
-                        id="title"
-                        type="text"
-                        label="Title"
-                        element="input"
-                        validators={[VALIDATOR_REQUIRE()]}
-                        errorMessage={'Please enter a valid title.'}
-                        onInput={inputHandler}
-                    />
-                    <Input
-                        id="author"
-                        type="text"
-                        label="Author"
-                        element="input"
-                        validators={[VALIDATOR_REQUIRE()]}
-                        errorMessage={'Please enter a valid Author.'}
-                        onInput={inputHandler}
-                    />
-                    <Input
-                        id="imageUrl"
-                        type="text"
-                        label="ImageUrl"
-                        element="input"
-                        validators={[VALIDATOR_REQUIRE()]}
-                        errorMessage={'Please enter a valid imageUrl.'}
-                        onInput={inputHandler}
-                    />
-                    <Input
-                        id="genre"
-                        type="text"
-                        label="Genre"
-                        element="input"
-                        validators={[VALIDATOR_REQUIRE()]}
-                        errorMessage={'Please enter a valid genre.'}
-                        onInput={inputHandler}
-                    />
-                    <Input
-                        id="price"
-                        type="number"
-                        label="price"
-                        element="input"
-                        validators={[VALIDATOR_REQUIRE()]}
-                        errorMessage={'Please enter a valid price.'}
-                        onInput={inputHandler}
-                    />
-                </div>
-                <div className={classes['book-publisher']}>
-                    <Input
-                        id="publisher"
-                        type="text"
-                        label="Publisher"
-                        element="input"
-                        validators={[VALIDATOR_REQUIRE()]}
-                        errorMessage={'Please enter a valid publisher.'}
-                        onInput={inputHandler}
-                    />
-                    <div className={classes.inline}>
+        <>
+            <Prompt
+                when={isEntering}
+                message={() => 'Are you sure that you want to leave? All your changes and entered data can be lost!'
+                }
+            />
+            <Card className={classes.container}>
+                <h1>Create Book</h1>
+                <form className={classes.form} onSubmit={submitHandler} onFocus={focusHandler}>
+                    <div className={classes['book-info']}>
                         <Input
-                            id="year"
-                            type="number"
-                            label="Year"
+                            id="title"
+                            type="text"
+                            label="Title"
                             element="input"
                             validators={[VALIDATOR_REQUIRE()]}
-                            errorMessage={'Please enter a valid year.'}
+                            errorMessage={'Please enter a valid title.'}
                             onInput={inputHandler}
                         />
                         <Input
-                            id="pages"
-                            type="number"
-                            label="Pages"
+                            id="author"
+                            type="text"
+                            label="Author"
                             element="input"
                             validators={[VALIDATOR_REQUIRE()]}
-                            errorMessage={'Please enter a valid pages.'}
+                            errorMessage={'Please enter a valid Author.'}
+                            onInput={inputHandler}
+                        />
+                        <Input
+                            id="imageUrl"
+                            type="text"
+                            label="ImageUrl"
+                            element="input"
+                            validators={[VALIDATOR_REQUIRE()]}
+                            errorMessage={'Please enter a valid imageUrl.'}
+                            onInput={inputHandler}
+                        />
+                        <Input
+                            id="genre"
+                            type="text"
+                            label="Genre"
+                            element="input"
+                            validators={[VALIDATOR_REQUIRE()]}
+                            errorMessage={'Please enter a valid genre.'}
+                            onInput={inputHandler}
+                        />
+                        <Input
+                            id="price"
+                            type="number"
+                            label="price"
+                            element="input"
+                            validators={[VALIDATOR_REQUIRE()]}
+                            errorMessage={'Please enter a valid price.'}
                             onInput={inputHandler}
                         />
                     </div>
-                    <div className={classes.inline}>
+                    <div className={classes['book-publisher']}>
                         <Input
-                            id="condition"
-                            label="Condition"
-                            element="select"
+                            id="publisher"
+                            type="text"
+                            label="Publisher"
+                            element="input"
                             validators={[VALIDATOR_REQUIRE()]}
-                            errorMessage={'Please enter a valid condition.'}
-                            options={
-                                <>
-                                    <option></option>
-                                    <option value="Excellent">Excellent</option>
-                                    <option value="Very Good">Very Good</option>
-                                    <option value="Good">Good</option>
-                                    <option value="Bad">Bad</option>
-                                    <option value="Very Bad">Very Bad</option>
-                                </>
-                            }
+                            errorMessage={'Please enter a valid publisher.'}
                             onInput={inputHandler}
                         />
+                        <div className={classes.inline}>
+                            <Input
+                                id="year"
+                                type="number"
+                                label="Year"
+                                element="input"
+                                validators={[VALIDATOR_REQUIRE()]}
+                                errorMessage={'Please enter a valid year.'}
+                                onInput={inputHandler}
+                            />
+                            <Input
+                                id="pages"
+                                type="number"
+                                label="Pages"
+                                element="input"
+                                validators={[VALIDATOR_REQUIRE()]}
+                                errorMessage={'Please enter a valid pages.'}
+                                onInput={inputHandler}
+                            />
+                        </div>
+                        <div className={classes.inline}>
+                            <Input
+                                id="condition"
+                                label="Condition"
+                                element="select"
+                                validators={[VALIDATOR_REQUIRE()]}
+                                errorMessage={'Please enter a valid condition.'}
+                                options={
+                                    <>
+                                        <option></option>
+                                        <option value="Excellent">Excellent</option>
+                                        <option value="Very Good">Very Good</option>
+                                        <option value="Good">Good</option>
+                                        <option value="Bad">Bad</option>
+                                        <option value="Very Bad">Very Bad</option>
+                                    </>
+                                }
+                                onInput={inputHandler}
+                            />
+                            <Input
+                                id="covers"
+                                label="Covers"
+                                element="select"
+                                validators={[VALIDATOR_REQUIRE()]}
+                                errorMessage={'Please enter a valid covers.'}
+                                options={
+                                    <>
+                                        <option></option>
+                                        <option value="Soft">Soft</option>
+                                        <option value="Hard">Hard</option>
+                                    </>
+                                }
+                                onInput={inputHandler}
+                            />
+                        </div>
                         <Input
-                            id="covers"
-                            label="Covers"
-                            element="select"
+                            id="contacts"
+                            type="text"
+                            label="Contacts"
+                            element="input"
                             validators={[VALIDATOR_REQUIRE()]}
-                            errorMessage={'Please enter a valid covers.'}
-                            options={
-                                <>
-                                    <option></option>
-                                    <option value="Soft">Soft</option>
-                                    <option value="Hard">Hard</option>
-                                </>
-                            }
+                            errorMessage={'Please enter a valid contacts.'}
                             onInput={inputHandler}
                         />
                     </div>
-                    <Input
-                        id="contacts"
-                        type="text"
-                        label="Contacts"
-                        element="input"
-                        validators={[VALIDATOR_REQUIRE()]}
-                        errorMessage={'Please enter a valid contacts.'}
-                        onInput={inputHandler}
-                    />
-                </div>
-                <Button
-                    type="submit"
-                    disabled={!formState.isValid}
-                    className={classes['edit-btn']}
-                >
-                    Create
-                </Button>
-            </form>
-        </Card >
+                    <Button
+                        type="submit"
+                        disabled={!formState.isValid}
+                        className={classes['edit-btn']}
+                    >
+                        Create
+                    </Button>
+                </form>
+            </Card >
+        </>
     );
 };
 
