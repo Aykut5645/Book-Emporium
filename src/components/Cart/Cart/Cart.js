@@ -24,6 +24,7 @@ const Cart = props => {
                 {cartCtx.items.map((item, index) =>
                     <CartItem
                         key={index}
+                        id={item.id}
                         title={item.title}
                         price={item.price}
                         onRemove={cartItemRemoveHandler.bind(null, index)}
