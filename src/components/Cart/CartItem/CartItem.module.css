@@ -1,3 +1,7 @@
+.cart-title {
+    font-size: 1.4rem;
+}
+
 .cart-item {
     display: flex;
     justify-content: space-between;
