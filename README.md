@@ -31,7 +31,7 @@ Fictional internet platform that offers mediation between those who sell and tho
   - [TortoiseGit](https://tortoisegit.org/ "TortoiseGit")
   - [SVG](https://developer.mozilla.org/en-US/docs/Web/SVG "SVG")
   - [Font Awesome Icons](https://fontawesome.com/icons "Font Awesome Icons")
-  - [Info about books](https://www.goodreads.com/ "Info about books")
+  - [Info about books - goodreads.com](https://www.goodreads.com/ "Info about books")
 
 
 ## Functionality
@@ -44,7 +44,7 @@ Fictional internet platform that offers mediation between those who sell and tho
 - **Catalog Page**
     - shows all books from database
     - can make orders and see all the details related to specific book
-    - can search books by title, author and price range (from - to )
+    - can search books by title, author and price range (from - to)
 - **Details Page**
     - shows all details related to specific book
     - can make orders, but cannot delete or edit book
